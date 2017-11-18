@@ -3,20 +3,20 @@ require "./app/models/user"
 
 describe User do
 
-  let(:user)          { User.new(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123") }
-
   after do
 		User.destroy_all
 	end
 
   context "User Model" do
-
+    user = User.create(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123")
+    
     it "creates a new user" do
       expect(user).to be_a User
     end
   end
 
   context "has a password when password exists" do
+    user = User.create(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123")
 
     it "gives user a name, email and password" do
       expect(user.name).to eq("John Doe")
