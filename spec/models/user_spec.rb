@@ -7,18 +7,18 @@ describe User do
 		User.destroy_all
 	end
 
-  context "User Model" do
+  context User do
     user = User.create(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123")
 
-    it "creates a new user" do
+    it "can create a new user" do
       expect(user).to be_a User
     end
   end
 
-  context "has a password when password exists" do
+  context "when password exists" do
     user = User.create(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123")
 
-    it "gives user a name, email and password" do
+    it "gives user a name, email, uid and password" do
       expect(user.name).to eq("John Doe")
       expect(user.email).to eq("user@gmail.com")
       expect(user.password).to eq("secret")
