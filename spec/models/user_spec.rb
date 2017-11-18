@@ -9,7 +9,7 @@ describe User do
 
   context "User Model" do
     user = User.create(name: "John Doe", email: "user@gmail.com", password: "secret", uid: "123")
-    
+
     it "creates a new user" do
       expect(user).to be_a User
     end
@@ -27,8 +27,7 @@ describe User do
   end
 
   context "when password not given" do
-
-    let(:user)        { User.new(name: "John Doe", email: "user@gmail.com", uid: "123") }
+    user = User.new(name: "John Doe", email: "user@gmail.com", uid: "123") 
 
     it "raises an error" do
       expect { user.save! }.to raise_error("Validation failed: Password can't be blank")
