@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
 	validates :name, :email, presence: true
 	validates :name,:email, uniqueness: true
 
-	# Creates a new Facebook user if they don't already exist
 	def self.create_with_omniauth(auth_hash)
 	    user = User.find_or_create_by(uid: auth_hash["uid"])
 	    user.email = auth_hash["info"]["email"]
