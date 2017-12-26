@@ -25,6 +25,9 @@ RSpec.configure do |config|
 
   config.example_status_persistence_file_path = "tmp/rspec_examples.txt"
   config.order = :random
+
+  config.include(OmniauthMacros)
+  config.include Capybara::DSL
 end
 
 WebMock.disable_net_connect!(allow_localhost: true)

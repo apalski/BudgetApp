@@ -44,10 +44,10 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.6"
+  gem "capybara-webkit"
 end
 
 group :test do
-  gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
