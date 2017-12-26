@@ -6,15 +6,15 @@ class User < ActiveRecord::Base
 	validates :name,:email, uniqueness: true
 
 	def self.create_with_omniauth(auth_hash)
-	    user = User.find_or_create_by(uid: auth_hash["uid"])
-	    user.email = auth_hash["info"]["email"]
-	    user.password = SecureRandom.base64(10)
-	    user.name = auth_hash["info"]["name"]
-	    if User.exists?(user)
-	    	user
-	    else
-	    	user.save!
-	    	user
-	    end
-  	end
+    user = User.find_or_create_by(uid: auth_hash["uid"])
+    user.email = auth_hash["user_info"]["email"]
+    user.password = SecureRandom.base64(10)
+    user.name = auth_hash["user_info"]["name"]
+    if User.exists?(user.uid)
+    	user
+    else
+    	user.save!
+    	user
+    end
+	end
 end

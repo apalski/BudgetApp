@@ -311,3 +311,455 @@ Migrating to CreateDelayedJobs (20171118114518)
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95460
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95482
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95482
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95750
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95750
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95774
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95774
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95792
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95792
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95862
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95862
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=95892
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=95892
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=96439
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=96439
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=96634
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=96634
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=96653
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=96653
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97104
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97104
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97153
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97153
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97429
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97429
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97469
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97469
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97501
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97501
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97539
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97539
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97577
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97577
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97615
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97615
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=97647
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=97647
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=98546
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=98546
+Started GET "/" for ::1 at 2017-12-26 15:38:11 +1100
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/annettedrapalski/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/annettedrapalski/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (5.6ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sessions/new" for ::1 at 2017-12-26 15:38:20 +1100
+Processing by SessionsController#new as HTML
+  Rendering layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (29.6ms)
+  Rendered application/_flashes.html.erb (1.1ms)
+  Rendered application/_analytics.html.erb (1.1ms)
+  Rendered application/_javascript.html.erb (28.7ms)
+  Rendered application/_css_overrides.html.erb (0.9ms)
+  Rendered layouts/application.html.erb (2071.6ms)
+Completed 200 OK in 2090ms (Views: 2078.4ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/normalize.css/normalize.css"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:34:in `block in call'
+honeybadger (3.1.2) lib/honeybadger/agent.rb:321:in `with_rack_env'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_feedback.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_informer.rb:21:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+** [Honeybadger] Unable to send error report: API key is missing. id=63932b4c-0569-4c6b-9cf6-4e5ce71ff419 level=3 pid=98564
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=98788
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=98788
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=98822
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=98822
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=98869
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=98869
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=98969
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=98969
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=99010
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=99010
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=99043
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=99043
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=862
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=862
+Started GET "/" for ::1 at 2017-12-26 16:36:00 +1100
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering layouts/application.html.erb
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (12.4ms)
+  Rendered layouts/application.html.erb (14.6ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to Budget App <%= @user.name %></h1>
+  
+app/views/application/welcome.html.erb:1:in `_app_views_application_welcome_html_erb___337983859784869832_70307143536200'
+** [Honeybadger] Unable to send error report: API key is missing. id=acae6553-e42b-456d-a117-36ece41f4d1c level=3 pid=879
+Started GET "/sessions/new" for ::1 at 2017-12-26 16:36:28 +1100
+Processing by SessionsController#new as HTML
+  Rendering layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (31.7ms)
+  Rendered application/_flashes.html.erb (0.7ms)
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  Rendered application/_analytics.html.erb (0.6ms)
+  Rendered application/_javascript.html.erb (23.2ms)
+  Rendered application/_css_overrides.html.erb (0.6ms)
+  Rendered layouts/application.html.erb (240.5ms)
+Completed 200 OK in 247ms (Views: 245.2ms | ActiveRecord: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/normalize.css/normalize.css"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:34:in `block in call'
+honeybadger (3.1.2) lib/honeybadger/agent.rb:321:in `with_rack_env'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_feedback.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_informer.rb:21:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+** [Honeybadger] Unable to send error report: API key is missing. id=9fdddeff-c0b5-4e79-b57f-a604450a7cd3 level=3 pid=879
+Started GET "/" for ::1 at 2017-12-26 16:36:42 +1100
+Processing by ApplicationController#welcome as HTML
+  Rendering layouts/application.html.erb
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (21.3ms)
+  Rendered layouts/application.html.erb (23.4ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to Budget App <%= @user.name %></h1>
+  
+app/views/application/welcome.html.erb:1:in `_app_views_application_welcome_html_erb___337983859784869832_70307142715720'
+** [Honeybadger] Unable to send error report: API key is missing. id=eb24a798-0ca7-4a97-a116-ff0094b37235 level=3 pid=879
+  
+ActionController::RoutingError (No route matches [GET] "/assets/normalize.css/normalize.css"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:34:in `block in call'
+honeybadger (3.1.2) lib/honeybadger/agent.rb:321:in `with_rack_env'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_feedback.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_informer.rb:21:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+** [Honeybadger] Unable to send error report: API key is missing. id=71ecd1d1-3c7a-42af-8dfe-a13fe855fd51 level=3 pid=879
+  
+ActionController::RoutingError (No route matches [GET] "/assets/normalize.css/normalize.css"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:34:in `block in call'
+honeybadger (3.1.2) lib/honeybadger/agent.rb:321:in `with_rack_env'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_feedback.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_informer.rb:21:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+** [Honeybadger] Unable to send error report: API key is missing. id=b7023d49-23a5-4d7a-b87f-9a2e2f47fbb5 level=3 pid=879
+Started GET "/auth/facebook" for ::1 at 2017-12-26 16:37:23 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/assets/normalize.css/normalize.css"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:63:in `block (3 levels) in broadcast'
+activesupport (5.1.4) lib/active_support/logger_silence.rb:20:in `silence'
+activesupport (5.1.4) lib/active_support/logger.rb:61:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:34:in `block in call'
+honeybadger (3.1.2) lib/honeybadger/agent.rb:321:in `with_rack_env'
+honeybadger (3.1.2) lib/honeybadger/rack/error_notifier.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_feedback.rb:31:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+honeybadger (3.1.2) lib/honeybadger/rack/user_informer.rb:21:in `call'
+skylight (1.4.4) lib/skylight/probes/middleware.rb:25:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+** [Honeybadger] Unable to send error report: API key is missing. id=eea509f1-e99e-4fc4-9f08-d85cc01ddd09 level=3 pid=879
+Started GET "/" for ::1 at 2017-12-26 16:39:49 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationController#welcome as HTML
+  Rendering layouts/application.html.erb
+  Rendering application/welcome.html.erb within layouts/application
+  Rendered application/welcome.html.erb within layouts/application (9.9ms)
+  Rendered layouts/application.html.erb (13.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to Budget App <%= @user.name %></h1>
+  
+app/views/application/welcome.html.erb:1:in `_app_views_application_welcome_html_erb___337983859784869832_70307143752400'
+** [Honeybadger] Unable to send error report: API key is missing. id=e0e07107-dece-4c3c-9200-1c526ee74626 level=3 pid=878
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1093
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1093
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1130
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1130
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1168
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1168
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1185
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1185
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1249
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1249
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1459
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1459
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1480
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1480
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1543
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1543
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1603
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1603
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1684
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1684
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=1791
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=1791
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2195
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2195
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2273
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2273
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2293
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2293
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2313
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2313
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2665
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2665
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=2722
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=2722
