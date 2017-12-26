@@ -25,7 +25,9 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 gem "bcrypt"
-
+gem "omniauth"
+gem "omniauth-facebook"
+gem "dotenv"
 
 group :development do
   gem "listen"
