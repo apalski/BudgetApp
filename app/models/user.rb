@@ -10,11 +10,7 @@ class User < ActiveRecord::Base
     user.email = auth_hash["user_info"]["email"]
     user.password = SecureRandom.base64(10)
     user.name = auth_hash["user_info"]["name"]
-    if User.exists?(user.uid)
-    	user
-    else
-    	user.save!
-    	user
-    end
+    user.save! unless User.exists?(user.uid)
+    user
 	end
 end

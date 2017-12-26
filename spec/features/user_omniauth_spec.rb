@@ -4,7 +4,6 @@ require "./app/models/user"
 describe "User" do
   context "when signing up with omniauth" do
     it "should be created" do
-      OmniAuth.config.test_mode = true
       OmniAuth.config.mock_auth[:facebook] = {
         'provider' => 'facebook',
         'uid' => '123545',
@@ -17,17 +16,17 @@ describe "User" do
           'secret' => 'mock_secret'
         }
       }
-      visit '/sessions/new'
-      expect(page).to have_content("Sign in with Facebook")
-      click_on "Sign in with Facebook"
+      visit new_session_path
+      expect(page).to have_content("Access with Facebook")
+      click_on "Access with Facebook"
       expect(page).to have_content("mockuser")
     end
 
     it "can handle authentication error" do
       OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
-      visit '/sessions/new'
-      expect(page).to have_content("Sign in with Facebook")
-      click_on "Sign in with Facebook"
+      visit new_session_path
+      expect(page).to have_content("Access with Facebook")
+      click_on "Access with Facebook"
       expect(page).to have_content('Authentication failed.')
     end
   end
