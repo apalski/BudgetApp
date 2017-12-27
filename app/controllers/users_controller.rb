@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
-			redirect_to sessions_new_path
+			redirect_to root_path, notice: "You have successfully joined Budget App"
 		else
 		 	render :new
 		end
@@ -32,17 +32,10 @@ class UsersController < ApplicationController
 
 	def update
 		set_user
-		if @user == current_user
-			if @user.update(user_params)
-				redirect_to user_path(@user)
-			else
-				render :edit
-			end
+		if @user == current_user && @user.update(user_params)
+			redirect_to user_path(@user)
 		else
-			if !params[:user][:password].nil?
-				@user.update_attribute(:password, params[:user][:password])
-			end
-			redirect_to root_path
+			render :edit
 		end
 	end
 

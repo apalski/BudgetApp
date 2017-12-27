@@ -1,14 +1,7 @@
 <h1>Please sign in:</h1>
 
 <%= form_for :user, url: '/sessions' do |f| %>
-<div class="field" >
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
-</div>
-<div class="field" >
-  <%= f.label :password %>
-  <%= f.password_field :password %><br><br>
-</div>
+  <%= render 'form', f: f %>
 	<%= f.submit "Sign In" %>
 <% end %>
 

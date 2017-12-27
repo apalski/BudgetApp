@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   def destroy
 		session.clear
 		respond_to do |format|
-			format.html { redirect_to sessions_new_path, notice: "You are signed out" }
+			format.html { redirect_to new_session_path, notice: "You are signed out" }
 		end
 	end
 end
