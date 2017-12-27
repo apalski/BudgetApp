@@ -56,3 +56,14 @@ end
 group :production do
   gem "rack-timeout"
 end
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+gem 'high_voltage'
+gem 'bourbon', '~> 5.0.0.beta.8'
+gem 'neat', '~> 2.1'
+gem 'refills', group: [:development, :test]
+>>>>>>> 7ec1ff1... Setup factorybot
+=======
+>>>>>>> 60b38d1... Add gem Rubocop to project

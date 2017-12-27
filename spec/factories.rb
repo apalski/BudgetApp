@@ -1,4 +1,5 @@
 FactoryBot.define do
+<<<<<<< HEAD
   factory :budget do
     sequence(:name) { |n| "budget name#{n}" }
   end
@@ -22,4 +23,6 @@ FactoryBot.define do
     sequence(:name) { |n| "user name#{n}" }
     sequence(:email) { |n| "user email#{n}" }
   end
+=======
+>>>>>>> 7ec1ff1... Setup factorybot
 end

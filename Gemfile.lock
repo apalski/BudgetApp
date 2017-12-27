@@ -286,6 +286,13 @@ DEPENDENCIES
   delayed_job_active_record
   dotenv-rails
   factory_bot_rails
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  flutie
+>>>>>>> 7ec1ff1... Setup factorybot
+=======
+>>>>>>> 60b38d1... Add gem Rubocop to project
   formulaic
   honeybadger
   jquery-rails
