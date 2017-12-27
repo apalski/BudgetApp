@@ -24,7 +24,9 @@ gem "sprockets", ">= 3.0.0"
 gem "suspenders"
 gem "title"
 gem "uglifier"
-
+gem "bcrypt"
+gem "omniauth"
+gem "omniauth-facebook"
 
 group :development do
   gem "listen"
@@ -39,14 +41,14 @@ group :development, :test do
   gem "bullet"
   gem "bundler-audit", ">= 0.5.0", require: false
   gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "rspec-rails", "~> 3.6"
+  gem "rspec-rails", "~> 3.7"
+  gem "capybara-webkit"
 end
 
 group :test do
-  gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"

@@ -1,0 +1,14 @@
+<h1>Welcome to BudgetApp</h1>
+
+<h2>If you are already a member please signin above</h2>
+<h2>To become a member please complete your details below</h2>
+
+<%= form_for @user do |f| %>
+	<%= render 'application/errors', target: @user %>
+  <div class="field" >
+	<%= f.label :email %>
+	<%= f.text_field :email %><br><br>
+</div>	
+	<%= render 'sessions/form', f: f %>
+	<%= f.submit %>
+<% end %>

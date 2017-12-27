@@ -1,0 +1,8 @@
+<h1>Please sign in:</h1>
+
+<%= form_for :user, url: '/sessions' do |f| %>
+  <%= render 'form', f: f %>
+	<%= f.submit "Sign In" %>
+<% end %>
+
+<h2>Or sign in with Facebook above</h2>
