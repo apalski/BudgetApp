@@ -60,4 +60,11 @@ describe User do
       expect { user2.save! }.to raise_error("Validation failed: Email has already been taken")
     end
   end
+
+  context "has many budgets" do
+
+    xit "the association is correct" do
+      
+    end
+  end
 end
