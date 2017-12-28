@@ -64,7 +64,9 @@ describe User do
   context "has many budgets" do
 
     xit "the association is correct" do
-      
+      RSpec.describe User, type: :model do
+        it { should have_many(:budgets).through(:user_budgets) }
+      end
     end
   end
 end
