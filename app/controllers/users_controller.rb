@@ -2,14 +2,22 @@
 
 class UsersController < ApplicationController
   def index
+<<<<<<< HEAD
     @users = User.all.sort_by { |user| user.name.downcase }
+=======
+    @users = User.all.sort_by {|user| user.name.downcase}
+>>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
   end
 
   def new
     if !current_user
       @user = User.new
     else
+<<<<<<< HEAD
       redirect_to user_path(current_user), notice: 'You are already signed in'
+=======
+      redirect_to user_path(current_user), notice: "You are already signed in"
+>>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
     end
   end
 
@@ -17,7 +25,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+<<<<<<< HEAD
       redirect_to root_path, notice: 'You have successfully joined Budget App'
+=======
+      redirect_to root_path, notice: "You have successfully joined Budget App"
+>>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
     else
       render :new
     end
@@ -43,6 +55,7 @@ class UsersController < ApplicationController
   def destroy
     set_user.destroy
     respond_to do |format|
+<<<<<<< HEAD
       format.html do
         redirect_to users_path,
                     notice: 'User was successfully deleted'
@@ -51,6 +64,13 @@ class UsersController < ApplicationController
   end
 
   private
+=======
+      format.html {redirect_to users_path, notice: "User was successfully deleted"}
+    end
+  end
+
+private
+>>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
 
   def set_user
     @user = User.find(params[:id])

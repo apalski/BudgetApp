@@ -4,11 +4,19 @@
 <h2>To become a member please complete your details below</h2>
 
 <%= form_for @user do |f| %>
-	<%= render 'application/errors', target: @user %>
+  <%= render 'application/errors', target: @user %>
   <div class="field" >
+<<<<<<< HEAD
 	<%= f.label :email %>
 	<%= f.text_field :email %><br><br>
 </div>
 	<%= render 'sessions/form', f: f %>
 	<%= f.submit %>
+=======
+    <%= f.label :email %>
+    <%= f.text_field :email %><br><br>
+  </div>	
+  <%= render 'sessions/form', f: f %>
+  <%= f.submit %>
+>>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
 <% end %>
