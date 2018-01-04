@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper, SessionHelper
 
   def welcome
-		@user = current_user
-	end
+    @user = current_user
+  end
 end
