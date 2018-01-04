@@ -1,8 +1,10 @@
-require "rails_helper"
-require "./app/models/user"
+# frozen_string_literal: true
 
-describe "User signing in with omniauth" do
-  scenario "should be created" do
+require 'rails_helper'
+require './app/models/user'
+
+describe 'User signing in with omniauth' do
+  scenario 'should be created' do
     OmniAuth.config.mock_auth[:facebook] = {
       'provider' => 'facebook',
       'uid' => '123545',
@@ -18,21 +20,21 @@ describe "User signing in with omniauth" do
 
     visit new_session_path
 
-    expect(page).to have_content("Sign in with Facebook")
+    expect(page).to have_content('Sign in with Facebook')
 
-    click_on "Sign in with Facebook"
+    click_on 'Sign in with Facebook'
 
-    expect(page).to have_content("mockuser")
+    expect(page).to have_content('mockuser')
   end
 
-  scenario "can handle authentication error" do
+  scenario 'can handle authentication error' do
     OmniAuth.config.mock_auth[:facebook] = :invalid_credentials
 
     visit new_session_path
 
-    expect(page).to have_content("Sign in with Facebook")
+    expect(page).to have_content('Sign in with Facebook')
 
-    click_on "Sign in with Facebook"
+    click_on 'Sign in with Facebook'
 
     expect(page).to have_content('Authentication failed.')
   end

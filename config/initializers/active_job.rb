@@ -1,6 +1,8 @@
-require "active_job/logging"
+# frozen_string_literal: true
 
-ActiveSupport::Notifications.unsubscribe("enqueue.active_job")
+require 'active_job/logging'
+
+ActiveSupport::Notifications.unsubscribe('enqueue.active_job')
 
 module ActiveJob
   module Logging
