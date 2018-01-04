@@ -806,3 +806,47 @@ app/views/application/welcome.html.erb:1:in `_app_views_application_welcome_html
   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=63438
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=63438
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=53275
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=53275
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61417
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61417
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61443
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61443
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61473
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61473
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61493
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61493
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61512
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61512
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61532
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61532
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61553
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61553
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61572
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61572
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61674
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61674
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61702
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61702
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61730
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61730
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61754
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61754
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61797
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61797
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61827
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61827
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61852
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61852
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61873
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61873
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61915
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61915
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=61975
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=61975
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=62183
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=62183
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=62243
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=62243
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=62267
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=62267

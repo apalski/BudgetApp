@@ -6,9 +6,9 @@
 <%= form_for @user do |f| %>
 	<%= render 'application/errors', target: @user %>
   <div class="field" >
-	<%= f.label :email %>
-	<%= f.text_field :email %><br><br>
-</div>	
+  	<%= f.label :email %>
+  	<%= f.text_field :email %><br><br>
+  </div>	
 	<%= render 'sessions/form', f: f %>
 	<%= f.submit %>
 <% end %>
