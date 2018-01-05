@@ -19,8 +19,8 @@ describe User do
     it 'raises an error' do
       user = User.create(name: 'John Doe', email: 'user@gmail.com', uid: '123')
 
-      expect { user.save! }.to raise_error("Validation failed:
-																						Password can't be blank")
+      expect { user.save! }
+        .to raise_error("Validation failed: Password can't be blank")
     end
   end
 
@@ -30,8 +30,8 @@ describe User do
                          password: 'secret',
                          uid: '123')
 
-      expect { user.save! }.to raise_error("Validation failed:
-																						Name can't be blank")
+      expect { user.save! }
+        .to raise_error('Validation failed: Name You must enter your name')
     end
   end
 
@@ -39,8 +39,8 @@ describe User do
     it 'raises an error' do
       user = User.create(name: 'John Doe', password: 'secret', uid: '123')
 
-      expect { user.save! }.to raise_error("Validation failed:
-																						Email can't be blank")
+      expect { user.save! }
+        .to raise_error('Validation failed: Email Enter an email address')
     end
   end
 
@@ -56,8 +56,8 @@ describe User do
                           password: 'secret_sausage',
                           uid: '124')
 
-      expect { user2.save! }.to raise_error('Validation failed:
-																						 Name has already been taken')
+      expect { user2.save! }
+        .to raise_error('Validation failed: Name has already been taken')
     end
   end
 
@@ -73,8 +73,8 @@ describe User do
                           password: 'secret_sausage',
                           uid: '124')
 
-      expect { user2.save! }.to raise_error('Validation failed:
-																						 Email has already been taken')
+      expect { user2.save! }
+        .to raise_error('Validation failed: Email has already been taken')
     end
   end
 

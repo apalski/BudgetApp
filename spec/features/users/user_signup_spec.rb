@@ -32,7 +32,7 @@ describe User do
     fill_in 'Password', with: 'secretsausage'
     click_on 'Create User'
 
-    expect(page).to have_content("Email can't be blank")
+    expect(page).to have_content('Email You must enter an email address')
   end
 
   scenario "can't signup for a new account without a name" do
@@ -42,7 +42,7 @@ describe User do
     fill_in 'Password', with: 'secretsausage'
     click_on 'Create User'
 
-    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content('Name You must enter your name')
   end
 
   scenario "can't signup for a new account with the same details again" do

@@ -17,3 +17,13 @@ en:
 
   titles:
     application: Budgetapp
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "You must enter your name"
+            email:
+              blank: "Enter an email address"

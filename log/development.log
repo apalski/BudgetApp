@@ -880,3 +880,13 @@ app/views/application/welcome.html.erb:1:in `_app_views_application_welcome_html
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=65609
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=65633
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=65633
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=67443
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=67443
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=67481
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=67481
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=67507
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=67507
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=67959
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=67959
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=68288
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=68288
