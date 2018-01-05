@@ -2,20 +2,27 @@
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+	before_filter :set_locale
 
   include SessionHelper
-  include ApplicationHelper
+	include LocaleSetter
 
   def welcome
     @user = current_user
   end
-<<<<<<< HEAD
 
-  private
+private
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
-=======
->>>>>>> 2b74537335135625450d28b60e1fd6bedd0b4ba7
+
+	def set_locale
+		I18n.locale = LocaleSetter.from_param(params[:locale]) ||
+      LocaleSetter.from_http(request.env["HTTP_ACCEPT_LANGUAGE"])
+  end
+
+	def default_url_options(options = {})
+	  { locale: I18n.locale }.merge(options)
+	end
 end
