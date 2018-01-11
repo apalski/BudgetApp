@@ -43,6 +43,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "pry-rails"
   gem "rspec-rails", "~> 3.6"
+	gem "rubocop"
 end
 
 group :test do
@@ -60,7 +61,7 @@ group :production do
   gem "rack-timeout"
 end
 
-gem 'high_voltage'
-gem 'bourbon', '~> 5.0.0.beta.8'
-gem 'neat', '~> 2.1'
-gem 'refills', group: [:development, :test]
+gem "high_voltage"
+gem "bourbon", "~> 5.0.0.beta.8"
+gem "neat", "~> 2.1"
+gem "refills", group: [:development, :test]
