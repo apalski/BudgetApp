@@ -7,19 +7,16 @@ end
 
 ruby "2.4.1"
 
-gem "autoprefixer-rails"
+gem "bcrypt"
 gem "delayed_job_active_record"
-gem "flutie"
 gem "honeybadger"
 gem "jquery-rails"
 gem "pg"
 gem "puma"
-gem "rack-canonical-host"
 gem "rails", "~> 5.1.3"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 5.0"
 gem "simple_form"
-gem "skylight"
 gem "sprockets", ">= 3.0.0"
 gem "suspenders"
 gem "title"
@@ -38,16 +35,16 @@ group :development, :test do
   gem "awesome_print"
   gem "bullet"
   gem "bundler-audit", ">= 0.5.0", require: false
+  gem "capybara-webkit"
   gem "dotenv-rails"
   gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
-  gem "rspec-rails", "~> 3.6"
-	gem "rubocop"
+  gem "rspec-rails", "~> 3.7"
+  gem "rubocop"
 end
 
 group :test do
-  gem "capybara-webkit"
   gem "database_cleaner"
   gem "formulaic"
   gem "launchy"
@@ -60,8 +57,3 @@ end
 group :production do
   gem "rack-timeout"
 end
-
-gem "high_voltage"
-gem "bourbon", "~> 5.0.0.beta.8"
-gem "neat", "~> 2.1"
-gem "refills", group: [:development, :test]
