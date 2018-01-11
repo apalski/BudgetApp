@@ -84,6 +84,7 @@ Migrating to CreateDelayedJobs (20171118114518)
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=24544
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=27379
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=27379
+<<<<<<< HEAD
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=27717
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=27717
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=28513
@@ -92,4 +93,13 @@ Migrating to CreateDelayedJobs (20171118114518)
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=28537
 ** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=28557
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=28557
+<<<<<<< HEAD
 >>>>>>> 16d1ca3... Removed omniauth gems and added recipient_interceptor gem
+=======
+>>>>>>> a662524... Added log files to .gitignore, deleted skylight log as not using skylight gem
+=======
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=28734
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=28734
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=30514
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=30514
+>>>>>>> e6c4c04... Altered .gitignore references to log files to dynamic /log/*.log
