@@ -2,6 +2,11 @@ AllCops:
   Exclude:
     - "Gemfile.lock"
     - "spec/spec_helper.rb"
+    - "bin/update"
+    - "config/environments/production.rb"
+    - "config/environments/development.rb"
+    - "config/initializers/rack_mini_profiler.rb"
+    - "db/seeds.rb"
 EndOfLine:
   Enabled: false
 Metrics/BlockLength:
