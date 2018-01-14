@@ -4,36 +4,53 @@ AllCops:
     - "spec/spec_helper.rb"
 EndOfLine:
   Enabled: false
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+Layout/IndentationConsistency:
+  Enabled: true
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
+    - "config/**/*"
+    - "bin/*"
 Metrics/LineLength:
   Max: 80
-Style/ClassAndModuleCamelCase:
+  Exclude:
+    - "spec/**/*"
+    - "config/**/*"
+    - "db/seeds.rb"
+    - "Rakefile"
+    - "bin/*"
+Naming/ClassAndModuleCamelCase:
   Enabled: true
-Style/ConstantName:
+Naming/ConstantName:
   Enabled: true
 Style/DefWithParentheses:
   Enabled: true
-Style/EmptyLineBetweenDefs:
-  Enabled: true
-Style/IndentationConsistency:
-  Enabled: true
-Style/IdenticalConditionalBranches:
-  Enabled: true
-Style/NegatedIf:
-  Enabled: true
 Style/Documentation:
-  Enabled: false
-Style/EmptyLinesAroundClassBody:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/IdenticalConditionalBranches:
+  Enabled: true
 Style/IfInsideElse:
   Enabled: false
 Style/IfUnlessModifier:
   Enabled: false
+Style/MixinUsage:
+  Exclude:
+    - "bin/update"
+Style/MutableConstant:
+  Exclude:
+    - "config/**/*"
+Style/NegatedIf:
+  Enabled: true
 Style/OneLineConditional:
   Enabled: false
+Style/StderrPuts:
+  Exclude:
+    - "bin/*"
 Style/StringLiterals:
   EnforcedStyle: double_quotes
