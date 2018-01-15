@@ -111,3 +111,5 @@ Migrating to CreateDelayedJobs (20171118114518)
 ** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=30514
 >>>>>>> e6c4c04... Altered .gitignore references to log files to dynamic /log/*.log
 >>>>>>> f8d9f17... Ignore log files
+** [Honeybadger] Initializing Honeybadger Error Tracker for Ruby. Ship it! version=3.1.2 framework=rails level=1 pid=77995
+** [Honeybadger] Entering development mode: data will not be reported. level=2 pid=77995
