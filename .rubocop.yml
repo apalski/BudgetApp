@@ -4,6 +4,8 @@ AllCops:
     - "spec/spec_helper.rb"
 EndOfLine:
   Enabled: false
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation  
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLineBetweenDefs:
@@ -18,11 +20,7 @@ Metrics/BlockLength:
 Metrics/LineLength:
   Max: 80
   Exclude:
-    - "spec/**/*"
     - "config/**/*"
-    - "db/seeds.rb"
-    - "Rakefile"
-    - "bin/*"
 Naming/ClassAndModuleCamelCase:
   Enabled: true
 Naming/ConstantName:
@@ -54,3 +52,5 @@ Style/StderrPuts:
     - "bin/*"
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: consistent_comma
