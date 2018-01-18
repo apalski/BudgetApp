@@ -22,7 +22,6 @@ gem "suspenders"
 gem "title"
 gem "uglifier"
 
-
 group :development do
   gem "listen"
   gem "rack-mini-profiler", require: false
