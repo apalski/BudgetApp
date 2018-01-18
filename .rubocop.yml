@@ -5,7 +5,7 @@ AllCops:
 EndOfLine:
   Enabled: false
 Layout/AlignParameters:
-  EnforcedStyle: with_fixed_indentation  
+  EnforcedStyle: with_fixed_indentation
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLineBetweenDefs:
@@ -45,6 +45,9 @@ Style/MutableConstant:
     - "config/**/*"
 Style/NegatedIf:
   Enabled: true
+Style/NumericLiterals:
+  Exclude:
+    - "db/**/*"
 Style/OneLineConditional:
   Enabled: false
 Style/StderrPuts:
