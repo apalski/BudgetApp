@@ -27,3 +27,15 @@ en:
 
   titles:
     application: Budgetapp
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "must be entered"
+              taken: "already taken"
+            email:
+              blank: "must be entered"
+              taken: "already taken"
