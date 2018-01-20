@@ -1,5 +1,4 @@
 require "rails_helper"
-require "./app/models/user"
 
 describe User do
   context "when all attributes are correct" do
