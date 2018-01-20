@@ -17,3 +17,14 @@ en:
 
   titles:
     application: Budgetapp
+
+  activerecord:
+    errors:
+      models:
+        expense:
+          attributes:
+            name:
+              blank: "can't be blank"
+              taken: "already taken"
+            frequency:
+              blank: "can't be blank"    
