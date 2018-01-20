@@ -1,5 +1,4 @@
 require "rails_helper"
-require "./app/models/expense"
 
 describe Expense do
   it "has a name" do
