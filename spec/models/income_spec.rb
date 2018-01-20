@@ -1,5 +1,4 @@
 require "rails_helper"
-require "./app/models/income"
 
 describe Income do
   it "has a name" do
