@@ -27,3 +27,9 @@ en:
 
   titles:
     application: Budgetapp
+
+  activerecord:
+    errors:
+      messages:
+        blank: "must be entered"
+        taken: "already taken"
