@@ -31,5 +31,5 @@ en:
   activerecord:
     errors:
       messages:
-        blank: "must be entered"
+        blank: "can't be blank"
         taken: "already taken"
