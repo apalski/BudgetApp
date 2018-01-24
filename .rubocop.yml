@@ -17,6 +17,7 @@ Metrics/BlockLength:
     - "spec/**/*"
     - "config/**/*"
     - "bin/*"
+    - "db/*"
 Metrics/LineLength:
   Max: 80
   Exclude:
