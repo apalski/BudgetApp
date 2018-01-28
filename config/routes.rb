@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  scope "/:locale", locale: /en/ do
-    resources :users, only: [:new]
-    resources :budgets, only: [:new]
-  end
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :budgets, only: [:new]
+  root to: "home#show"
 end

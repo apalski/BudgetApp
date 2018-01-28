@@ -6,12 +6,21 @@ EndOfLine:
   Enabled: false
 Layout/AlignParameters:
   EnforcedStyle: with_fixed_indentation
+Layout/DotPosition:
+  Enabled: false
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLineBetweenDefs:
   Enabled: true
+Layout/FirstParameterIndentation:
+  Enabled: false
+Layout/FirstParameterIndentation:
+  Enabled: false  
 Layout/IndentationConsistency:
   Enabled: true
+Layout/MultilineBlockLayout:
+  Exclude:
+    - "spec/**/*"
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
@@ -29,6 +38,8 @@ Naming/ConstantName:
 Style/DefWithParentheses:
   Enabled: true
 Style/Documentation:
+  Enabled: false
+Style/EmptyMethod:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
@@ -58,5 +69,9 @@ Style/StderrPuts:
     - "bin/*"
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+Style/SymbolArray:
+  Enabled: false
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: consistent_comma
+Style/UnneededInterpolation:
+  Enabled: false

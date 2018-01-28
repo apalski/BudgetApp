@@ -16,3 +16,8 @@ if defined? RSpec
 end
 
 task default: "bundle:audit"
+
+task :default do
+  system("rspec")
+  system("rubocop -S")
+end
