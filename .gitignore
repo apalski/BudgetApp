@@ -16,6 +16,7 @@
 .env
 .byebug_history
 .DS_Store
+.DS_Store?
 ## Specific to RubyMotion:
 .dat*
 .repl_history

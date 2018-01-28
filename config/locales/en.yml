@@ -25,11 +25,34 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
-  titles:
-    application: Budgetapp
+  home:
+    show:
+      link: "New Account"
+      new_account: "To sign up for a new account click the 'New Account' button"
+      welcome: "Welcome to Budget App"
+
+  users:
+    defaults:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+    new:
+      title: "Please fill in the form to sign up"
+    edit:
+      delete: "Delete Account"
+      title: "%{name}, please fill in the form to edit your profile"
+    show:
+      profile_information: "Your email address is: %{email}"
+      welcome: "Welcome %{name}"
 
   activerecord:
     errors:
       messages:
         blank: "can't be blank"
         taken: "already taken"
+
+  helpers:
+    submit:
+      user:
+        create: "Sign up"
+        update: "Edit profile"
