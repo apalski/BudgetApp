@@ -5,15 +5,7 @@ AllCops:
 EndOfLine:
   Enabled: false
 Layout/AlignParameters:
-<<<<<<< HEAD
-<<<<<<< HEAD
   EnforcedStyle: with_fixed_indentation
-=======
-  EnforcedStyle: with_fixed_indentation  
->>>>>>> 60b38d1... Add gem Rubocop to project
-=======
-  EnforcedStyle: with_fixed_indentation
->>>>>>> 638f7a3... Create migration for users table
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
 Layout/EmptyLineBetweenDefs:
@@ -25,10 +17,7 @@ Metrics/BlockLength:
     - "spec/**/*"
     - "config/**/*"
     - "bin/*"
-<<<<<<< HEAD
     - "db/*"
-=======
->>>>>>> 60b38d1... Add gem Rubocop to project
 Metrics/LineLength:
   Max: 80
   Exclude:
@@ -43,11 +32,8 @@ Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
-<<<<<<< HEAD
 Style/GuardClause:
   Enabled: false
-=======
->>>>>>> 60b38d1... Add gem Rubocop to project
 Style/IdenticalConditionalBranches:
   Enabled: true
 Style/IfInsideElse:
@@ -62,18 +48,9 @@ Style/MutableConstant:
     - "config/**/*"
 Style/NegatedIf:
   Enabled: true
-<<<<<<< HEAD
-<<<<<<< HEAD
 Style/NumericLiterals:
   Exclude:
     - "db/**/*"
-=======
->>>>>>> 60b38d1... Add gem Rubocop to project
-=======
-Style/NumericLiterals:
-  Exclude:
-    - "db/**/*"
->>>>>>> 638f7a3... Create migration for users table
 Style/OneLineConditional:
   Enabled: false
 Style/StderrPuts:
