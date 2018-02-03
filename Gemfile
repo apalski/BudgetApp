@@ -8,9 +8,11 @@ end
 ruby "2.4.1"
 
 gem "bcrypt"
+gem "bourbon"
 gem "delayed_job_active_record"
 gem "honeybadger"
 gem "jquery-rails"
+gem "neat"
 gem "pg"
 gem "puma"
 gem "rails", "~> 5.1.3"
@@ -39,6 +41,7 @@ group :development, :test do
   gem "factory_bot_rails"
   gem "pry-byebug"
   gem "pry-rails"
+  gem "refills"
   gem "rspec-rails", "~> 3.7"
   gem "rubocop"
 end
