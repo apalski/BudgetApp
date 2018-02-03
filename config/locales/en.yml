@@ -25,6 +25,7 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
+<<<<<<< HEAD
   home:
     show:
       link: "New Account"
@@ -44,6 +45,12 @@ en:
     show:
       profile_information: "Your email address is: %{email}"
       welcome: "Welcome %{name}"
+=======
+  sessions:
+    new:
+      submit: "Log in"
+      title: "Please log in to access your account."
+>>>>>>> b744267... Add login and logout routes, add session translations
 
   activerecord:
     errors:

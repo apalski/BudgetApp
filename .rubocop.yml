@@ -14,8 +14,6 @@ Layout/EmptyLineBetweenDefs:
   Enabled: true
 Layout/FirstParameterIndentation:
   Enabled: false
-Layout/FirstParameterIndentation:
-  Enabled: false  
 Layout/IndentationConsistency:
   Enabled: true
 Layout/MultilineBlockLayout:
@@ -31,6 +29,8 @@ Metrics/LineLength:
   Max: 80
   Exclude:
     - "config/**/*"
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
 Naming/ClassAndModuleCamelCase:
   Enabled: true
 Naming/ConstantName:
