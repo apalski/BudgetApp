@@ -8,9 +8,11 @@ end
 ruby "2.4.1"
 
 gem "bcrypt"
+gem "bourbon"
 gem "delayed_job_active_record"
 gem "honeybadger"
 gem "jquery-rails"
+gem "neat"
 gem "pg"
 gem "puma"
 gem "rails", "~> 5.1.3"
