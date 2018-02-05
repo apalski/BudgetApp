@@ -2,13 +2,7 @@
 
 @import "bourbon";
 @import "neat";
-@import "buttons";
-@import "flashes";
-@import "forms";
-@import "layout";
-@import "lists";
-@import "media";
-@import "normalize.css/normalize.css";
-@import "tables";
-@import "typography";
-@import "variables";
+@import "base";
+@import "components";
+@import "library";
+@import "patterns";
