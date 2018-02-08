@@ -93,6 +93,23 @@ en:
       new_account: "Click New Account to sign up"
       welcome: "Welcome to Budget App"
 
+  incomes:
+    defaults:
+      amount: "Amount"
+      budget: "Budget"
+      due_date: "Due Date"
+      frequency: "Frequency"
+      name: "Name"
+    index:
+      title: "These are your income types"
+    new:
+      title: "Create a new income type"
+    edit:
+      title: "Edit your income type"
+      delete: "Delete Income"
+    show:
+      title: "Your %{name} details"
+
   nav:
     admin: "Admin"
     create_user: "Create user"
@@ -174,3 +191,7 @@ en:
         update: "Edit expense"
       user:
         create: "New account"
+        update: "Edit profile"
+      income:
+        create: "Create income"
+        update: "Edit income"

@@ -1,0 +1,7 @@
+<%= simple_form_for income do |f| %>
+  <%= f.input :name %>
+  <%= f.input :due_date, order: [:day, :month, :year] %>
+  <%= f.input :frequency %>
+  <%= f.input :amount %>
+  <%= f.submit %>
+<% end %>
