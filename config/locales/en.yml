@@ -25,11 +25,16 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
-<<<<<<< HEAD
+  application:
+    home: "Home"
+    signup: "Sign up"
+    signin: "Sign in"
+    signout: "Sign out"
+
   home:
     show:
       link: "New Account"
-      new_account: "To sign up for a new account click the 'New Account' button"
+      new_account: "Click New Account to sign up"
       welcome: "Welcome to Budget App"
 
   users:
@@ -45,12 +50,13 @@ en:
     show:
       profile_information: "Your email address is: %{email}"
       welcome: "Welcome %{name}"
-=======
+
   sessions:
     new:
       submit: "Log in"
       title: "Please log in to access your account."
->>>>>>> b744267... Add login and logout routes, add session translations
+    destroy:
+      link: "Sign out"  
 
   activerecord:
     errors:
@@ -61,5 +67,5 @@ en:
   helpers:
     submit:
       user:
-        create: "Sign up"
+        create: "New account"
         update: "Edit profile"

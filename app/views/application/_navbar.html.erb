@@ -1,6 +1,8 @@
 <nav>
-	<h3><%= link_to "Home", root_path %> |
-	<%= link_to "Sign up", new_user_path %> |
-	<%= link_to "Sign out", "/sessions/destroy", :method => :delete %> |
-	<%= link_to "Sign in", login_path %></h3>
+<h3><%= link_to t("application.home"), root_path %> |
+<%= link_to t("application.signup"), new_user_path %> |
+<% if current_user %>
+  <%= link_to t("application.signout"), session_path(current_user), method: :delete %> |
+<% end %>
+<%= link_to t("application.signin"), login_path %></h3>
 </nav>
