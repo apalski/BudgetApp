@@ -1,0 +1,8 @@
+<div><%= t(".title") %></div>
+
+<ul>
+  <% @expenses.each do |expense| %>
+    <%= render "detail", expense: expense %>
+    </br>
+  <% end %>
+</ul>
