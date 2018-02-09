@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180201054016) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,8 +25,8 @@ ActiveRecord::Schema.define(version: 20180201054016) do
 
   create_table "expenses", force: :cascade do |t|
     t.string "name", null: false
-    t.date "due_date"
-    t.string "frequency", null: false
+    t.date "due_date", null: false
+    t.integer "frequency", default: 0, null: false
     t.decimal "bill_estimate"
     t.bigint "budget_id"
     t.datetime "created_at", null: false
@@ -55,5 +54,4 @@ ActiveRecord::Schema.define(version: 20180201054016) do
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false
   end
-
 end

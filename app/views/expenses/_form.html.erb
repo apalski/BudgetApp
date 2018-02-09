@@ -1,0 +1,11 @@
+<%= simple_form_for expense do |f| %>
+  <%= f.input :name, placeholder: t("expenses.placeholders.name") %>
+  <%= f.input :due_date, order: [:day, :month, :year] %>
+  <%= f.input :frequency, collection: Expense.frequencies.keys %>
+  <%= f.input :bill_estimate,
+    placeholder: t("expenses.placeholders.bill_estimate"),
+    input_html: {
+      value: number_with_precision(f.object.bill_estimate, precision: 2)
+    } %>
+  <%= f.submit %>
+<% end %>

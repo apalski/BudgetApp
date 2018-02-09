@@ -7,9 +7,28 @@ describe Expense do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_presence_of(:frequency) }
+    it { is_expected.to define_enum_for(:frequency).with(Expense.frequencies) }
   end
 
   context "associations" do
     it { is_expected.to belong_to(:budget).dependent(:destroy) }
+  end
+
+  context "frequency has a default value" do
+    it "should be weekly" do
+      expense = build(:expense)
+
+      expect(expense.frequency).to eq("weekly")
+    end
+  end
+
+  context ".by_name" do
+    it "orders by expense name" do
+      expense1 = create(:expense, name: "Gas")
+      expense2 = create(:expense, name: "Electricity")
+      expense3 = create(:expense, name: "Food")
+
+      expect(Expense.by_name).to eq [expense2, expense3, expense1]
+    end
   end
 end
