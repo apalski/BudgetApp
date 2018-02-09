@@ -1,4 +1,5 @@
 class ExpensesController < ApplicationController
+  before_action :require_login
   def index
     @expenses = Expense.all
   end
@@ -14,6 +15,7 @@ class ExpensesController < ApplicationController
   end
 
   def show
+    @budget = expense.budgets.find(budget_id)
   end
 
   def edit
@@ -35,7 +37,7 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).
-      permit(:name, :due_date, :frequency, :bill_estimate)
+      permit(:name, :due_date, :frequency, :bill_estimate, :budget_ids)
   end
 
   def expense

@@ -2,18 +2,9 @@ en:
   date:
     formats:
       default:
-        "%m/%d/%Y"
+        "%dth %B %Y"
       with_weekday:
         "%a %m/%d/%y"
-
-  time:
-    formats:
-      default:
-        "%a, %b %-d, %Y at %r"
-      date:
-        "%b %-d, %Y"
-      short:
-        "%B %d"
 
   currency:
     format:
@@ -66,6 +57,38 @@ en:
       delete: "Delete budget"
       edit: "Edit budget"
       title: "Your budget details:"
+
+  budgets:
+    defaults:
+      name: "Name"
+      budget_type: "Budget Type"
+    index:
+      title: "Your budgets:"
+    new:
+      title: "Please fill in budget details"
+    edit:
+      delete: "Delete Account"
+      title: "Please fill in changes to budget"
+    show:
+      title: "Your budget:"
+
+  expenses:
+    defaults:
+      name: "Name"
+      frequency: "Frequency"
+      due_date: "Due Date"
+      bill_estimate: "Bill Estimate"
+      budget: "Budget"
+    index:
+      delete: "Delete Expense"
+      title: "These are your expense types:"
+      update: "Update Expense"
+    new:
+      title: "Create a new expense type"
+    edit:
+      title: "Edit your expense type"
+    show:
+      title: "Your expense details"
 
   home:
     show:
@@ -123,6 +146,13 @@ en:
       welcome: "Your profile details:"
 
   activerecord:
+    attributes:
+      frequencies:
+        weekly: "Weekly"
+        fortnightly: "Fortnightly"
+        monthly: "Monthly"
+        quarterly: "Quarterly"
+        annually: "Annually"
     errors:
       messages:
         blank: "can't be blank"
@@ -133,8 +163,8 @@ en:
 
   helpers:
     submit:
-      budget:
-        create: "Create budget"
-        update: "Update budget"
+      expense:
+        create: "Create expense"
+        update: "Edit expense"
       user:
         create: "New account"

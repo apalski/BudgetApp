@@ -1,5 +1,9 @@
-<%= f.input :name %>
-<%= f.input :due_date, order: [:day, :month, :year] %>
-<%= f.input :frequency %>
-<%= f.input :bill_estimate %>
-<%= f.submit %>
+<%= simple_form_for expense do |f| %>
+  <%= f.input :name %>
+  <%= f.input :due_date, order: [:day, :month, :year] %>
+  <%= f.input :frequency %>
+  <%= f.input :bill_estimate %>
+  Choose a budget:
+  <%= f.association :budgets, as: :radio_buttons %>
+  <%= f.submit %>
+<% end %>

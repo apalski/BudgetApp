@@ -4,6 +4,8 @@ describe ExpensesController do
   context "GET #new" do
     context "when invalid params" do
       it "won't create a new expense" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense_params = { name: "Gas", bill_estimate: 500 }
 
         expect do
@@ -12,6 +14,8 @@ describe ExpensesController do
       end
 
       it "renders new" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense_params = { name: "Gas", bill_estimate: 500 }
 
         post :create, params: { expense: expense_params }
@@ -20,6 +24,8 @@ describe ExpensesController do
       end
 
       it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense_params = { name: "Gas", bill_estimate: 500 }
 
         post :create, params: { expense: expense_params }
@@ -34,6 +40,8 @@ describe ExpensesController do
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the expense attributes" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense = create(:expense, name: "gas")
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -42,6 +50,8 @@ describe ExpensesController do
       end
 
       it "renders edit" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense = create(:expense)
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -50,6 +60,8 @@ describe ExpensesController do
       end
 
       it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense = create(:expense)
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -64,7 +76,10 @@ describe ExpensesController do
   context "DELETE #destroy" do
     context "expense doesn't exist" do
       it "won't change Expense count" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         expense = create(:expense)
+
         delete :destroy, params: { id: expense.id }
 
         expect do
