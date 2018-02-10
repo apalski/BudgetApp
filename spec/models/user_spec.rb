@@ -11,6 +11,12 @@ describe User do
     it { is_expected.to have_secure_password }
   end
 
+  context "associations" do
+    subject { build(:user) }
+
+    it { is_expected.to have_many(:budgets) }
+  end
+
   context "admin" do
     it "is false by default" do
       expect(User.new).not_to be_admin
