@@ -25,17 +25,31 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
-  application:
+  home:
+    show:
+      link: "New Account"
+      new_account: "Click New Account to sign up"
+      welcome: "Welcome to Budget App"    
+
+  nav:
     home: "Home"
     signup: "Sign up"
     signin: "Sign in"
     signout: "Sign out"
 
-  home:
-    show:
-      link: "New Account"
-      new_account: "Click New Account to sign up"
-      welcome: "Welcome to Budget App"
+  sessions:
+    new:
+      alert: "Already logged in"
+      email: "Email"
+      password: "Password"
+      submit: "Log in"
+      title: "Please log in to access your account."
+    create:
+      alert: "Session not created"
+      notice: "Session created"
+    destroy:
+      link: "Sign out"
+      notice: "Logout successful"
 
   users:
     defaults:
@@ -50,13 +64,6 @@ en:
     show:
       profile_information: "Your email address is: %{email}"
       welcome: "Welcome %{name}"
-
-  sessions:
-    new:
-      submit: "Log in"
-      title: "Please log in to access your account."
-    destroy:
-      link: "Sign out"  
 
   activerecord:
     errors:

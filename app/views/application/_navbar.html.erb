@@ -1,8 +1,9 @@
 <nav>
-<h3><%= link_to t("application.home"), root_path %> |
-<%= link_to t("application.signup"), new_user_path %> |
+<h3><%= link_to t("nav.home"), root_path %> |
 <% if current_user %>
-  <%= link_to t("application.signout"), session_path(current_user), method: :delete %> |
+  <%= link_to t("nav.signout"), session_path(current_user), method: :delete %> |
+<% else %>
+  <%= link_to t("nav.signup"), new_user_path %> |
+  <%= link_to t("nav.signin"), new_session_path %></h3>
 <% end %>
-<%= link_to t("application.signin"), login_path %></h3>
 </nav>

@@ -19,6 +19,12 @@ Layout/IndentationConsistency:
 Layout/MultilineBlockLayout:
   Exclude:
     - "spec/**/*"
+Lint/UselessAccessModifier:
+  Exclude:
+    - "app/controllers/application_controller.rb"
+Metrics/AbcSize:
+  Exclude:
+    - "app/controllers/sessions_controller.rb"        
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"

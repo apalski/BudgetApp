@@ -4,42 +4,28 @@ class SessionsController < ApplicationController
 
   def new
     if current_user
-      redirect_to user_path(current_user), alert: I18n.
-        t("flash.actions.create.alert", resource_name: "Session")
+      redirect_to user_path(current_user), alert: t(".alert")
     end
   end
 
   def create
     if user&.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      create_notice
-      redirect_to user_path(user)
+      redirect_to user_path(user), notice: t(".notice")
     else
-      create_alert
+      flash[:alert] = t(".alert")
       render :new
     end
   end
 
   def destroy
     session.clear
-    flash[:notice] = I18n.
-      t("flash.actions.destroy.notice", resource_name: "Session")
-    redirect_to root_path
+    redirect_to root_path, notice: t(".notice")
   end
 
   private
 
   def user
-    User.find_by(email: params[:session][:email])
-  end
-
-  def create_alert
-    flash[:alert] = I18n.
-      t("flash.actions.create.alert", resource_name: "Session")
-  end
-
-  def create_notice
-    flash[:notice] = I18n.
-      t("flash.actions.create.notice", resource_name: "Session")
+    @user ||= User.find_by(email: params[:session][:email])
   end
 end
