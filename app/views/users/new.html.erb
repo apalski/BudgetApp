@@ -3,5 +3,8 @@
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :password %>
+  <% if current_user&.admin? %>
+    <%= f.input :admin %>
+  <% end %>
   <%= f.submit %>
 <% end %>

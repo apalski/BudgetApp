@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  before_action :require_admin, only: [:index]
+
+  def index
+    @users = User.all
+
+    respond_with(@users)
+  end
+
   def show
   end
 

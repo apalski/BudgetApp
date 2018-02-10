@@ -11,7 +11,18 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  private
+  def require_admin
+    unless admin?
+      redirect_to user_path(current_user), alert: I18n.t(
+        "users.index.require_admin"
+      )
+    end
+  end
+
+  def admin?
+    current_user.admin?
+  end
+  helper_method :admin?
 
   protect_from_forgery with: :exception
 end

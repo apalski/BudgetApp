@@ -29,7 +29,7 @@ en:
     show:
       link: "New Account"
       new_account: "Click New Account to sign up"
-      welcome: "Welcome to Budget App"    
+      welcome: "Welcome to Budget App"
 
   nav:
     home: "Home"
@@ -56,14 +56,17 @@ en:
       name: "Name"
       email: "Email"
       password: "Password"
+    index:
+      require_admin: "You must be admin to access user list"
+      title: "Current registered users"
     new:
       title: "Please fill in the form to sign up"
     edit:
       delete: "Delete Account"
-      title: "%{name}, please fill in the form to edit your profile"
+      title: "Please fill in the form to edit your profile"
     show:
       profile_information: "Your email address is: %{email}"
-      welcome: "Welcome %{name}"
+      welcome: "Welcome, your details are:"
 
   activerecord:
     errors:

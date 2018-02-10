@@ -1,6 +1,9 @@
 en:
   flash:
     actions:
+      index:
+        notice: "You have accessed the %{resource_name} list"
+        alert: "You must be admin to access %{resource_name} list"
       create:
         notice: "%{resource_name} was successfully created."
         alert: "%{resource_name} could not be created."
