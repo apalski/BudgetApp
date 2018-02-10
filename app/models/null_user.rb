@@ -7,7 +7,7 @@ class NullUser
     end
   end
 
-  def respond_to_missing?(_name, _include_private = false)
+  def respond_to_missing?(*_args)
     true
   end
 end
