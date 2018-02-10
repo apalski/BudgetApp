@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :budgets, only: [:new]
+  resources :budgets
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   root to: "home#show"
