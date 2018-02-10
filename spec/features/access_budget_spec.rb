@@ -13,7 +13,7 @@ feature "access budgets" do
     expect(Budget.all.count).to eq 2
   end
 
-  scenario "create new budget" do
+  scenario "creates new budget" do
     visit new_budget_path
     fill_in "budget_name", with: "My Budget"
     fill_in "budget_budget_type", with: "Holiday"
@@ -27,7 +27,7 @@ feature "access budgets" do
       ))
   end
 
-  scenario "view single budget" do
+  scenario "views show page" do
     budget = create(:budget)
 
     visit budget_path(budget)
@@ -35,7 +35,7 @@ feature "access budgets" do
     expect(page).to have_text(I18n.t("budgets.show.title", name: budget.name))
   end
 
-  scenario "edit budget" do
+  scenario "updates budget" do
     budget = create(:budget)
 
     visit edit_budget_path(budget)

@@ -1,0 +1,6 @@
+<h1><%= t(".title") %></h1>
+<%= simple_form_for budget do |f| %>
+  <%= render "form", f: f %>
+<% end %>
+
+<%= link_to t(".delete"), budget, method: :delete %>
