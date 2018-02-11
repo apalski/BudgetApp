@@ -65,6 +65,21 @@ en:
       new_account: "Click New Account to sign up"
       welcome: "Welcome to Budget App"
 
+  goals:
+    defaults:
+      name: "Name"
+      due_date: "Due Date"
+      amount: "Amount"
+    index:
+      title: "These are your goal types"
+    new:
+      title: "Create a new goal type"
+    edit:
+      title: "Edit your goal type"
+      delete: "Delete Goal"
+    show:
+      title: "Your goal details"
+
   nav:
     home: "Home"
     signup: "Sign up"
@@ -113,8 +128,10 @@ en:
 
   helpers:
     submit:
-      budget:
-        create: "Create budget"
-        update: "Update budget"
+      budget: "Create budget"
+      update: "Update budget"
+      goal:
+        create: "Create goal"
+        update: "Edit goal"
       user:
         create: "New account"
