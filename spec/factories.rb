@@ -5,6 +5,12 @@ FactoryBot.define do
     user
   end
 
+  factory :goal do
+    sequence(:name) { |n| "goal name#{n}" }
+    due_date "01/04/2019"
+    amount 100
+  end
+
   factory :expense do
     sequence(:name) { |n| "name#{n}" }
     frequency :weekly
