@@ -9,8 +9,6 @@ describe Budget do
   end
 
   context "associations" do
-    subject { build(:budget) }
-
     it { is_expected.to belong_to(:user) }
     it { is_expected.to have_many(:incomes).through(:budget_incomes) }
     it { is_expected.to have_many(:expenses).through(:budget_expenses) }

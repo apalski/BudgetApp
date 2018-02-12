@@ -9,8 +9,6 @@ describe Income do
   end
 
   context "associations" do
-    subject { build(:income) }
-
     it { is_expected.to have_many(:budgets).through(:budget_incomes) }
   end
 end
