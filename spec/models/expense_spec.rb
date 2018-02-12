@@ -10,8 +10,6 @@ describe Expense do
   end
 
   context "associations" do
-    subject { build(:expense) }
-
     it { is_expected.to have_many(:budgets).through(:budget_expenses) }
   end
 end

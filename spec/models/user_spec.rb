@@ -12,8 +12,6 @@ describe User do
   end
 
   context "associations" do
-    subject { build(:user) }
-
     it { is_expected.to have_many(:budgets) }
   end
 
