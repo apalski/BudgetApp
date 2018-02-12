@@ -28,8 +28,28 @@ en:
   home:
     show:
       link: "New Account"
-      new_account: "To sign up for a new account click the 'New Account' button"
-      welcome: "Welcome to Budget App"
+      new_account: "Click New Account to sign up"
+      welcome: "Welcome to Budget App"    
+
+  nav:
+    home: "Home"
+    signup: "Sign up"
+    signin: "Sign in"
+    signout: "Sign out"
+
+  sessions:
+    new:
+      alert: "Already logged in"
+      email: "Email"
+      password: "Password"
+      submit: "Log in"
+      title: "Please log in to access your account."
+    create:
+      alert: "Session not created"
+      notice: "Session created"
+    destroy:
+      link: "Sign out"
+      notice: "Logout successful"
 
   users:
     defaults:
@@ -54,5 +74,5 @@ en:
   helpers:
     submit:
       user:
-        create: "Sign up"
+        create: "New account"
         update: "Edit profile"

@@ -1,5 +1,7 @@
 {
   "name": "BudgetApp",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^7.0.0"
+  }
 }

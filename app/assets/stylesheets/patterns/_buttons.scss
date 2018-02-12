@@ -1,6 +1,3 @@
-$_button-background-color: $action-color;
-$_button-background-color-hover: shade($action-color, 20%);
-
 #{$all-buttons} {
   appearance: none;
   background-color: $_button-background-color;
