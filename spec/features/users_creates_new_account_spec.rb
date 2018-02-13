@@ -1,7 +1,7 @@
 require "rails_helper"
 
 feature "user creates new account" do
-  scenario "successfully" do
+  scenario "successfully without login" do
     visit new_user_path
 
     fill_in "user_name", with: "Mary"
@@ -9,7 +9,7 @@ feature "user creates new account" do
     fill_in "user_password", with: "secret"
     click_on I18n.t("helpers.submit.user.create")
 
-    expect(page).to have_text(I18n.t("users.show.welcome", name: "Mary"))
+    expect(page).to have_text(I18n.t("sessions.new.title"))
     expect(page).
       to have_text(I18n.t(
         "flash.actions.create.notice",
@@ -19,6 +19,7 @@ feature "user creates new account" do
 
   scenario "views show page" do
     user = create(:user)
+    feature_log_in_as user
 
     visit user_path(user)
 
@@ -27,6 +28,7 @@ feature "user creates new account" do
 
   scenario "updates profile" do
     user = create(:user)
+    feature_log_in_as user
 
     visit edit_user_path(user)
 
@@ -43,6 +45,7 @@ feature "user creates new account" do
 
   scenario "deletes account" do
     user = create(:user)
+    feature_log_in_as user
 
     visit edit_user_path(user)
 
