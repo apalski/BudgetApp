@@ -81,14 +81,4 @@ describe UsersController do
       end
     end
   end
-
-  context "DELETE #destroy" do
-    context "when not logged in" do
-      it "won't delete the user" do
-        delete :destroy, params: { id: 1 }
-
-        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
-      end
-    end
-  end
 end
