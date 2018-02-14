@@ -4,12 +4,9 @@ describe UsersController do
   context "GET #index" do
     context "when not logged in" do
       it "won't access the index page" do
-        create(:user, admin: true)
-
         get :index
 
-        expect(flash[:alert]).
-          to match I18n.t("sessions.new.logged_in")
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
       end
     end
   end
@@ -46,12 +43,9 @@ describe UsersController do
   context "GET #show" do
     context "when not logged in" do
       it "won't access the show page" do
-        user = create(:user)
+        get :show, params: { id: 1 }
 
-        get :show, params: { id: user.id }
-
-        expect(flash[:alert]).
-          to match I18n.t("sessions.new.logged_in")
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
       end
     end
   end
@@ -60,7 +54,7 @@ describe UsersController do
     context "when invalid parameters" do
       it "won't update a user's profile" do
         user = create(:user, name: "John")
-        log_in_as user
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
@@ -69,7 +63,7 @@ describe UsersController do
 
       it "renders edit" do
         user = create(:user)
-        log_in_as user
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
@@ -78,7 +72,7 @@ describe UsersController do
 
       it "sets the flash[:alert]" do
         user = create(:user)
-        log_in_as user
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
@@ -91,12 +85,9 @@ describe UsersController do
   context "DELETE #destroy" do
     context "when not logged in" do
       it "won't delete the user" do
-        user = create(:user)
+        delete :destroy, params: { id: 1 }
 
-        delete :destroy, params: { id: user.id }
-
-        expect(flash[:alert]).
-          to match I18n.t("sessions.new.logged_in")
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
       end
     end
   end

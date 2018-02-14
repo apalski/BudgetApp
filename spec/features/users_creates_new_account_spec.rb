@@ -19,7 +19,7 @@ feature "user creates new account" do
 
   scenario "views show page" do
     user = create(:user)
-    feature_log_in_as user
+    log_in_as user
 
     visit user_path(user)
 
@@ -28,7 +28,7 @@ feature "user creates new account" do
 
   scenario "updates profile" do
     user = create(:user)
-    feature_log_in_as user
+    log_in_as user
 
     visit edit_user_path(user)
 
@@ -45,7 +45,7 @@ feature "user creates new account" do
 
   scenario "deletes account" do
     user = create(:user)
-    feature_log_in_as user
+    log_in_as user
 
     visit edit_user_path(user)
 

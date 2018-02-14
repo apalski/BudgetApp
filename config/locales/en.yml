@@ -39,18 +39,21 @@ en:
 
   sessions:
     new:
-      alert: "Already logged in"
       email: "Email"
-      logged_in: "You must be logged in"
       password: "Password"
       submit: "Log in"
       title: "Please log in to access your account."
+      flash:
+        alert: "Already logged in"
+        require_login: "You must be logged in"
     create:
-      alert: "Session not created"
-      notice: "Session created"
+      flash:
+        alert: "Session not created"
+        notice: "Session created"
     destroy:
       link: "Sign out"
-      notice: "Logout successful"
+      flash:
+        notice: "Logout successful"
 
   users:
     defaults:
