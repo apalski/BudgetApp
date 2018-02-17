@@ -1,4 +1,6 @@
 class BudgetsController < ApplicationController
+  before_action :require_login
+
   def index
     @budgets = Budget.all
   end
@@ -9,8 +11,7 @@ class BudgetsController < ApplicationController
 
   def create
     @budget = Budget.create(budget_params)
-    @budget.user_id = current_user.id
-    @budget.save
+    current_user.budgets << @budget
 
     respond_with(@budget)
   end

@@ -4,6 +4,8 @@ describe BudgetsController do
   context "GET #new" do
     context "when invalid params" do
       it "won't create a new budget" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget_params = { budget_type: "Holiday" }
 
         expect do
@@ -12,6 +14,8 @@ describe BudgetsController do
       end
 
       it "renders new" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget_params = { budget_type: "Holiday" }
 
         post :create, params: { budget: budget_params }
@@ -20,6 +24,8 @@ describe BudgetsController do
       end
 
       it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget_params = { budget_type: "Holiday" }
 
         post :create, params: { budget: budget_params }
@@ -33,6 +39,8 @@ describe BudgetsController do
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the budget attributes" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget, name: "Holiday")
 
         put :update, params: { id: budget.id, budget: { name: "" } }
@@ -41,6 +49,8 @@ describe BudgetsController do
       end
 
       it "renders edit" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
@@ -49,6 +59,8 @@ describe BudgetsController do
       end
 
       it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
