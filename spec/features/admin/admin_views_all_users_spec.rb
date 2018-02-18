@@ -3,7 +3,7 @@ require "rails_helper"
 feature "admin views all users" do
   scenario "successfully" do
     user = create(:user, admin: true)
-    feature_log_in_as user
+    log_in_as user
 
     visit users_path
 
@@ -12,7 +12,7 @@ feature "admin views all users" do
 
   scenario "unsuccessfully" do
     user = create(:user)
-    feature_log_in_as user
+    log_in_as user
 
     visit users_path
 

@@ -33,6 +33,4 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path, alert: I18n.t("sessions.new.logged_in")
     end
   end
-
-  protect_from_forgery with: :exception
 end

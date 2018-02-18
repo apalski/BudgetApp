@@ -4,7 +4,7 @@ feature "admin creates new admin account" do
   scenario "successfully" do
     skip
     user = create(:user, admin: true)
-    feature_log_in_as user
+    log_in_as user
 
     visit new_user_path
 

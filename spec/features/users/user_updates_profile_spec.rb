@@ -3,7 +3,7 @@ require "rails_helper"
 feature "user updates profile" do
   scenario "successfully" do
     user = create(:user)
-    feature_log_in_as user
+    log_in_as user
 
     visit edit_user_path(user)
 
