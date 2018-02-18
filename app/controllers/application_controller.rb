@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
+  private
+
+  protect_from_forgery with: :exception
+
   def current_user
     if session[:user_id]
       @current_user ||= User.find_by(id: session[:user_id])
@@ -23,6 +27,12 @@ class ApplicationController < ActionController::Base
     current_user.admin?
   end
   helper_method :admin?
+
+  def require_login
+    unless current_user
+      redirect_to new_session_path, alert: I18n.t("sessions.new.logged_in")
+    end
+  end
 
   protect_from_forgery with: :exception
 end

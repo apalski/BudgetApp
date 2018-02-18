@@ -1,6 +1,16 @@
 require "rails_helper"
 
 describe UsersController do
+  context "GET #index" do
+    context "when not logged in" do
+      it "won't access the index page" do
+        get :index
+
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
+      end
+    end
+  end
+
   context "GET #new" do
     context "when invalid params" do
       it "won't create a new user" do
@@ -30,10 +40,21 @@ describe UsersController do
     end
   end
 
+  context "GET #show" do
+    context "when not logged in" do
+      it "won't access the show page" do
+        get :show, params: { id: 1 }
+
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
+      end
+    end
+  end
+
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update a user's profile" do
         user = create(:user, name: "John")
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
@@ -42,6 +63,7 @@ describe UsersController do
 
       it "renders edit" do
         user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
@@ -50,11 +72,22 @@ describe UsersController do
 
       it "sets the flash[:alert]" do
         user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: user.id, user: { name: "" } }
 
         expect(flash[:alert]).
           to match I18n.t("flash.actions.update.alert", resource_name: "User")
+      end
+    end
+  end
+
+  context "DELETE #destroy" do
+    context "when not logged in" do
+      it "won't delete the user" do
+        delete :destroy, params: { id: 1 }
+
+        expect(flash[:alert]).to match I18n.t("sessions.new.logged_in")
       end
     end
   end

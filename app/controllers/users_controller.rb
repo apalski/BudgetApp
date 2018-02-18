@@ -1,13 +1,9 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:new, :create]
   before_action :require_admin, only: [:index]
 
   def index
     @users = User.all
-
-    respond_with(@users)
-  end
-
-  def show
   end
 
   def new
@@ -17,7 +13,10 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    respond_with(@user)
+    respond_with user, location: -> { new_session_path }
+  end
+
+  def show
   end
 
   def edit
