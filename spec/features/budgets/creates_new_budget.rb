@@ -10,12 +10,12 @@ feature "creates new budget" do
     fill_in "budget_budget_type", with: "Holiday"
     click_on I18n.t("helpers.submit.budget.create")
 
-    expect(page).to have_text(I18n.t("budgets.show.title", name: "My Budget"))
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.create.notice",
-        resource_name: "Budget"
-      ))
+    expect(page).to have_text(
+      I18n.t("budgets.show.title", name: "My Budget")
+    )
+    expect(page).to have_text(
+      I18n.t("flash.actions.create.notice", resource_name: "Budget")
+    )
     expect(user.budgets.count).to eq 1
   end
 end

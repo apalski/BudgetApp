@@ -3,8 +3,8 @@ require "rails_helper"
 feature "views show page" do
   scenario "successfully" do
     user = create(:user)
+    budget = create(:budget, user: user)
     log_in_as user
-    budget = create(:budget)
 
     visit budget_path(budget)
 
