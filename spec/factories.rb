@@ -3,14 +3,14 @@ FactoryBot.define do
     sequence(:name) { |n| "budget name#{n}" }
   end
 
-  factory :income do
-    sequence(:name) { |n| "name#{n}" }
-    sequence(:frequency) { |n| "frequency#{n}" }
-  end
-
   factory :expense do
     sequence(:name) { |n| "name#{n}" }
-    sequence(:frequency) { |n| "frequency#{n}" }
+    frequency "Weekly"
+  end
+
+  factory :income do
+    sequence(:name) { |n| "name#{n}" }
+    frequency "Fortnightly"
   end
 
   factory :user do
