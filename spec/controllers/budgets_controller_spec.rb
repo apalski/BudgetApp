@@ -40,8 +40,8 @@ describe BudgetsController do
     context "when invalid parameters" do
       it "won't update the budget attributes" do
         user = create(:user)
+        budget = create(:budget, name: "Holiday", user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget = create(:budget, name: "Holiday")
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -50,8 +50,8 @@ describe BudgetsController do
 
       it "renders edit" do
         user = create(:user)
+        budget = create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget = create(:budget)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -60,8 +60,8 @@ describe BudgetsController do
 
       it "sets the flash[:alert]" do
         user = create(:user)
+        budget = create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget = create(:budget)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -72,7 +72,7 @@ describe BudgetsController do
   end
 
   context "DELETE #destroy" do
-    context "budget doesn't exist" do
+    context "user is not logged in" do
       it "won't change Budget count" do
         budget = create(:budget)
 
