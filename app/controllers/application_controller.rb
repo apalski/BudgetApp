@@ -20,17 +20,4 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path, alert: I18n.t("sessions.new.logged_in")
     end
   end
-
-  def admin?
-    current_user.admin?
-  end
-  helper_method :admin?
-
-  def require_admin
-    unless admin?
-      redirect_to user_path(current_user), alert: I18n.t(
-        "users.index.require_admin" # TODO: change once there's admin namespace
-      )
-    end
-  end
 end

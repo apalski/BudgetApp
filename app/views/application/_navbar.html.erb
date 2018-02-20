@@ -3,7 +3,7 @@
 <% if current_user %>
   <%= link_to t("nav.signout"), session_path(current_user), method: :delete %> |
 <% else %>
-  <%= link_to t("nav.signup"), new_user_path %> |
+  <%= link_to t("nav.signup"), new_admin_user_path %> |
   <%= link_to t("nav.signin"), new_session_path %></h3>
 <% end %>
 </nav>
