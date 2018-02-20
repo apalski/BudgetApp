@@ -15,5 +15,6 @@ feature "user deletes account" do
         "flash.actions.destroy.notice",
         resource_name: "User"
       ))
+    # TODO: ensure user is logged out. Add an assertion/expectation
   end
 end
