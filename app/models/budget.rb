@@ -1,5 +1,5 @@
 class Budget < ActiveRecord::Base
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :budget_incomes
   has_many :incomes, through: :budget_incomes
   has_many :budget_expenses

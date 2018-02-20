@@ -2,7 +2,7 @@ class BudgetsController < ApplicationController
   before_action :require_login
 
   def index
-    @budgets = Budget.all
+    @budgets = current_user.budgets
   end
 
   def new
@@ -10,8 +10,7 @@ class BudgetsController < ApplicationController
   end
 
   def create
-    @budget = Budget.create(budget_params)
-    current_user.budgets << @budget
+    @budget = current_user.budgets.create(budget_params)
 
     respond_with(@budget)
   end
