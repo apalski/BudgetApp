@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "user creates new account" do
   scenario "successfully" do
-    visit new_user_path
+    visit new_users_path
 
     fill_in "user_name", with: "Mary"
     fill_in "user_email", with: "Mary@example.com"

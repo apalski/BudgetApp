@@ -25,6 +25,27 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
+  admin:
+    defaults:
+      "yes": "Yes"
+      "no": "No"
+      require_admin: "You must be admin to access the page"
+    users:
+      new:
+        submit: "New account"
+        title: "Create new user"
+      edit:
+        submit: "Update User"
+        title: "Edit user"
+      index:
+        name: "User name"
+        email: "User email"
+        admin: "Admin status"
+        links:
+          delete: "Delete User"
+          edit: "Edit User"
+        title: "Current registered users"
+
   budgets:
     defaults:
       name: "Name"
@@ -73,15 +94,16 @@ en:
       name: "Name"
       email: "Email"
       password: "Password"
-    index:
-      title: "Current registered users:"
     new:
       title: "Please fill in the form to sign up"
     edit:
       delete: "Delete Account"
+      submit: "Edit profile"
       title: "Please fill in the form to edit your profile"
     show:
-      welcome: "Your profile details are:"
+      name: "Name"
+      email: "Email"
+      welcome: "Welcome, your details are:"
 
   activerecord:
     errors:
@@ -96,4 +118,3 @@ en:
         update: "Update budget"
       user:
         create: "New account"
-        update: "Edit profile"

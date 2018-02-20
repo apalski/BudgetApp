@@ -18,5 +18,9 @@ FactoryBot.define do
     sequence(:name) { |n| "user name#{n}" }
     sequence(:email) { |n| "user email#{n}" }
     password "password"
+
+    trait :admin do
+      admin true
+    end
   end
 end
