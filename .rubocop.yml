@@ -32,6 +32,7 @@ Metrics/LineLength:
   Max: 80
   Exclude:
     - "config/**/*"
+    - "db/schema.rb"
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 Naming/ClassAndModuleCamelCase:
