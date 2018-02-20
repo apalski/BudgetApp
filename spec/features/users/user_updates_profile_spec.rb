@@ -5,10 +5,11 @@ feature "user updates profile" do
     user = create(:user)
     log_in_as user
 
-    visit edit_user_path(user)
+    visit edit_users_path
 
     fill_in "user_email", with: "JT@example.com"
-    click_on I18n.t("helpers.submit.user.update")
+    fill_in "user_name", with: user.name
+    click_on I18n.t("users.edit.submit")
 
     expect(page).to have_text("JT@example.com")
     expect(page).

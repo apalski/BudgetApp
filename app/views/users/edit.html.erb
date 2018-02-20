@@ -1,8 +1,6 @@
 <h1><%= t(".title") %></h1>
-<%= simple_form_for user do |f| %>
+<%= simple_form_for current_user, url: users_path do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.submit %>
+  <%= f.submit t(".submit") %>
 <% end %>
-
-<%= link_to t(".delete"), user, method: :delete %>
