@@ -1,7 +1,4 @@
 <h1><%= t(".title") %></h1>
 <ul>
-  <% @budgets.each do |budget| %>
-    <%= render "detail", budget: budget %>
-    </br>
-  <% end %>
+  <%= render @budgets %>
 </ul>
