@@ -69,23 +69,21 @@ en:
       flash:
         notice: "Logout successful"
 
-  admin:      
-    users:
-      defaults:
-        name: "Name"
-        email: "Email"
-        password: "Password"
-      index:
-        require_admin: "You must be admin to access user list"
-        title: "Current registered users"
-      new:
-        title: "Please fill in the form to sign up"
-      edit:
-        delete: "Delete Account"
-        title: "Please fill in the form to edit your profile"
-      show:
-        profile_information: "Your email address is: %{email}"
-        welcome: "Welcome, your details are:"
+  users:
+    defaults:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+    new:
+      title: "Please fill in the form to sign up"
+    edit:
+      delete: "Delete Account"
+      title: "Please fill in the form to edit your profile"
+    show:
+      profile_information: "Your email address is: %{email}, name is %{name}"
+      welcome: "Welcome, your details are:"
+    update:
+      submit: "Edit profile"
 
   activerecord:
     errors:
@@ -100,4 +98,3 @@ en:
         update: "Update budget"
       user:
         create: "New account"
-        update: "Edit profile"

@@ -6,7 +6,7 @@ feature "admin creates new admin account" do
     user = create(:user, admin: true)
     log_in_as user
 
-    visit new_user_path
+    visit admin_new_user_path
 
     fill_in "user_name", with: "Mary"
     fill_in "user_email", with: "Mary@example.com"

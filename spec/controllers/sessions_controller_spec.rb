@@ -37,7 +37,7 @@ describe SessionsController do
 
       get :new
 
-      expect(response).to redirect_to(user_path(user))
+      expect(response).to redirect_to(users_path)
     end
 
     it "sets the flash[:alert]" do

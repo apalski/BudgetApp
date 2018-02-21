@@ -1,11 +1,12 @@
 require "rails_helper"
 
-feature "user deletes account" do
+feature "admin deletes account" do
   scenario "successfully" do
-    user = create(:user)
+    skip
+    user = create(:user, admin: true)
     log_in_as user
 
-    visit edit_user_path(user)
+    visit admin_edit_user_path(user)
 
     click_on I18n.t("users.edit.delete")
 
@@ -15,6 +16,5 @@ feature "user deletes account" do
         "flash.actions.destroy.notice",
         resource_name: "User"
       ))
-    # TODO: ensure user is logged out. Add an assertion/expectation
   end
 end
