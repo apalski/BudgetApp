@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :budgets
-  resources :sessions, only: [:new, :create, :destroy]
   namespace :admin do
-    resources :users
+    resources :users, only: [:index, :edit, :update, :destroy]
   end
-  # resources :users, only: [:new, :create, :show, :edit, :update]
+
+  resources :budgets, only: [:new]
+  resources :sessions, only: [:new, :create, :destroy]
+  resource :users, only: [:show, :new, :create, :edit, :update]
+
   root to: "home#show"
 end
