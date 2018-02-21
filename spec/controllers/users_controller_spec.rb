@@ -35,7 +35,9 @@ describe UsersController do
       it "won't access the show page" do
         get :show
 
-        expect(flash[:alert]).to match I18n.t("sessions.new.flash.require_login")
+        expect(flash[:alert]).to match I18n.t(
+          "sessions.new.flash.require_login"
+        )
       end
     end
   end
@@ -46,16 +48,16 @@ describe UsersController do
         user = create(:user, name: "John")
         allow(controller).to receive(:current_user).and_return(user)
 
-        put :update, params: { id: user.id, user: { name: "" } }
+        put :update, params: { user: { name: "" } }
 
-        expect(user.name).to eq "John"
+        expect(user.reload.name).to eq "John"
       end
 
       it "renders edit" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
-        put :update, params: { id: user.id, user: { name: "" } }
+        put :update, params: { user: { name: "" } }
 
         expect(response).to render_template(:edit)
       end
@@ -64,7 +66,7 @@ describe UsersController do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
-        put :update, params: { id: user.id, user: { name: "" } }
+        put :update, params: { user: { name: "" } }
 
         expect(flash[:alert]).
           to match I18n.t("flash.actions.update.alert", resource_name: "User")

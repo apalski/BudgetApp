@@ -24,7 +24,10 @@ class UsersController < ApplicationController
         resource_name: "User"
       )
     else
-      flash[:alert] = I18n.t("flash.actions.update.alert", resource_name: "User")
+      flash[:alert] = I18n.t(
+        "flash.actions.update.alert",
+        resource_name: "User"
+      )
       render :edit
     end
   end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :edit, :update, :destroy]
   end
 
-  resources :budgets, only: [:new]
+  resources :budgets
   resources :sessions, only: [:new, :create, :destroy]
   resource :users, only: [:show, :new, :create, :edit, :update]
 

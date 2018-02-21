@@ -25,6 +25,11 @@ en:
       strip_insignificant_zeros: false
       unit: "$"
 
+  admin:
+    users:
+      index:
+        title: "Current registered users"    
+
   budgets:
     defaults:
       name: "Name"

@@ -1,6 +1,6 @@
 <h1><%= t(".title") %></h1>
-<%= simple_form_for [:admin, user] do |f| %>
+<%= simple_form_for :user, url: users_path, method: :put do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
-  <%= f.submit %>
+  <%= f.submit t("users.update.submit") %>
 <% end %>
