@@ -70,8 +70,8 @@ describe BudgetsController do
     context "when invalid parameters" do
       it "won't update the budget attributes" do
         user = create(:user)
-        budget = create(:budget, name: "Holiday", user: user)
         allow(controller).to receive(:current_user).and_return(user)
+        budget = create(:budget, name: "Holiday", user: user)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -80,8 +80,8 @@ describe BudgetsController do
 
       it "renders edit" do
         user = create(:user)
-        budget = create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
+        budget = create(:budget, user: user)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -90,8 +90,8 @@ describe BudgetsController do
 
       it "sets the flash[:alert]" do
         user = create(:user)
-        budget = create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
+        budget = create(:budget, user: user)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -111,6 +111,17 @@ describe BudgetsController do
         expect do
           delete :destroy, params: { id: budget.id }
         end.to change(Budget, :count).by(0)
+      end
+    end
+
+    context "budget does not exist" do
+      it "will raise record missing error" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        expect do
+          delete :destroy, params: { id: 10 }
+        end.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
