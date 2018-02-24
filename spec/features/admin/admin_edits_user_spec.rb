@@ -2,9 +2,9 @@ require "rails_helper"
 
 feature "Admin edits user" do
   scenario "successfully" do
-    user = create(:user, admin: true)
-    other_user = create(:user)
-    log_in_as user
+    admin = create(:user, admin: true)
+    user = create(:user)
+    log_in_as admin
 
     visit admin_users_path
     within "#user_#{user.id}" do

@@ -27,7 +27,7 @@ module Admin
       user.delete
       flash[:notice] = I18n.t(
         "flash.actions.destroy.notice",
-        resource_name: "User",
+        resource_name: "User"
       )
 
       redirect_to admin_users_path
