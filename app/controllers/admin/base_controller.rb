@@ -7,9 +7,15 @@ module Admin
 
     def require_admin
       unless current_user.admin?
-        redirect_to new_session_path, alert: I18n.t(
-          "admin.users.index.require_admin"
-        )
+        if current_user
+          redirect_to users_path, alert: I18n.t(
+            "admin.defaults.require_admin"
+          )
+        else
+          redirect_to new_session_path, alert: I18n.t(
+            "admin.defaults.require_admin"
+          )
+        end    
       end
     end
   end

@@ -4,24 +4,38 @@ module Admin
       @users = User.all
     end
 
+    def new
+      @user = User.new
+    end
+
+    def create
+      @user = User.create(admin_user_params)
+
+      respond_with @user, location: -> { admin_users_path }
+    end
+
     def edit
     end
 
     def update
-      user.update_attributes(user_params)
+      user.update_attributes(admin_user_params)
 
-      respond_with user, location: -> { admin_user_path(user) }
+      respond_with user, location: -> { admin_users_path }
     end
 
     def destroy
       user.delete
+      flash[:notice] = I18n.t(
+        "flash.actions.destroy.notice",
+        resource_name: "User",
+      )
 
-      respond_with user, location: -> { new_admin_user_path }
+      redirect_to admin_users_path
     end
 
     private
 
-    def user_params
+    def admin_user_params
       params.require(:user).permit(:name, :email, :password, :uid, :admin)
     end
 

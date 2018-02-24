@@ -26,9 +26,22 @@ en:
       unit: "$"
 
   admin:
+    defaults:
+      "yes": "Yes"
+      "no": "No"
+      require_admin: "You must be admin to access the page"
     users:
+      new:
+        submit: "New Account"
+        title: "Create new user"
+      edit:
+        submit: "Update User"
+        title: "Edit user"
       index:
-        title: "Current registered users"    
+        links:
+          delete: "Delete User"
+          edit: "Edit User"
+        title: "Current registered users"
 
   budgets:
     defaults:
@@ -85,7 +98,7 @@ en:
       delete: "Delete Account"
       title: "Please fill in the form to edit your profile"
     show:
-      profile_information: "Your email address is: %{email}, name is %{name}"
+      profile_information: "Your email address is: %{email}, name is %{name}, admin is %{admin}"
       welcome: "Welcome, your details are:"
     update:
       submit: "Edit profile"

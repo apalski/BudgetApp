@@ -1,7 +1,12 @@
 <h1><%= t(".title") %></h1>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= user.name %></li>
+<% @users.each do |user| %>
+  <ul id="user_<%= user.id %>">
+    <li>
+        <%= user.name %>
     <li><%= user.email %></li>
-  <% end %>
-</ul>
+    <li><%= user.admin? %></li>
+    <li>
+      <%= link_to t(".links.delete"), admin_user_path(user), method: :delete %>
+      <%= link_to t(".links.edit"), edit_admin_user_path(user) %>
+  </ul>
+<% end %>
