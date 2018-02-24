@@ -15,5 +15,10 @@ feature "Admin edits user" do
     click_on I18n.t("admin.users.edit.submit")
 
     expect(page).to have_text(I18n.t("admin.users.index.title"))
+    expect(page).
+      to have_text(I18n.t(
+        "flash.actions.update.notice",
+        resource_name: "User"
+      ))
   end
 end

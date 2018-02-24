@@ -1,7 +1,7 @@
 module Admin
   class UsersController < BaseController
     def index
-      @users = User.all
+      @users = User.all.order(admin: :desc, name: :asc)
     end
 
     def new

@@ -6,16 +6,12 @@ module Admin
     private
 
     def require_admin
-      unless current_user.admin?
-        if current_user
+      if current_user
+        unless current_user.admin?
           redirect_to users_path, alert: I18n.t(
             "admin.defaults.require_admin"
           )
-        else
-          redirect_to new_session_path, alert: I18n.t(
-            "admin.defaults.require_admin"
-          )
-        end
+        end   
       end
     end
   end
