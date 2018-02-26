@@ -5,6 +5,7 @@ class CreateExpenses < ActiveRecord::Migration[5.1]
       t.date :due_date
       t.string :frequency, null: false
       t.decimal :bill_estimate
+      t.references :budget
       t.timestamps
     end
   end

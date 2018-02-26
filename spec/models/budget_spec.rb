@@ -10,8 +10,8 @@ describe Budget do
 
   context "associations" do
     it { is_expected.to belong_to(:user) }
-    it { is_expected.to have_many(:incomes).through(:budget_incomes) }
-    it { is_expected.to have_many(:expenses).through(:budget_expenses) }
+    it { is_expected.to have_many(:incomes) }
+    it { is_expected.to have_many(:expenses) }
   end
 
   context "budget_type" do
