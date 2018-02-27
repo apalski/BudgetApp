@@ -6,13 +6,11 @@ module Admin
     private
 
     def require_admin
-      if current_user
-        unless current_user.admin?
-          redirect_to users_path, alert: I18n.t(
-            "admin.defaults.require_admin"
-          )
-        end   
-      end
+      unless current_user.admin?
+        redirect_to users_path, alert: I18n.t(
+          "admin.defaults.require_admin"
+        )
+      end   
     end
   end
 end
