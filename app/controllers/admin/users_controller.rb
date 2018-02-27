@@ -1,7 +1,7 @@
 module Admin
   class UsersController < BaseController
     def index
-      @users = User.all.order(admin: :desc, name: :asc)
+      @users = User.list_users
     end
 
     def new
@@ -9,7 +9,7 @@ module Admin
     end
 
     def create
-      @user = User.create(admin_user_params)
+      @user = User.create(user_params)
 
       respond_with @user, location: -> { admin_users_path }
     end
@@ -18,7 +18,7 @@ module Admin
     end
 
     def update
-      user.update_attributes(admin_user_params)
+      user.update_attributes(user_params)
 
       respond_with user, location: -> { admin_users_path }
     end
@@ -35,7 +35,7 @@ module Admin
 
     private
 
-    def admin_user_params
+    def user_params
       params.require(:user).permit(:name, :email, :password, :uid, :admin)
     end
 
