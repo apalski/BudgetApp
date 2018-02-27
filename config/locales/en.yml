@@ -101,7 +101,8 @@ en:
       delete: "Delete Account"
       title: "Please fill in the form to edit your profile"
     show:
-      profile_information: "Your email address is: %{email}, name is %{name}, admin is %{admin}"
+      name: "Name"
+      email: "Email"
       welcome: "Welcome, your details are:"
     update:
       submit: "Edit profile"
