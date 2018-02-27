@@ -38,6 +38,9 @@ en:
         submit: "Update User"
         title: "Edit user"
       index:
+        name: "User name"
+        email: "User email"
+        admin: "Admin status"
         links:
           delete: "Delete User"
           edit: "Edit User"
