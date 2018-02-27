@@ -6,19 +6,17 @@ describe BudgetsController do
       it "won't create a new budget" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget_params = { budget_type: "Holiday" }
 
         expect do
-          post :create, params: { budget: budget_params }
+          post :create, params: { budget: { budget_type: "Holiday" } }
         end.to change(Budget, :count).by(0)
       end
 
       it "renders new" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget_params = { budget_type: "Holiday" }
 
-        post :create, params: { budget: budget_params }
+        post :create, params: { budget: { budget_type: "Holiday" } }
 
         expect(response).to render_template(:new)
       end
@@ -26,12 +24,44 @@ describe BudgetsController do
       it "sets the flash[:alert]" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        budget_params = { budget_type: "Holiday" }
 
-        post :create, params: { budget: budget_params }
+        post :create, params: { budget: { budget_type: "Holiday" } }
 
         expect(flash[:alert]).
           to match I18n.t("flash.actions.create.alert", resource_name: "Budget")
+      end
+    end
+
+    context "when user already has a budget" do
+      it "won't create a new budget" do
+        user = create(:user)
+        create(:budget, user: user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        expect do
+          post :create, params: { budget: { name: "Holiday" } }
+        end.to change(Budget, :count).by(0)
+      end
+
+      it "renders show" do
+        user = create(:user)
+        create(:budget, user: user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        post :create, params: { budget: { name: "Goals" } }
+
+        expect(response).to redirect_to(budgets_path)
+      end
+
+      it "sets the flash[:alert]" do
+        user = create(:user)
+        create(:budget, user: user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        post :create, params: { budget: { name: "Goals" } }
+
+        expect(flash[:alert]).
+          to match I18n.t("budgets.new.budget_exists")
       end
     end
   end
@@ -45,7 +75,7 @@ describe BudgetsController do
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
-        expect(budget.name).to eq "Holiday"
+        expect(budget.reload.name).to eq "Holiday"
       end
 
       it "renders edit" do

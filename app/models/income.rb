@@ -1,5 +1,5 @@
 class Income < ActiveRecord::Base
-  has_one :budget
+  belongs_to :budget
 
   validates :name, presence: true, uniqueness: true
   validates :frequency, presence: true

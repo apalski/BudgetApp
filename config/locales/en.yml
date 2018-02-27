@@ -29,12 +29,11 @@ en:
     defaults:
       name: "Name"
       budget_type: "Budget Type"
-    index:
-      title: "Your budgets:"
     new:
+      budget_exists: "You already have a budget"
       title: "Please fill in budget details"
     edit:
-      delete: "Delete Account"
+      delete: "Delete Budget"
       title: "Please fill in changes to budget"
     show:
       title: "Your budget:"
