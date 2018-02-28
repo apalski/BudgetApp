@@ -80,4 +80,46 @@ describe Admin::UsersController do
       end
     end
   end
+
+  context "when user not admin" do
+    it "they can't access #index" do
+      user = create(:user)
+      allow(controller).to receive(:current_user).and_return(user)
+
+      get :index
+
+      expect(flash[:alert]).
+        to match I18n.t("admin.defaults.require_admin")
+    end
+
+    it "they can't access #new" do
+      user = create(:user)
+      allow(controller).to receive(:current_user).and_return(user)
+
+      get :new
+
+      expect(flash[:alert]).
+        to match I18n.t("admin.defaults.require_admin")
+    end
+
+    it "they can't access edit" do
+      user = create(:user)
+      allow(controller).to receive(:current_user).and_return(user)
+
+      get :edit, params: { id: user.id }
+
+      expect(flash[:alert]).
+        to match I18n.t("admin.defaults.require_admin")
+    end
+
+    it "they can't access destroy" do
+      user = create(:user)
+      allow(controller).to receive(:current_user).and_return(user)
+
+      get :destroy, params: { id: user.id }
+
+      expect(flash[:alert]).
+        to match I18n.t("admin.defaults.require_admin")
+    end
+  end
 end
