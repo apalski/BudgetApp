@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "admin creates new admin account" do
   scenario "successfully" do
-    user = create(:user, admin: true)
+    user = create(:user, :admin)
     log_in_as user
 
     visit new_admin_user_path
@@ -12,7 +12,7 @@ feature "admin creates new admin account" do
     fill_in "user_password", with: "secret"
     click_on I18n.t("admin.users.new.submit")
 
-    expect(user.admin).to eq true
+    expect(user).to be_admin
     expect(page).to have_text(I18n.t("admin.users.index.title"))
     expect(page).
       to have_text(I18n.t(

@@ -2,7 +2,7 @@ require "rails_helper"
 
 feature "Admin edits user" do
   scenario "successfully" do
-    admin = create(:user, admin: true)
+    admin = create(:user, :admin)
     user = create(:user)
     log_in_as admin
 
