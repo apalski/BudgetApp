@@ -32,7 +32,7 @@ en:
       require_admin: "You must be admin to access the page"
     users:
       new:
-        submit: "New Account"
+        submit: "New account"
         title: "Create new user"
       edit:
         submit: "Update User"
