@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
   before_action :require_login, except: [:new, :create]
-  before_action :require_admin, only: [:index]
-
-  def index
-    @users = User.all
-  end
 
   def new
     @user = User.new
@@ -13,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
 
-    respond_with user, location: -> { new_session_path }
+    respond_with @user, location: -> { new_session_path }
   end
 
   def show
@@ -23,15 +18,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    user.update_attributes(user_params)
+    current_user.update_attributes(user_params)
 
-    respond_with(user)
-  end
-
-  def destroy
-    user.delete
-
-    respond_with user, location: -> { new_user_path }
+    respond_with current_user, location: -> { users_path }
   end
 
   private
@@ -39,9 +28,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :uid)
   end
-
-  def user
-    @user ||= User.find(params[:id])
-  end
-  helper_method :user
 end

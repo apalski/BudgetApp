@@ -20,4 +20,14 @@ describe User do
       expect(User.new).not_to be_admin
     end
   end
+
+  context ".by_admin" do
+    it "orders admin first, then by user's name" do
+      user1 = create(:user, name: "Zane")
+      user2 = create(:user, name: "Abel")
+      admin = create(:user, :admin, name: "Mildred")
+
+      expect(User.by_admin).to eq [admin, user2, user1]
+    end
+  end
 end
