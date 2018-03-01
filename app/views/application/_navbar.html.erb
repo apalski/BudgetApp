@@ -1,9 +1,36 @@
-<nav>
-<h3><%= link_to t("nav.home"), root_path %> |
-<% if current_user %>
-  <%= link_to t("nav.signout"), session_path(current_user), method: :delete %> |
-<% else %>
-  <%= link_to t("nav.signup"), new_users_path %> |
-  <%= link_to t("nav.signin"), new_session_path %></h3>
-<% end %>
-</nav>
+<div class="navbar">
+  <% if current_user %>
+    <% if current_user.admin? %>
+      <div class="dropdown">
+        <button class="dropbtn"><%= t("nav.admin") %></button>
+        <div class="dropdown-content">
+          <a><%= link_to t("nav.user_index"), admin_users_path %></a>
+          <a><%= link_to t("nav.create_user"), new_admin_user_path %></a>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="dropdown">
+      <button class="dropbtn"><%= t("nav.user_profile") %></button>
+      <div class="dropdown-content">
+        <a><%= link_to t("nav.profile_page"), users_path(current_user) %></a>
+        <a>
+          <%= link_to t("nav.edit_profile"), edit_users_path(current_user) %>
+        </a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn"><%= t("nav.budget") %></button>
+      <div class="dropdown-content">
+        <a><%= link_to t("nav.budget_page"), budgets_path %></a>
+        <a><%= link_to t("nav.edit_budget"), edit_budgets_path %></a>
+      </div>
+    </div>
+
+    <a><%= link_to t("nav.signout"), session_path(current_user), method: :delete %></li>
+  <% else %>
+    <a><%= link_to t("nav.signup"), new_users_path %></a>
+    <a><%= link_to t("nav.signin"), new_session_path %></a>
+  <% end %>
+</div>

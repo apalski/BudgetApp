@@ -33,10 +33,10 @@ en:
     users:
       new:
         submit: "New account"
-        title: "Create new user"
+        title: "Create new user:"
       edit:
         submit: "Update User"
-        title: "Edit user"
+        title: "Edit user:"
       index:
         name: "User name"
         email: "User email"
@@ -44,7 +44,7 @@ en:
         links:
           delete: "Delete User"
           edit: "Edit User"
-        title: "Current registered users"
+        title: "Current registered users:"
 
   budgets:
     defaults:
@@ -52,12 +52,14 @@ en:
       budget_type: "Budget Type"
     new:
       budget_exists: "You already have a budget"
-      title: "Please fill in budget details"
+      title: "Please fill in budget details:"
     edit:
-      delete: "Delete Budget"
-      title: "Please fill in changes to budget"
+      delete: "Delete budget"
+      title: "Edit your budget:"
     show:
-      title: "Your budget:"
+      delete: "Delete budget"
+      edit: "Edit budget"
+      title: "Your budget details:"
 
   home:
     show:
@@ -66,17 +68,25 @@ en:
       welcome: "Welcome to Budget App"
 
   nav:
-    home: "Home"
+    admin: "Admin"
+    create_user: "Create user"
+    budget: "Budget"
+    budget_page: "Budget page"
+    edit_budget: "Edit budget"
+    edit_profile: "Edit profile"
+    profile_page: "Profile page"
     signup: "Sign up"
     signin: "Sign in"
     signout: "Sign out"
+    user_index: "All users"
+    user_profile: "Profile"
 
   sessions:
     new:
       email: "Email"
       password: "Password"
       submit: "Log in"
-      title: "Please log in to access your account."
+      title: "Please log into your account:"
       flash:
         alert: "Already logged in"
         require_login: "You must be logged in"
@@ -95,15 +105,16 @@ en:
       email: "Email"
       password: "Password"
     new:
-      title: "Please fill in the form to sign up"
+      title: "Fill in your details to sign up:"
     edit:
-      delete: "Delete Account"
-      submit: "Edit profile"
-      title: "Please fill in the form to edit your profile"
+      delete: "Delete Profile"
+      submit: "Update User"
+      title: "Edit your details:"
     show:
+      edit: "Edit Profile"
       name: "Name"
       email: "Email"
-      welcome: "Welcome, your details are:"
+      welcome: "Your profile details:"
 
   activerecord:
     errors:

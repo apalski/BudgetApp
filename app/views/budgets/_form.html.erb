@@ -1,5 +1,5 @@
-<%= simple_form_for @budget do |f| %>
+<%= simple_form_for budget, url: budgets_path do |f| %>
   <%= f.input :name %>
   <%= f.input :budget_type %>
-  <%= f.submit %>
+  <div class="submit"><%= f.submit %></div>
 <% end %>

@@ -1,8 +1,12 @@
-<h1><%= t(".title") %></h1>
-<%= simple_form_for @user do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :email_confirmation %>
-  <%= f.input :password %>
-  <%= f.submit %>
-<% end %>
+<div class="box">
+  <div class="form">
+    <h3 class="left_align"><%= t(".title") %></h3>
+    <%= simple_form_for @user do |f| %>
+      <%= f.input :name %>
+      <%= f.input :email %>
+      <%= f.input :email_confirmation %>
+      <%= f.input :password %>
+      <%= f.submit class: "button" %>
+    <% end %>
+  </div>
+</div>
