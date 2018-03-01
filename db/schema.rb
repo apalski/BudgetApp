@@ -3,8 +3,7 @@ ActiveRecord::Schema.define(version: 20180201054016) do
   enable_extension "plpgsql"
 
   create_table "budgets", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "budget_type", default: "basic"
+    t.string "name"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
