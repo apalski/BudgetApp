@@ -4,6 +4,9 @@ Rails.application.routes.draw do
     resources :expenses
     resources :goals
   end
+  namespace :admin do
+    resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resource :users, only: [:show, :new, :create, :edit, :update]
 
