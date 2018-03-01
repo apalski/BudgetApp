@@ -20,5 +20,8 @@ feature "Admin edits user" do
         "flash.actions.update.notice",
         resource_name: "User"
       ))
+    within "#user_#{user.id}" do
+      expect(page).to have_text("Mary")
+    end  
   end
 end
