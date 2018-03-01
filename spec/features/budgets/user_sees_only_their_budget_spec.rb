@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user can see only their budgets" do
+feature "user sees only their budget" do
   scenario "successfully" do
     user = create(:user)
     user_budget = create(:budget, user: user)

@@ -7,19 +7,15 @@ class BudgetsController < ApplicationController
   end
 
   def create
-    @budget = Budget.create(budget_params)
-    @budget.user_id = current_user.id
-    @budget.save
+    @budget = Budget.create(budget_params.merge(user: current_user))
 
     respond_with(@budget, location: -> { budgets_path })
   end
 
   def show
-    @budget = current_user.budget
   end
 
   def edit
-    @budget = current_user.budget
   end
 
   def update
@@ -49,5 +45,18 @@ class BudgetsController < ApplicationController
 
   def budget_params
     params.require(:budget).permit(:name, :budget_type, :user_id)
+  end
+
+  def budget
+    @budget ||= current_user.budget
+  end
+  helper_method :budget
+
+  def budget_exists
+    if current_user.budget
+      redirect_to budgets_path, alert: I18n.t(
+        "budgets.new.budget_exists"
+      )
+    end
   end
 end

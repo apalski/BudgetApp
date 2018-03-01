@@ -33,12 +33,4 @@ class ApplicationController < ActionController::Base
       )
     end
   end
-
-  def budget_exists
-    if current_user.budget
-      redirect_to budgets_path, alert: I18n.t(
-        "budgets.new.budget_exists"
-      )
-    end
-  end
 end
