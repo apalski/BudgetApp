@@ -105,40 +105,6 @@ describe ExpensesController do
           t("flash.actions.update.alert", resource_name: "Expense")
       end
     end
-
-    context "when there isn't a budget" do
-      it "won't update the expense" do
-        user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
-        expense = create(:expense, name: "gas")
-
-        put :update, params: { id: expense.id, expense: { name: "" } }
-
-        expect(expense.name).to eq "gas"
-      end
-
-      it "renders #edit" do
-        user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
-        expense = create(:expense)
-
-        put :update, params: { id: expense.id, expense: { name: "" } }
-
-        expect(response).to render_template(:edit)
-      end
-
-      it "sets the flash alert" do
-        user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
-        expense = create(:expense)
-
-        put :update, params: { id: expense.id, expense: { name: "" } }
-
-        expect(flash[:alert]).
-          to match I18n.
-          t("flash.actions.update.alert", resource_name: "Expense")
-      end
-    end
   end
 
   context "DELETE #destroy" do

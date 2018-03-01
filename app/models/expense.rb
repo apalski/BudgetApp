@@ -6,4 +6,8 @@ class Expense < ActiveRecord::Base
   validates :name, :frequency, presence: true
   validates :name, uniqueness: true
   validates :frequency, inclusion: { in: Expense.frequencies.keys }
+
+  def self.by_name
+    order(name: :asc)
+  end
 end

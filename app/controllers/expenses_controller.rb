@@ -1,7 +1,7 @@
 class ExpensesController < ApplicationController
   before_action :require_login
   def index
-    @expenses = current_user.budget.expenses.all
+    @expenses = current_user.budget.expenses.by_name
   end
 
   def new

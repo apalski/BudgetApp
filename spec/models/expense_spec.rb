@@ -13,4 +13,14 @@ describe Expense do
   context "associations" do
     it { is_expected.to belong_to(:budget).dependent(:destroy) }
   end
+
+  context ".by_name" do
+    it "orders by expense name" do
+      expense1 = create(:expense, name: "Gas")
+      expense2 = create(:expense, name: "Electricity")
+      expense3 = create(:expense, name: "Food")
+
+      expect(Expense.by_name).to eq [expense2, expense3, expense1]
+    end
+  end
 end
