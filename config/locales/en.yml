@@ -99,13 +99,12 @@ en:
       title: "Please fill in the form to sign up"
     edit:
       delete: "Delete Account"
+      submit: "Edit profile"
       title: "Please fill in the form to edit your profile"
     show:
       name: "Name"
       email: "Email"
       welcome: "Welcome, your details are:"
-    update:
-      submit: "Edit profile"
 
   activerecord:
     errors:

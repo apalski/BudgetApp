@@ -9,7 +9,7 @@ feature "user updates profile" do
 
     fill_in "user_email", with: "JT@example.com"
     fill_in "user_name", with: user.name
-    click_on I18n.t("users.update.submit")
+    click_on I18n.t("users.edit.submit")
 
     expect(page).to have_text("JT@example.com")
     expect(page).
