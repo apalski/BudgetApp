@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resource :budgets, only: [:show, :new, :create, :edit, :update, :destroy]
-  namespace :admin do
-    resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :budget do
+    resources :incomes
+    resources :expenses
+    resources :goals
   end
   resources :sessions, only: [:new, :create, :destroy]
   resource :users, only: [:show, :new, :create, :edit, :update]
