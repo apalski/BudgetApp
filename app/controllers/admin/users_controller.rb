@@ -1,7 +1,7 @@
 module Admin
   class UsersController < BaseController
     def index
-      @users = User.list_users
+      @users = User.by_admin
     end
 
     def new

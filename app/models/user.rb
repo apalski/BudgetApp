@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   validates :name, :email, presence: true, uniqueness: true
 
-  def self.list_users
-    User.all.order(admin: :desc, name: :asc)
+  def self.by_admin
+    order(admin: :desc, name: :asc)
   end
 end
