@@ -9,6 +9,6 @@ describe Income do
   end
 
   context "associations" do
-    it { is_expected.to have_many(:budgets).through(:budget_incomes) }
+    it { is_expected.to belong_to(:budget) }
   end
 end

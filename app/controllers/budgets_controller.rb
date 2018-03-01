@@ -1,18 +1,15 @@
 class BudgetsController < ApplicationController
   before_action :require_login
-
-  def index
-    @budgets = current_user.budgets
-  end
+  before_action :budget_exists, only: [:new, :create]
 
   def new
     @budget = Budget.new
   end
 
   def create
-    @budget = current_user.budgets.create(budget_params)
+    @budget = Budget.create(budget_params.merge(user: current_user))
 
-    respond_with(@budget)
+    respond_with(@budget, location: -> { budgets_path })
   end
 
   def show
@@ -22,15 +19,17 @@ class BudgetsController < ApplicationController
   end
 
   def update
-    budget.update_attributes(budget_params)
+    current_user.budget.update_attributes(budget_params)
 
-    respond_with(budget)
+    respond_with current_user.budget, location: -> { budgets_path }
   end
 
   def destroy
-    budget.delete
-
-    respond_with budget, location: -> { new_budget_path }
+    current_user.budget.delete
+    redirect_to new_budgets_path, notice: I18n.t(
+      "flash.actions.destroy.notice",
+      resource_name: "Budget"
+    )
   end
 
   private
@@ -40,7 +39,15 @@ class BudgetsController < ApplicationController
   end
 
   def budget
-    @budget ||= Budget.find(params[:id])
+    @budget ||= current_user.budget
   end
   helper_method :budget
+
+  def budget_exists
+    if current_user.budget
+      redirect_to budgets_path, alert: I18n.t(
+        "budgets.new.budget_exists"
+      )
+    end
+  end
 end

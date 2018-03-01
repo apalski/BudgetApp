@@ -1,4 +1,4 @@
 <h1><%= t(".title") %></h1>
-<%= render "form" %>
+<%= render "form", url: edit_budgets_path %>
 
-<%= link_to t(".delete"), budget, method: :delete %>
+<%= link_to t(".delete"), budgets_path, method: :delete %>
