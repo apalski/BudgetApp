@@ -1,0 +1,7 @@
+<li><%= t("expenses.defaults.name") %>: <%= expense.name %></li>
+<li><%= t("expenses.defaults.due_date") %>: <%= l expense.due_date, format: :default %></li>
+<li><%= t("expenses.defaults.frequency") %>: <%= expense.frequency %></li>
+<li><%= t("expenses.defaults.bill_estimate") %>: <%= number_to_currency(expense.bill_estimate) %></li>
+<li><%= t("expenses.defaults.budget") %>: <%= expense.budget.name %></li>
+<%= link_to t(".delete"), expense_path(expense), method: :delete %> |
+<%= link_to t(".update"), edit_expense_path(expense) %>

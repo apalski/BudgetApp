@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, only: [:index, :new, :create, :edit, :update, :destroy]
   end
+  resources :expenses
   resources :sessions, only: [:new, :create, :destroy]
   resource :users, only: [:show, :new, :create, :edit, :update]
 

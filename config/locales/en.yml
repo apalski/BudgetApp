@@ -2,7 +2,7 @@ en:
   date:
     formats:
       default:
-        "%dth %B %Y"
+        "%a %d/%m/%y"
       with_weekday:
         "%a %m/%d/%y"
 
@@ -79,16 +79,17 @@ en:
       due_date: "Due Date"
       bill_estimate: "Bill Estimate"
       budget: "Budget"
-    index:
+    expense:
       delete: "Delete Expense"
-      title: "These are your expense types:"
-      update: "Update Expense"
+      update: "Edit Expense"
+    index:
+      title: "Your expenses:"
     new:
-      title: "Create a new expense type"
+      title: "Create a new expense"
     edit:
-      title: "Edit your expense type"
+      title: "Edit your expense"
     show:
-      title: "Your expense details"
+      title: "Your expense:"
 
   home:
     show:
@@ -163,6 +164,9 @@ en:
 
   helpers:
     submit:
+      budget:
+        create: "Create budget"
+        update: "Update budget"
       expense:
         create: "Create expense"
         update: "Edit expense"
