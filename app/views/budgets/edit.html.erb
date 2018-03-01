@@ -1,8 +1,4 @@
 <h1><%= t(".title") %></h1>
-<%= simple_form_for @budget, url: edit_budgets_path do |f| %>
-  <%= f.input :name %>
-  <%= f.input :budget_type %>
-  <%= f.submit %>
-<% end %>
+<%= render "form", url: edit_budgets_path %>
 
 <%= link_to t(".delete"), budgets_path, method: :delete %>
