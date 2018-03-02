@@ -2,8 +2,9 @@ require "rails_helper"
 
 feature "create new expense" do
   scenario "successfully" do
-    budget = create(:budget)
-    log_in_as budget.user
+    user = create(:user)
+    create(:budget, user: user)
+    log_in_as user
 
     visit new_expense_path
     fill_in "expense_name", with: "Gas"

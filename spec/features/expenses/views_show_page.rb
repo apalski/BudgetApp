@@ -2,8 +2,9 @@ require "rails_helper"
 
 feature "view single expense" do
   scenario "successfully" do
-    budget = create(:budget)
-    log_in_as budget.user
+    user = create(:user)
+    create(:budget, user: user)
+    log_in_as user
     expense = create(:expense)
 
     visit expense_path(expense)
