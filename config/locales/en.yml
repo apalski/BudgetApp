@@ -49,7 +49,6 @@ en:
   budgets:
     defaults:
       name: "Name"
-      budget_type: "Budget Type"
     new:
       budget_exists: "You already have a budget"
       title: "Please fill in budget details:"

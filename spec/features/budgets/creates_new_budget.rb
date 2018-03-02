@@ -7,7 +7,6 @@ feature "creates new budget" do
 
     visit new_budget_path
     fill_in "budget_name", with: "My Budget"
-    fill_in "budget_budget_type", with: "Holiday"
     click_on I18n.t("helpers.submit.budget.create")
 
     expect(page).to have_text(

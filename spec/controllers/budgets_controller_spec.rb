@@ -8,7 +8,7 @@ describe BudgetsController do
         allow(controller).to receive(:current_user).and_return(user)
 
         expect do
-          post :create, params: { budget: { budget_type: "Holiday" } }
+          post :create, params: { budget: { name: "" } }
         end.to change(Budget, :count).by(0)
       end
 
@@ -16,7 +16,7 @@ describe BudgetsController do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
-        post :create, params: { budget: { budget_type: "Holiday" } }
+        post :create, params: { budget: { name: "" } }
 
         expect(response).to render_template(:new)
       end
@@ -25,7 +25,7 @@ describe BudgetsController do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
-        post :create, params: { budget: { budget_type: "Holiday" } }
+        post :create, params: { budget: { name: "" } }
 
         expect(flash[:alert]).
           to match I18n.t("flash.actions.create.alert", resource_name: "Budget")
@@ -115,13 +115,13 @@ describe BudgetsController do
     end
 
     context "budget does not exist" do
-      it "will raise record missing error" do
+      it "will raise no method error" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
         expect do
           delete :destroy, params: { id: 10 }
-        end.to raise_error(ActiveRecord::RecordNotFound)
+        end.to raise_error(NoMethodError)
       end
     end
   end

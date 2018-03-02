@@ -3,5 +3,5 @@ class Budget < ActiveRecord::Base
   has_many :incomes
   has_many :expenses
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
 end
