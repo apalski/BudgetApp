@@ -1,5 +1,5 @@
 class Budget < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :user, dependent: :destroy
   has_many :incomes
   has_many :expenses
 

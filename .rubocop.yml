@@ -21,7 +21,7 @@ Layout/MultilineBlockLayout:
     - "spec/**/*"
 Metrics/AbcSize:
   Exclude:
-    - "app/controllers/sessions_controller.rb"        
+    - "app/controllers/sessions_controller.rb"
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*"
@@ -75,6 +75,8 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 Style/SymbolArray:
   Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma  
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: consistent_comma
 Style/UnneededInterpolation:

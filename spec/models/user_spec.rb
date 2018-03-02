@@ -12,7 +12,7 @@ describe User do
   end
 
   context "associations" do
-    it { is_expected.to have_one(:budget) }
+    it { is_expected.to have_one(:budget).dependent(:destroy) }
   end
 
   context "admin" do

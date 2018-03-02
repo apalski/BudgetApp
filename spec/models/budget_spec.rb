@@ -9,7 +9,7 @@ describe Budget do
   end
 
   context "associations" do
-    it { is_expected.to belong_to(:user) }
+    it { is_expected.to belong_to(:user).dependent(:destroy) }
     it { is_expected.to have_many(:incomes) }
     it { is_expected.to have_many(:expenses) }
   end
