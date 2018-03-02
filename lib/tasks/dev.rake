@@ -6,7 +6,24 @@ if Rails.env.development? || Rails.env.test?
     task prime: "db:setup" do
       include FactoryBot::Syntax::Methods
 
-      # create(:user, email: "user@example.com", password: "password")
+      create(:budget, user: User.create(
+        name: "admin",
+        email: "admin@example.com",
+        password: "secret",
+        admin: true
+      ))
+
+      9.times do
+        create(:budget, user: create(:user))
+      end
+
+      User.all.each do |user|
+        9.times do
+          create(:expense, budget: user.budget)
+        end
+      end
+
+      puts "Done!"
     end
   end
 end
