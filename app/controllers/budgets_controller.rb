@@ -1,6 +1,7 @@
 class BudgetsController < ApplicationController
   before_action :require_login
   before_action :budget_exists, only: [:new, :create]
+  before_action :require_budget, only: [:show, :edit, :update, :destroy]
 
   def new
     @budget = Budget.new
@@ -35,7 +36,7 @@ class BudgetsController < ApplicationController
   private
 
   def budget_params
-    params.require(:budget).permit(:name, :user_id)
+    params.require(:budget).permit(:name, :frequency, :user_id)
   end
 
   def budget
@@ -47,6 +48,14 @@ class BudgetsController < ApplicationController
     if current_user.budget
       redirect_to budgets_path, alert: I18n.t(
         "budgets.new.budget_exists"
+      )
+    end
+  end
+
+  def require_budget
+    unless current_user.budget
+      redirect_to new_budgets_path, alert: I18n.t(
+        "budgets.defaults.require_budget"
       )
     end
   end

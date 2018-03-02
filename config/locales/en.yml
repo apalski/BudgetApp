@@ -48,7 +48,9 @@ en:
 
   budgets:
     defaults:
+      frequency: "Frequency"
       name: "Name"
+      require_budget: "You don't have a budget"
     new:
       budget_exists: "You already have a budget"
       title: "Please fill in budget details:"
@@ -116,6 +118,11 @@ en:
       welcome: "Your profile details:"
 
   activerecord:
+    attributes:
+      frequencies:
+        weekly: "Weekly"
+        fortnightly: "Fortnightly"
+        monthly: "Monthly"
     errors:
       messages:
         blank: "can't be blank"

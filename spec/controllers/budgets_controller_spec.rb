@@ -66,6 +66,30 @@ describe BudgetsController do
     end
   end
 
+  context "GET #show" do
+    context "when there isn't a budget" do
+      it "redirects to #new" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        get :show
+
+        expect(response).to redirect_to(new_budgets_path)
+      end
+
+      it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        get :show
+
+        expect(flash[:alert]).to match(I18n.t(
+          "budgets.defaults.require_budget"
+        ))
+      end
+    end
+  end
+
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the budget attributes" do
@@ -99,6 +123,28 @@ describe BudgetsController do
           to match I18n.t("flash.actions.update.alert", resource_name: "Budget")
       end
     end
+
+    context "when there isn't a budget" do
+      it "redirects to #new" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        get :edit
+
+        expect(response).to redirect_to(new_budgets_path)
+      end
+
+      it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        get :edit
+
+        expect(flash[:alert]).to match(I18n.t(
+          "budgets.defaults.require_budget"
+        ))
+      end
+    end
   end
 
   context "DELETE #destroy" do
@@ -115,13 +161,24 @@ describe BudgetsController do
     end
 
     context "budget does not exist" do
-      it "will raise no method error" do
+      it "redirects to #new" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
 
-        expect do
-          delete :destroy, params: { id: 10 }
-        end.to raise_error(NoMethodError)
+        delete :destroy, params: { id: 10 }
+
+        expect(response).to redirect_to(new_budgets_path)
+      end
+
+      it "sets the flash[:alert]" do
+        user = create(:user)
+        allow(controller).to receive(:current_user).and_return(user)
+
+        delete :destroy, params: { id: 10 }
+
+        expect(flash[:alert]).to match(I18n.t(
+          "budgets.defaults.require_budget"
+        ))
       end
     end
   end

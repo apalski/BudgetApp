@@ -5,6 +5,8 @@ describe Budget do
     subject { build(:budget) }
 
     it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:frequency) }
+    it { is_expected.to define_enum_for(:frequency).with(Budget.frequencies) }
   end
 
   context "associations" do
