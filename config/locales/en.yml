@@ -109,7 +109,10 @@ en:
     errors:
       messages:
         blank: "can't be blank"
+        confirmation: "email must match"
         taken: "already taken"
+        too_short: "minimum length 6"
+        too_long: "maximum length 20"
 
   helpers:
     submit:
