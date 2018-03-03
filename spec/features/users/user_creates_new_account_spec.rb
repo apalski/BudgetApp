@@ -10,11 +10,8 @@ feature "user creates new account" do
     fill_in "user_password", with: "secret"
     click_on I18n.t("helpers.submit.user.create")
 
-    expect(page).to have_text(I18n.t("sessions.new.title"))
+    expect(page).to have_text(I18n.t("users.show.welcome"))
     expect(page).
-      to have_text(I18n.t(
-        "flash.actions.create.notice",
-        resource_name: "User"
-      ))
+      to have_text(I18n.t("sessions.new.flash.alert"))
   end
 end

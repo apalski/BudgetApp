@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    if @user
+      session[:user_id] = @user.id
+    end
 
     respond_with @user, location: -> { new_session_path }
   end
