@@ -1,6 +1,8 @@
 class GoalsController < ApplicationController
+  before_action :require_login
+
   def index
-    @goals = Goal.all
+    @goals = current_user.budget.goals.by_name
   end
 
   def new
@@ -8,7 +10,7 @@ class GoalsController < ApplicationController
   end
 
   def create
-    @goal = Goal.create(goal_params)
+    @goal = Goal.create(goal_params.merge(budget: current_user.budget))
 
     respond_with(@goal)
   end
