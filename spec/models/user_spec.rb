@@ -8,7 +8,7 @@ describe User do
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_uniqueness_of(:name) }
     it { is_expected.to validate_uniqueness_of(:email) }
-    it { is_expected.to validate_comfirmation_of(:email) }
+    it { is_expected.to validate_confirmation_of(:email) }
     it { is_expected.to validate_length_of(:password) }
     it { is_expected.to have_secure_password }
   end

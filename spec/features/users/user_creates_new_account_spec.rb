@@ -6,6 +6,7 @@ feature "user creates new account" do
 
     fill_in "user_name", with: "Mary"
     fill_in "user_email", with: "Mary@example.com"
+    fill_in "user_email_confirmation", with: "Mary@example.com"
     fill_in "user_password", with: "secret"
     click_on I18n.t("helpers.submit.user.create")
 
