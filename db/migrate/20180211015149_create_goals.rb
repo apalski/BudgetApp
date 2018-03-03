@@ -4,7 +4,7 @@ class CreateGoals < ActiveRecord::Migration[5.1]
       t.string :name, null: false
       t.date :due_date, null: false
       t.decimal :amount, null: false
-      t.references :user, index: true
+      t.references :budget
       t.timestamps
     end
   end
