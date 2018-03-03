@@ -74,11 +74,12 @@ en:
 
   expenses:
     defaults:
-      name: "Name"
-      frequency: "Frequency"
-      due_date: "Due Date"
       bill_estimate: "Bill Estimate"
       budget: "Budget"
+      due_date: "Due Date"
+      frequency: "Frequency"
+      name: "Name"
+      no_expenses: "You have no expenses, create one:" 
     expense:
       delete: "Delete Expense"
       update: "Edit Expense"

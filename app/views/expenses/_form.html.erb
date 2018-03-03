@@ -2,6 +2,6 @@
   <%= f.input :name %>
   <%= f.input :due_date, order: [:day, :month, :year] %>
   <%= f.input :frequency %>
-  <%= f.input :bill_estimate %>
+  <%= f.input :bill_estimate, input_html: { value: number_with_precision(f.object.bill_estimate, precision: 2) } %>
   <%= f.submit %>
 <% end %>
