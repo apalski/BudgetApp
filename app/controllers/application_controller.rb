@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
       )
     end
   end
+
+  def log_user_in
+    session[:user_id] = @user.id
+  end
 end

@@ -7,6 +7,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    if @user
+      log_user_in
+    end
 
     respond_with @user, location: -> { new_session_path }
   end
@@ -26,6 +29,12 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :uid)
+    params.require(:user).permit(
+      :email,
+      :email_confirmation,
+      :name,
+      :password,
+      :uid,
+    )
   end
 end

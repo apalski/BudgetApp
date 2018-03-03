@@ -7,11 +7,11 @@ feature "user updates profile" do
 
     visit edit_users_path
 
-    fill_in "user_email", with: "JT@example.com"
-    fill_in "user_name", with: user.name
+    fill_in "user_name", with: "Fred"
+    fill_in "user_password", with: user.password
     click_on I18n.t("users.edit.submit")
 
-    expect(page).to have_text("JT@example.com")
+    expect(page).to have_text("Fred")
     expect(page).
       to have_text(I18n.t(
         "flash.actions.update.notice",

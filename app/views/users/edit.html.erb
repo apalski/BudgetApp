@@ -2,5 +2,6 @@
 <%= simple_form_for current_user, url: users_path do |f| %>
   <%= f.input :name %>
   <%= f.input :email %>
+  <%= f.input :password %>
   <%= f.submit t(".submit") %>
 <% end %>

@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     if user&.authenticate(params[:session][:password])
-      session[:user_id] = user.id
+      log_user_in
       redirect_to after_sign_in_path_for(user), notice: t(".flash.notice")
     else
       flash[:alert] = t(".flash.alert")

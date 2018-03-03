@@ -8,6 +8,7 @@ feature "admin creates new admin account" do
     visit new_admin_user_path
     fill_in "user_name", with: "Mary"
     fill_in "user_email", with: "Mary@example.com"
+    fill_in "user_email_confirmation", with: "Mary@example.com"
     choose "Yes"
     fill_in "user_password", with: "secret"
     click_on I18n.t("admin.users.new.submit")
