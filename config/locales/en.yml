@@ -102,11 +102,14 @@ en:
       name: "Name"
     index:
       title: "These are your income types"
+    income:
+      delete: "Delete income"
+      update: "Edit income"
     new:
       title: "Create a new income type"
     edit:
-      title: "Edit your income type"
       delete: "Delete Income"
+      title: "Edit your income type"
     show:
       title: "Your %{name} details"
 

@@ -1,5 +1,5 @@
 <li><%= t("incomes.defaults.name") %>: <%= income.name %></li>
-<li><%= t("incomes.defaults.due_date") %>: <%= income.due_date.strftime("%d-%m-%Y") %></li>
+<li><%= t("incomes.defaults.due_date") %>: <%= l income.due_date, format: :default %></li>
 <li><%= t("incomes.defaults.frequency") %>: <%= income.frequency %></li>
 <li><%= t("incomes.defaults.amount") %>: <%= number_to_currency(income.amount) %></li>
 <li><%= t("incomes.defaults.budget") %>: <%= income.budget.name %></li>
