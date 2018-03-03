@@ -1,0 +1,6 @@
+<li><%= t("goals.defaults.name") %>: <%= goal.name %></li>
+<li><%= t("goals.defaults.due_date") %>: <%= l goal.due_date, format: :default %></li>
+<li><%= t("goals.defaults.amount") %>: <%= number_to_currency(goal.frequency) %></li>
+<li><%= t("goals.defaults.budget") %>: <%= goal.budget.name %></li>
+<%= link_to t(".delete"), goal_path(goal), method: :delete %> 
+<%= link_to t(".update"), edit_goal_path(goal) %>

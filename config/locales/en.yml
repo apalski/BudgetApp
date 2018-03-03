@@ -67,9 +67,10 @@ en:
 
   goals:
     defaults:
-      name: "Name"
-      due_date: "Due Date"
       amount: "Amount"
+      budget: "Budget"
+      due_date: "Due Date"
+      name: "Name" 
     index:
       title: "These are your goal types"
     new:

@@ -8,6 +8,7 @@ FactoryBot.define do
     sequence(:name) { |n| "name#{n}" }
     due_date "01/04/2019"
     amount 100
+    budget
   end
 
   factory :expense do

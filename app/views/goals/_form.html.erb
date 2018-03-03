@@ -1,0 +1,6 @@
+<%= simple_form_for goal do |f| %>
+  <%= f.input :name %>
+  <%= f.input :due_date, order: [:day, :month, :year] %>
+  <%= f.input :amount %>
+  <%= f.submit %>
+<% end %>

@@ -37,7 +37,7 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).
-      permit(:name, :due_date, :amount)
+      permit(:name, :due_date, :amount, :budget_id)
   end
 
   def goal
