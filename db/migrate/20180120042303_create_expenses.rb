@@ -3,7 +3,7 @@ class CreateExpenses < ActiveRecord::Migration[5.1]
     create_table :expenses do |t|
       t.string :name, null: false
       t.date :due_date
-      t.integer :frequency, null: false
+      t.integer :frequency, default: "weekly", null: false
       t.decimal :bill_estimate
       t.references :budget
       t.timestamps

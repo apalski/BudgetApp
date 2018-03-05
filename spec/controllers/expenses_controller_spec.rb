@@ -7,7 +7,7 @@ describe ExpensesController do
         user = create(:user)
         create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", bill_estimate: 500 }
+        expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         expect do
           post :create, params: { expense: expense_params }
@@ -18,7 +18,7 @@ describe ExpensesController do
         user = create(:user)
         create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", bill_estimate: 500 }
+        expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         post :create, params: { expense: expense_params }
 
@@ -29,7 +29,7 @@ describe ExpensesController do
         user = create(:user)
         create(:budget, user: user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", bill_estimate: 500 }
+        expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         post :create, params: { expense: expense_params }
 

@@ -14,6 +14,14 @@ describe Expense do
     it { is_expected.to belong_to(:budget).dependent(:destroy) }
   end
 
+  context "frequency has a default value" do
+    it "should be weekly" do
+      expense = create(:expense)
+
+      expect(expense.frequency).to eq("weekly")
+    end
+  end
+
   context ".by_name" do
     it "orders by expense name" do
       expense1 = create(:expense, name: "Gas")
