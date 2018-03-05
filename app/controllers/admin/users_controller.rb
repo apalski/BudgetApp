@@ -42,7 +42,7 @@ module Admin
         :email_confirmation,
         :name,
         :password,
-        :uid,    
+        :uid,
       )
     end
 
