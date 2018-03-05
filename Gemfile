@@ -9,7 +9,6 @@ ruby "2.4.1"
 
 gem "bcrypt"
 gem "delayed_job_active_record"
-gem "enum_help"
 gem "haml"
 gem "honeybadger"
 gem "jquery-rails"
