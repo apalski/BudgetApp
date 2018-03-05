@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
 
-  has_one :budget
+  has_one :budget, dependent: :destroy
 
   validates :name, :email, presence: true, uniqueness: true
 

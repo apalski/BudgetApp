@@ -7,6 +7,7 @@ FactoryBot.define do
   factory :expense do
     sequence(:name) { |n| "name#{n}" }
     frequency "Weekly"
+    budget
   end
 
   factory :income do
