@@ -43,7 +43,7 @@ describe ExpensesController do
       it "won't create a new expense" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", frequency: "Monthly" }
+        expense_params = { name: "Gas", frequency: "monthly" }
 
         expect do
           post :create, params: { expense: expense_params }
@@ -53,7 +53,7 @@ describe ExpensesController do
       it "renders #new" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", frequency: "Monthly" }
+        expense_params = { name: "Gas", frequency: "monthly" }
 
         post :create, params: { expense: expense_params }
 
@@ -63,7 +63,7 @@ describe ExpensesController do
       it "sets the flash alert" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        expense_params = { name: "Gas", frequency: "Monthly" }
+        expense_params = { name: "Gas", frequency: "monthly" }
 
         post :create, params: { expense: expense_params }
 

@@ -4,8 +4,8 @@ feature "view single expense" do
   scenario "successfully" do
     user = create(:user)
     create(:budget, user: user)
-    log_in_as user
     expense = create(:expense)
+    log_in_as user
 
     visit expense_path(expense)
 

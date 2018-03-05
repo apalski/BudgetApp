@@ -11,7 +11,7 @@ feature "create new expense" do
     select "1", from: "expense_due_date_3i"
     select "April", from: "expense_due_date_2i"
     select "2017", from: "expense_due_date_1i"
-    select "Monthly", from: "expense_frequency"
+    select "monthly", from: "expense_frequency"
     fill_in "expense_bill_estimate", with: 500
     click_on I18n.t("helpers.submit.expense.create")
 
