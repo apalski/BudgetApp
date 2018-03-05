@@ -11,7 +11,7 @@ if Rails.env.development? || Rails.env.test?
         name: "admin",
         email: "admin@example.com",
         password: "secret",
-        admin: true
+        admin: true,
       )
 
       9.times do
