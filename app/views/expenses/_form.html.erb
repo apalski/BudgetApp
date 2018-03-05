@@ -1,7 +1,7 @@
 <%= simple_form_for expense do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, placeholder: "Your name" %>
   <%= f.input :due_date, order: [:day, :month, :year] %>
-  <%= f.input :frequency %>
-  <%= f.input :bill_estimate, input_html: { value: number_with_precision(f.object.bill_estimate, precision: 2) } %>
+  <%= f.input :frequency, placeholder: "weekly, fortnightly, monthly" %>
+  <%= f.input :bill_estimate, placeholder: "how much you think", input_html: { value: number_with_precision(f.object.bill_estimate, precision: 2) } %>
   <%= f.submit %>
 <% end %>
