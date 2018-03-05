@@ -1,7 +1,7 @@
 class Expense < ActiveRecord::Base
   belongs_to :budget, dependent: :destroy
 
-  enum frequency: [:Weekly, :Fortnightly, :Monthly, :Quarterly, :Annually]
+  enum frequency: [:weekly, :fortnightly, :monthly, :quarterly, :annually]
 
   validates :name, :frequency, presence: true
   validates :name, uniqueness: true
