@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user
-      session[:user_id] = @user.id
+      log_user_in
     end
 
     respond_with @user, location: -> { new_session_path }
@@ -30,11 +30,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-      :name,
       :email,
+      :email_confirmation,
+      :name,
       :password,
       :uid,
-      :email_confirmation
     )
   end
 end
