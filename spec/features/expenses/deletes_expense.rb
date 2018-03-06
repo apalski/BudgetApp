@@ -15,7 +15,7 @@ feature "delete expense" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.destroy.notice",
-        resource_name: "Expense"
+        resource_name: "Expense",
       ))
     expect(page).not_to have_text(expense.name)
   end

@@ -19,7 +19,7 @@ feature "create new expense" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.create.notice",
-        resource_name: "Expense"
+        resource_name: "Expense",
       ))
   end
 end

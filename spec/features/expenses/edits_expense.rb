@@ -15,7 +15,7 @@ feature "edits expense" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.update.notice",
-        resource_name: "Expense"
+        resource_name: "Expense",
       ))
   end
 end
