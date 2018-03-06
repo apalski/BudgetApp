@@ -83,14 +83,18 @@ en:
     expense:
       delete: "Delete Expense"
       update: "Edit Expense"
+    edit:
+      title: "Edit your expense"
     index:
       title: "Your expenses:"
     new:
       title: "Create a new expense"
-    edit:
-      title: "Edit your expense"
     show:
       title: "Your expense:"
+    placeholders:
+      bill_estimate: "how much you think"
+      frequency:  "weekly, fortnightly, monthly"
+      name: "your name"
 
   home:
     show:
