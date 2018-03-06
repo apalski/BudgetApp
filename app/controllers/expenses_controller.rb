@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :require_login
+  before_action :require_current_budget, only: [:show, :edit, :destroy]
 
   def index
     @expenses = current_budget.expenses.by_name
@@ -47,5 +48,13 @@ class ExpensesController < ApplicationController
 
   def current_budget
     current_user.budget
+  end
+
+  def require_current_budget
+    unless current_budget.expenses.include?(expense.id)
+      redirect_to budgets_path, alert: I18n.t(
+        "expenses.flashes.alerts.require_current_budget"
+      )
+    end
   end
 end

@@ -58,20 +58,6 @@ en:
       edit: "Edit budget"
       title: "Your budget details:"
 
-  budgets:
-    defaults:
-      name: "Name"
-      budget_type: "Budget Type"
-    index:
-      title: "Your budgets:"
-    new:
-      title: "Please fill in budget details"
-    edit:
-      delete: "Delete Account"
-      title: "Please fill in changes to budget"
-    show:
-      title: "Your budget:"
-
   expenses:
     defaults:
       bill_estimate: "Bill Estimate"
@@ -91,10 +77,12 @@ en:
       title: "Create a new expense"
     show:
       title: "Your expense:"
+    flashes:
+      alerts:
+        require_current_budget: "You can only access your expenses"  
     placeholders:
       bill_estimate: "how much you think"
-      frequency:  "weekly, fortnightly, monthly"
-      name: "your name"
+      name: "your expense name"
 
   home:
     show:

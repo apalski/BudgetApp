@@ -68,6 +68,20 @@ describe ExpensesController do
     end
   end
 
+  context "GET #show" do
+    context "when not the expense owner" do
+      it "redirects the user to their budget view" do
+        create_current_user_with_budget
+        other_expense = create(:expense)
+        expense = create(:expense, name: "gas", budget: @budget)
+
+        get :show, params: { id: other_expense.id }
+
+        expect(response.body).to redirect_to(budgets_path)
+      end
+    end
+  end
+
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the expense" do
@@ -76,7 +90,7 @@ describe ExpensesController do
 
         put :update, params: { id: expense.id, expense: { name: "" } }
 
-        expect(expense.name).to eq "gas"
+        expect(expense.reload.name).to eq "gas"
       end
 
       it "renders #edit" do
@@ -118,7 +132,7 @@ describe ExpensesController do
 
   def create_current_user_with_budget
     user = create(:user)
-    create(:budget, user: user)
+    @budget = create(:budget, user: user)
     allow(controller).to receive(:current_user).and_return(user)
   end
 end
