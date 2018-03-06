@@ -48,5 +48,4 @@ class ExpensesController < ApplicationController
   def current_budget
     current_user.budget
   end
-  helper_method :current_budget
 end
