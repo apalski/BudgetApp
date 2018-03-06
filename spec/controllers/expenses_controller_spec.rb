@@ -4,9 +4,7 @@ describe ExpensesController do
   context "GET #new" do
     context "when invalid params" do
       it "won't create a new expense" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         expect do
@@ -15,9 +13,7 @@ describe ExpensesController do
       end
 
       it "renders #new" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         post :create, params: { expense: expense_params }
@@ -26,9 +22,7 @@ describe ExpensesController do
       end
 
       it "sets the flash[:alert]" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense_params = { name: "Gas", bill_estimate: 500, frequency: "" }
 
         post :create, params: { expense: expense_params }
@@ -77,9 +71,7 @@ describe ExpensesController do
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the expense" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense = create(:expense, name: "gas")
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -88,9 +80,7 @@ describe ExpensesController do
       end
 
       it "renders #edit" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense = create(:expense)
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -99,9 +89,7 @@ describe ExpensesController do
       end
 
       it "sets the flash[:alert]" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense = create(:expense)
 
         put :update, params: { id: expense.id, expense: { name: "" } }
@@ -116,9 +104,7 @@ describe ExpensesController do
   context "DELETE #destroy" do
     context "expense doesn't exist" do
       it "won't change Expense count" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         expense = create(:expense)
 
         delete :destroy, params: { id: expense.id }
@@ -128,5 +114,11 @@ describe ExpensesController do
         end.to change(Expense, :count).by(0)
       end
     end
+  end
+
+  def create_current_user_with_budget
+    user = create(:user)
+    create(:budget, user: user)
+    allow(controller).to receive(:current_user).and_return(user)
   end
 end
