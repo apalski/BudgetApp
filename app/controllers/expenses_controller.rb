@@ -53,7 +53,7 @@ class ExpensesController < ApplicationController
   def require_current_budget
     unless current_budget.expenses.include?(expense.id)
       redirect_to budgets_path, alert: I18n.t(
-        "expenses.flashes.alerts.require_current_budget"
+        "expenses.flashes.alerts.require_current_budget",
       )
     end
   end

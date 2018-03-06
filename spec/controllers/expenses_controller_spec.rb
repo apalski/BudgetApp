@@ -73,7 +73,7 @@ describe ExpensesController do
       it "redirects the user to their budget view" do
         create_current_user_with_budget
         other_expense = create(:expense)
-        expense = create(:expense, name: "gas", budget: @budget)
+        create(:expense, name: "gas", budget: @budget)
 
         get :show, params: { id: other_expense.id }
 

@@ -20,6 +20,6 @@ feature "create new expense" do
       to have_text(I18n.t(
         "flash.actions.create.notice",
         resource_name: "Expense",
-      ))
+      ),)
   end
 end

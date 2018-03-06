@@ -16,6 +16,6 @@ feature "edits expense" do
       to have_text(I18n.t(
         "flash.actions.update.notice",
         resource_name: "Expense",
-      ))
+      ),)
   end
 end

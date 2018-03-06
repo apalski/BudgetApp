@@ -16,7 +16,7 @@ describe Expense do
 
   context "frequency has a default value" do
     it "should be weekly" do
-      expense = create(:expense)
+      expense = build(:expense)
 
       expect(expense.frequency).to eq("weekly")
     end

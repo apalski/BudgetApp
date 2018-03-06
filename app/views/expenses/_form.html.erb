@@ -1,7 +1,7 @@
 <%= simple_form_for expense do |f| %>
   <%= f.input :name, placeholder: t("expenses.placeholders.name") %>
   <%= f.input :due_date, order: [:day, :month, :year] %>
-  <%= f.input :frequency, placeholder: t("expenses.placeholders.frequency") %>
+  <%= f.input :frequency, collection: Expense.frequencies.keys %>
   <%= f.input :bill_estimate,
     placeholder: t("expenses.placeholders.bill_estimate"),
     input_html: {
