@@ -29,7 +29,7 @@ class BudgetsController < ApplicationController
     current_user.budget.delete
     redirect_to new_budgets_path, notice: I18n.t(
       "flash.actions.destroy.notice",
-      resource_name: "Budget"
+      resource_name: "Budget",
     )
   end
 
@@ -47,7 +47,7 @@ class BudgetsController < ApplicationController
   def budget_exists
     if current_user.budget
       redirect_to budgets_path, alert: I18n.t(
-        "budgets.new.budget_exists"
+        "budgets.new.budget_exists",
       )
     end
   end
@@ -55,7 +55,7 @@ class BudgetsController < ApplicationController
   def require_budget
     unless current_user.budget
       redirect_to new_budgets_path, alert: I18n.t(
-        "budgets.defaults.require_budget"
+        "budgets.defaults.require_budget",
       )
     end
   end

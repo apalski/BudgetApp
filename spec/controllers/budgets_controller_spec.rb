@@ -84,8 +84,8 @@ describe BudgetsController do
         get :show
 
         expect(flash[:alert]).to match(I18n.t(
-          "budgets.defaults.require_budget"
-        ))
+          "budgets.defaults.require_budget",
+        ),)
       end
     end
   end
@@ -141,8 +141,8 @@ describe BudgetsController do
         get :edit
 
         expect(flash[:alert]).to match(I18n.t(
-          "budgets.defaults.require_budget"
-        ))
+          "budgets.defaults.require_budget",
+        ),)
       end
     end
   end
@@ -177,8 +177,8 @@ describe BudgetsController do
         delete :destroy, params: { id: 10 }
 
         expect(flash[:alert]).to match(I18n.t(
-          "budgets.defaults.require_budget"
-        ))
+          "budgets.defaults.require_budget",
+        ),)
       end
     end
   end

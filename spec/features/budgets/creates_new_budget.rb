@@ -7,14 +7,14 @@ feature "creates new budget" do
 
     visit new_budget_path
     fill_in "budget_name", with: "My Budget"
-    select "Monthly", from: "budget_frequency"
+    select "monthly", from: "budget_frequency"
     click_on I18n.t("helpers.submit.budget.create")
 
     expect(page).to have_text(
-      I18n.t("budgets.show.title", name: "My Budget")
+      I18n.t("budgets.show.title", name: "My Budget"),
     )
     expect(page).to have_text(
-      I18n.t("flash.actions.create.notice", resource_name: "Budget")
+      I18n.t("flash.actions.create.notice", resource_name: "Budget"),
     )
     expect(user.budgets.count).to eq 1
   end

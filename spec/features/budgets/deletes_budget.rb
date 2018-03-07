@@ -12,7 +12,7 @@ feature "delete budget" do
 
     expect(page).to have_text(I18n.t("budgets.new.title"))
     expect(page).to have_text(
-      I18n.t("flash.actions.destroy.notice", resource_name: "Budget")
+      I18n.t("flash.actions.destroy.notice", resource_name: "Budget"),
     )
   end
 end

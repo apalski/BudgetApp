@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :budget do
     sequence(:name) { |n| "budget name#{n}" }
-    frequency "Fortnightly"
+    frequency :fortnightly
     user
   end
 

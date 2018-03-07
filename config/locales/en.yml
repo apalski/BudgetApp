@@ -47,6 +47,11 @@ en:
         title: "Current registered users:"
 
   budgets:
+    attributes:
+      frequencies:
+        weekly: "weekly"
+        fortnightly: "fortnightly"
+        monthly: "monthly"
     defaults:
       frequency: "Frequency"
       name: "Name"
@@ -118,11 +123,6 @@ en:
       welcome: "Your profile details:"
 
   activerecord:
-    attributes:
-      frequencies:
-        weekly: "Weekly"
-        fortnightly: "Fortnightly"
-        monthly: "Monthly"
     errors:
       messages:
         blank: "can't be blank"

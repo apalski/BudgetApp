@@ -3,7 +3,7 @@ class Budget < ActiveRecord::Base
   has_many :incomes
   has_many :expenses
 
-  enum frequency: [:Weekly, :Fortnightly, :Monthly]
+  enum frequency: { weekly: 0, fortnightly: 1, monthly: 2 }
 
   validates :name, presence: true
   validates :frequency, presence: true
