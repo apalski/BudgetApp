@@ -100,18 +100,24 @@ en:
       due_date: "Due Date"
       frequency: "Frequency"
       name: "Name"
+      no_incomes: "You have no incomes, create one:"
     index:
       title: "These are your income types"
     income:
       delete: "Delete income"
       update: "Edit income"
     new:
-      title: "Create a new income type"
+      title: "Create a new income"
     edit:
-      delete: "Delete Income"
-      title: "Edit your income type"
+      title: "Edit your incomes:"
     show:
-      title: "Your %{name} details"
+      title: "Your income:"
+    flashes:
+      alerts:
+        require_current_budget: "You can only access your incomes"
+    placeholders:
+      amount: "your income amount"
+      name: "your income name"
 
   nav:
     admin: "Admin"
@@ -171,11 +177,11 @@ en:
   activerecord:
     attributes:
       frequencies:
-        weekly: "Weekly"
-        fortnightly: "Fortnightly"
-        monthly: "Monthly"
-        quarterly: "Quarterly"
-        annually: "Annually"
+        weekly: "weekly"
+        fortnightly: "fortnightly"
+        monthly: "monthly"
+        quarterly: "quarterly"
+        annually: "annually"
     errors:
       messages:
         blank: "can't be blank"

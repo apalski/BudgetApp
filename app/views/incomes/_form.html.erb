@@ -1,7 +1,11 @@
 <%= simple_form_for income do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, placeholder: t("incomes.placeholders.name") %>
   <%= f.input :due_date, order: [:day, :month, :year] %>
-  <%= f.input :frequency %>
-  <%= f.input :amount, input_html: { value: number_with_precision(f.object.amount, precision: 2) } %>
+  <%= f.input :frequency, collection: Income.frequencies.keys %>
+  <%= f.input :amount,
+    placeholder: t("incomes.placeholders.amount"),
+    input_html: {
+      value: number_with_precision(f.object.amount, precision: 2),
+    }, %>
   <%= f.submit %>
 <% end %>

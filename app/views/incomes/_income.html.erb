@@ -3,5 +3,7 @@
 <li><%= t("incomes.defaults.frequency") %>: <%= income.frequency %></li>
 <li><%= t("incomes.defaults.amount") %>: <%= number_to_currency(income.amount) %></li>
 <li><%= t("incomes.defaults.budget") %>: <%= income.budget.name %></li>
-<%= link_to t(".delete"), income_path(income), method: :delete %> |
-<%= link_to t(".update"), edit_income_path(income) %>
+<li>
+  <%= link_to t(".delete"), income_path(income), method: :delete %> 
+  <%= link_to t(".update"), edit_income_path(income) %>
+</li>
