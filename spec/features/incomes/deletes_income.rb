@@ -3,9 +3,9 @@ require "rails_helper"
 feature "delete income" do
   scenario "successfully" do
     user = create(:user)
-    create(:budget, user: user)
+    budget = create(:budget, user: user)
+    income = create(:income, budget: budget)
     log_in_as user
-    income = create(:income)
 
     visit edit_income_path(income)
 
@@ -15,7 +15,7 @@ feature "delete income" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.destroy.notice",
-        resource_name: "Income"
-      ))
+        resource_name: "Income",
+      ),)
   end
 end

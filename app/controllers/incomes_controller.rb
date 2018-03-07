@@ -3,7 +3,7 @@ class IncomesController < ApplicationController
   before_action :require_current_budget, only: [:show, :edit, :destroy]
 
   def index
-    @incomes = current_user.budget.incomes.by_name
+    @incomes = current_budget.incomes.by_name
   end
 
   def new
@@ -11,7 +11,7 @@ class IncomesController < ApplicationController
   end
 
   def create
-    @income = Income.create(income_params.merge(budget: current_user.budget))
+    @income = Income.create(income_params.merge(budget: current_budget))
 
     respond_with(@income)
   end
@@ -31,19 +31,13 @@ class IncomesController < ApplicationController
   def destroy
     income.delete
 
-    respond_with income, location: -> { new_income_path }
+    respond_with income, location: -> { incomes_path }
   end
 
   private
 
   def income_params
-    params.require(:income).permit(
-      :name,
-      :due_date,
-      :frequency,
-      :amount,
-      :budget_id,
-    )
+    params.require(:income).permit(:name, :due_date, :frequency, :amount)
   end
 
   def income

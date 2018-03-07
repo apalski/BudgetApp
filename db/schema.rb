@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20180201054016) do
   create_table "incomes", force: :cascade do |t|
     t.string "name", null: false
     t.date "due_date"
-    t.integer "frequency", null: false
+    t.integer "frequency", default: 0, null: false
     t.decimal "amount"
     t.bigint "user_id"
     t.datetime "created_at", null: false

@@ -4,10 +4,8 @@ describe IncomesController do
   context "GET #new" do
     context "when invalid params" do
       it "won't create a new income" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", amount: 500 }
+        create_current_user_with_budget
+        income_params = { name: "Salary", amount: 500, frequency: "" }
 
         expect do
           post :create, params: { income: income_params }
@@ -15,10 +13,8 @@ describe IncomesController do
       end
 
       it "renders new" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", amount: 500 }
+        create_current_user_with_budget
+        income_params = { name: "Salary", amount: 500, frequency: "" }
 
         post :create, params: { income: income_params }
 
@@ -26,15 +22,14 @@ describe IncomesController do
       end
 
       it "sets the flash[:alert]" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", amount: 500 }
+        create_current_user_with_budget
+        income_params = { name: "Salary", amount: 500, frequency: "" }
 
         post :create, params: { income: income_params }
 
         expect(flash[:alert]).
-          to match I18n.t("flash.actions.create.alert", resource_name: "Income")
+          to match I18n.
+          t("flash.actions.create.alert", resource_name: "Income")
       end
     end
 
@@ -42,7 +37,7 @@ describe IncomesController do
       it "won't create a new income" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", frequency: "Monthly" }
+        income_params = { name: "Salary", frequency: "monthly" }
 
         expect do
           post :create, params: { income: income_params }
@@ -52,7 +47,7 @@ describe IncomesController do
       it "renders #new" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", frequency: "Monthly" }
+        income_params = { name: "Salary", frequency: "monthly" }
 
         post :create, params: { income: income_params }
 
@@ -62,7 +57,7 @@ describe IncomesController do
       it "sets the flash alert" do
         user = create(:user)
         allow(controller).to receive(:current_user).and_return(user)
-        income_params = { name: "Salary", frequency: "Monthly" }
+        income_params = { name: "Salary", frequency: "monthly" }
 
         post :create, params: { income: income_params }
 
@@ -73,23 +68,33 @@ describe IncomesController do
     end
   end
 
+  context "GET #show" do
+    context "when not the income owner" do
+      it "redirects the user to their budget view" do
+        create_current_user_with_budget
+        other_income = create(:income)
+        create(:income, name: "gas", budget: @budget)
+
+        get :show, params: { id: other_income.id }
+
+        expect(response.body).to redirect_to(budgets_path)
+      end
+    end
+  end
+
   context "GET #edit" do
     context "when invalid parameters" do
       it "won't update the income attributes" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         income = create(:income, name: "salary")
 
         put :update, params: { id: income.id, income: { name: "" } }
 
-        expect(income.name).to eq "salary"
+        expect(income.reload.name).to eq "salary"
       end
 
       it "renders edit" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         income = create(:income)
 
         put :update, params: { id: income.id, income: { name: "" } }
@@ -98,15 +103,14 @@ describe IncomesController do
       end
 
       it "sets the flash[:alert]" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         income = create(:income)
 
         put :update, params: { id: income.id, income: { name: "" } }
 
         expect(flash[:alert]).
-          to match I18n.t("flash.actions.update.alert", resource_name: "Income")
+          to match I18n.
+          t("flash.actions.update.alert", resource_name: "Income")
       end
     end
   end
@@ -114,9 +118,7 @@ describe IncomesController do
   context "DELETE #destroy" do
     context "income doesn't exist" do
       it "won't change Income count" do
-        user = create(:user)
-        create(:budget, user: user)
-        allow(controller).to receive(:current_user).and_return(user)
+        create_current_user_with_budget
         income = create(:income)
 
         delete :destroy, params: { id: income.id }
@@ -126,5 +128,11 @@ describe IncomesController do
         end.to change(Income, :count).by(0)
       end
     end
+  end
+
+  def create_current_user_with_budget
+    user = create(:user)
+    @budget = create(:budget, user: user)
+    allow(controller).to receive(:current_user).and_return(user)
   end
 end

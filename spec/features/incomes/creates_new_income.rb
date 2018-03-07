@@ -11,7 +11,7 @@ feature "creates new income" do
     select "1", from: "income_due_date_3i"
     select "April", from: "income_due_date_2i"
     select "2017", from: "income_due_date_1i"
-    select "Monthly", from: "income_frequency"
+    select "monthly", from: "income_frequency"
     fill_in "income_amount", with: 1000.00
     click_on I18n.t("helpers.submit.income.create")
 
@@ -19,7 +19,7 @@ feature "creates new income" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.create.notice",
-        resource_name: "Income"
-      ))
+        resource_name: "Income",
+      ),)
   end
 end

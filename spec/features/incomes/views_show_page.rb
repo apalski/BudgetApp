@@ -3,9 +3,9 @@ require "rails_helper"
 feature "view single income" do
   scenario "successfully" do
     user = create(:user)
-    create(:budget, user: user)
+    budget = create(:budget, user: user)
     log_in_as user
-    income = create(:income)
+    income = create(:income, budget: budget)
 
     visit income_path(income)
 
