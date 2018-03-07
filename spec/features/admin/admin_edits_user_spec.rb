@@ -20,8 +20,8 @@ feature "Admin edits user" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.update.notice",
-        resource_name: "User"
-      ))
+        resource_name: "User",
+      ),)
     within "#user_#{user.id}" do
       expect(page).to have_text("Mary")
     end

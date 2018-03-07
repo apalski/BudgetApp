@@ -17,7 +17,7 @@ feature "user creates new session" do
 
     expect(page).to have_text(I18n.t("home.show.welcome"))
     expect(page).to have_text(
-      I18n.t("sessions.destroy.flash.notice", resource_name: "Session")
+      I18n.t("sessions.destroy.flash.notice", resource_name: "Session"),
     )
   end
 end

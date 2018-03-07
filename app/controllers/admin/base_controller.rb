@@ -8,7 +8,7 @@ module Admin
     def require_admin
       unless current_user.admin?
         redirect_to users_path, alert: I18n.t(
-          "admin.defaults.require_admin"
+          "admin.defaults.require_admin",
         )
       end
     end

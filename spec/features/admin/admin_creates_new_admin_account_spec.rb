@@ -19,8 +19,8 @@ feature "admin creates new admin account" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.create.notice",
-        resource_name: "User"
-      ))
+        resource_name: "User",
+      ),)
     within "#user_#{user.id}" do
       expect(page).to have_text("Mary")
       expect(page).to have_text("true")

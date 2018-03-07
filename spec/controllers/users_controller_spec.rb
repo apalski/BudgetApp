@@ -36,7 +36,7 @@ describe UsersController do
         get :show
 
         expect(flash[:alert]).to match I18n.t(
-          "sessions.new.flash.require_login"
+          "sessions.new.flash.require_login",
         )
       end
     end

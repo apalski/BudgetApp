@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   def require_login
     unless current_user
       redirect_to new_session_path, alert: I18n.t(
-        "sessions.new.flash.require_login"
+        "sessions.new.flash.require_login",
       )
     end
   end

@@ -16,7 +16,7 @@ feature "user creates new account" do
     expect(page).not_to have_text(I18n.t(
       "flash.actions.create.notice",
       resource_name: "User",
-    ))
+    ),)
     expect(current_path).to eq(users_path)
   end
 end

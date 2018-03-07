@@ -15,7 +15,7 @@ feature "user updates profile" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.update.notice",
-        resource_name: "User"
-      ))
+        resource_name: "User",
+      ),)
   end
 end

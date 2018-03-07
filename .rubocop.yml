@@ -76,7 +76,9 @@ Style/StringLiterals:
 Style/SymbolArray:
   Enabled: false
 Style/TrailingCommaInArguments:
-  EnforcedStyleForMultiline: consistent_comma  
+  EnforcedStyleForMultiline: consistent_comma
+  Exclude:
+    - "bin/*"
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: consistent_comma
 Style/UnneededInterpolation:

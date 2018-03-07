@@ -15,7 +15,7 @@ feature "admin deletes user" do
     expect(page).
       to have_text(I18n.t(
         "flash.actions.destroy.notice",
-        resource_name: "User"
-      ))
+        resource_name: "User",
+      ),)
   end
 end
