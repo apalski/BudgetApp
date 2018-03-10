@@ -2,7 +2,7 @@ en:
   date:
     formats:
       default:
-        "%a %d/%m/%y"
+        "%A %d/%m/%Y"
       with_weekday:
         "%a %m/%d/%y"
 
@@ -79,7 +79,7 @@ en:
       title: "Your expense:"
     flashes:
       alerts:
-        require_current_budget: "You can only access your expenses"  
+        require_current_budget: "You can only access your expenses"
     placeholders:
       bill_estimate: "how much you think"
       name: "your expense name"
