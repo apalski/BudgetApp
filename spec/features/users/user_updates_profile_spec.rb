@@ -8,7 +8,7 @@ feature "user updates profile" do
     visit edit_users_path
 
     fill_in "user_name", with: "Fred"
-    fill_in "user_password", with: user.password
+    fill_in "user_email", with: "fred@example.com"
     click_on I18n.t("users.edit.submit")
 
     expect(page).to have_text("Fred")
