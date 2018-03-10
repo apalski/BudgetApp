@@ -26,7 +26,6 @@ en:
         submit: "New account"
         title: "Create new user:"
       edit:
-        submit: "Update User"
         title: "Edit user:"
       index:
         name: "User name"
@@ -166,7 +165,6 @@ en:
       title: "Fill in your details to sign up:"
     edit:
       delete: "Delete Profile"
-      submit: "Update User"
       title: "Edit your details:"
     show:
       edit: "Edit Profile"
@@ -200,7 +198,7 @@ en:
         update: "Edit expense"
       user:
         create: "New account"
-        update: "Edit profile"
+        update: "Update profile"
       income:
         create: "Create income"
         update: "Edit income"

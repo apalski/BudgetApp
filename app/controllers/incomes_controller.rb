@@ -50,7 +50,7 @@ class IncomesController < ApplicationController
   end
 
   def require_current_budget
-    unless current_budget.incomes.include?(incomes.id)
+    unless current_budget.incomes.include?(income.id)
       redirect_to budgets_path, alert: I18n.t(
         "incomes.flashes.alerts.require_current_budget",
       )

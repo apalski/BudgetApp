@@ -3,7 +3,7 @@ class Income < ActiveRecord::Base
 
   enum frequency: {
     weekly: 0, fortnightly: 1, monthly: 2, quarterly: 3, annually: 4,
-  }   
+  }
 
   validates :name, :frequency, presence: true
   validates :name, uniqueness: true
