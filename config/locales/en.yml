@@ -20,7 +20,7 @@ en:
     defaults:
       "yes": "Yes"
       "no": "No"
-      require_admin: "You must be admin to access the page"
+      require_admin: "You must be admin to access this page"
     users:
       new:
         submit: "New account"
@@ -46,9 +46,9 @@ en:
     defaults:
       frequency: "Frequency"
       name: "Name"
-      require_budget: "You don't have a budget"
+      require_budget: "You don't have a budget, create one:"
     new:
-      budget_exists: "You already have a budget"
+      budget_exists: "You already have a budget, you can only have one"
       title: "Please fill in budget details:"
     edit:
       delete: "Delete budget"
@@ -100,6 +100,8 @@ en:
     budget_page: "Budget page"
     edit_budget: "Edit budget"
     edit_profile: "Edit profile"
+    new_budget: "New budget"
+    profile: "Profile"
     profile_page: "Profile page"
     signup: "Sign up"
     signin: "Sign in"
@@ -118,8 +120,8 @@ en:
         require_login: "You must be logged in"
     create:
       flash:
-        alert: "Session not created"
-        notice: "Session created"
+        alert: "Could not log you in, please check your details"
+        notice: "You are logged in"
     destroy:
       link: "Sign out"
       flash:

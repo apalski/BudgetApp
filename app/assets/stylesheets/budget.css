@@ -8,6 +8,7 @@
   --gear_shift: #755B64;
   --golden_desert: #EEA649;
   --light_and_fluffy: #DAD3CB;
+  --light_sacred_beam: #324663;
   --now_what: #EAD39F;
   --sacred_beam: #0C0730;
   --tears_waiting: #C48772;
@@ -19,9 +20,65 @@
   font-family: arial, sans-serif;
 }
 
+abbr[title] {
+  color: red;
+  text-decoration: none;
+}
+
 body {
   background-color: var(--white_whale);
   font-size: var(--default_font_size);
+}
+
+nav {
+  background-color: var(--sacred_beam);
+  overflow: hidden;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+}
+
+nav ul,
+nav ol,
+nav li {
+   margin: 0;
+   padding: 0;
+   float: left;
+}
+
+nav a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: var(--white_whale);
+}
+
+nav ul ul {
+  max-width: 11em;
+  background-color: var(--sacred_beam);
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
+
+nav ul ul li {
+  width: 100%;
+}
+
+nav li:hover a {
+  background-color: var(--light_sacred_beam);
+}
+
+nav li:hover ul {
+  display: block;
+}
+
+nav ul ul li:hover a {
+  background-color: var(--now_what);
+  color: var(--sacred_beam);
 }
 
 p {
@@ -29,10 +86,15 @@ p {
   text-align: left;
 }
 
+select {
+  background-color: var(--white_whale);
+}
+
 table {
   background-color: var(--now_what);
   border-radius: var(--default_border_radius);
   margin-left: 130px;
+  margin-top: 100px;
   width: 80%;
 }
 
@@ -79,7 +141,7 @@ th {
   text-align: center;
   margin-left: 360px;
   margin-top: 100px;
-  width: 40%;
+  width: 45%;
 }
 
 .button a:link{
@@ -99,132 +161,6 @@ th {
   background-color: var(--sacred_beam);
   border: var(--default_border) var(--sacred_beam);
   color: var(--white_whale);
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  background-color: inherit;
-  border: none;
-  color: var(--white_whale);
-  font-family: inherit;
-  font-size: var(--default_font_size);
-  margin: 0;
-  outline: none;
-  padding: 14px 16px;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: var(--now_what);
-  color: var(--sacred_beam)
-}
-
-.dropdown-content {
-  background-color: var(--sacred_beam);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  display: none;
-  position: absolute;
-  width: 120px;
-  z-index: 1;
-}
-
-div .dropdown-content a {
-  color: var(--white_whale);
-  display: block;
-  float: left;
-  font-size: 18px;
-  margin: -10px;
-  padding-bottom: 10px;
-  text-align: left;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--now_what);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.navbar {
-  background-color: var(--sacred_beam);
-  overflow: hidden;
-}
-
-.navbar a {
-  color: var(--white_whale);
-  float: left;
-  font-size: var(--default_font_size);
-  padding: 14px 16px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  background-color: inherit;
-  border: none;
-  color: var(--white_whale);
-  font-family: inherit;
-  font-size: var(--default_font_size);
-  margin: 0;
-  outline: none;
-  padding: 14px 16px;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: var(--now_what);
-  color: var(--sacred_beam)
-}
-
-.dropdown-content {
-  background-color: var(--sacred_beam);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  display: none;
-  position: absolute;
-  width: 120px;
-  z-index: 1;
-}
-
-div .dropdown-content a {
-  color: var(--white_whale);
-  display: block;
-  float: left;
-  font-size: 18px;
-  margin: -10px;
-  padding-bottom: 10px;
-  text-align: left;
-  text-decoration: none;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--now_what);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.navbar {
-  background-color: var(--sacred_beam);
-  overflow: hidden;
-}
-
-.navbar a {
-  color: var(--white_whale);
-  float: left;
-  font-size: var(--default_font_size);
-  padding: 14px 16px;
-  text-align: center;
-  text-decoration: none;
 }
 
 .flashes #flash-alert {
@@ -299,23 +235,4 @@ div .dropdown-content a {
   min-width: 30%;
   text-align: right;
   width: 100px;
-}
-
-.link {
-  background-color: var(--sacred_beam);
-  border: var(--default_border) var(--sacred_beam);
-  border-radius: var(--default_border_radius);
-  color: var(--sacred_beam);
-  margin-left: 415px;
-  padding: 10px;
-  width: 140px;
-}
-
-.link a:link {
-  color: var(--sacred_beam);
-  text-decoration: none;
-}
-
-.link a:visited {
-  color: var(--sacred_beam);
 }
