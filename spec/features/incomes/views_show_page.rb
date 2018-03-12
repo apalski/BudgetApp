@@ -4,8 +4,8 @@ feature "view single income" do
   scenario "successfully" do
     user = create(:user)
     budget = create(:budget, user: user)
-    log_in_as user
     income = create(:income, budget: budget)
+    log_in_as user
 
     visit income_path(income)
 

@@ -3,14 +3,24 @@ require "rails_helper"
 describe Income do
   context "validations" do
     subject { build(:income) }
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:amount) }
+    it { is_expected.to validate_presence_of(:due_date) }
     it { is_expected.to validate_presence_of(:frequency) }
     it { is_expected.to define_enum_for(:frequency).with(Income.frequencies) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end
 
   context "associations" do
     it { is_expected.to belong_to(:budget) }
+  end
+
+  context "frequency has a default value" do
+    it "should be weekly" do
+      income = build(:income)
+
+      expect(income.frequency).to eq("weekly")
+    end
   end
 
   context ".by_name" do

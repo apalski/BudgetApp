@@ -8,7 +8,6 @@ feature "delete income" do
     log_in_as user
 
     visit edit_income_path(income)
-
     click_on I18n.t("incomes.edit.delete")
 
     expect(page).to have_text(I18n.t("incomes.new.title"))
@@ -17,5 +16,6 @@ feature "delete income" do
         "flash.actions.destroy.notice",
         resource_name: "Income",
       ),)
+    expect(page).not_to have_text(income.name)
   end
 end

@@ -101,7 +101,10 @@ en:
       name: "Name"
       no_incomes: "You have no incomes, create one:"
     index:
-      title: "These are your income types"
+      links:
+        delete: "Delete income"
+        edit: "Edit income"
+      title: "Your incomes:"
     income:
       delete: "Delete income"
       update: "Edit income"
@@ -110,7 +113,7 @@ en:
     edit:
       title: "Edit your incomes:"
     show:
-      title: "Your income:"
+      title: "Your %{name} income:"
     flashes:
       alerts:
         require_current_budget: "You can only access your incomes"
@@ -196,9 +199,9 @@ en:
       expense:
         create: "Create expense"
         update: "Edit expense"
-      user:
-        create: "New account"
-        update: "Update profile"
       income:
         create: "Create income"
         update: "Edit income"
+      user:
+        create: "New account"
+        update: "Update profile"

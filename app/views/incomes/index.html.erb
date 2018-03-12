@@ -1,6 +1,43 @@
-<div class="box">
-  <h3><%= t(".title") %></h3>
-  <ul>
-    <%= render @incomes %>
-  </ul>
-</div>  
+<table>
+  <caption><%= t(".title") %></caption>
+  <thead>
+    <tr>
+      <th>
+        <%= t("incomes.defaults.name") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.frequency") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.due_date") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.amount") %>
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr id="income_<%= income.id %>">
+        <td>
+          <%= income.name %>
+        </td>
+        <td>
+          <%= income.frequency %>
+        </td>
+        <td>
+          <%= income.due_date %>
+        </td>
+        <td>
+          <%= income.amount %>
+        </td>
+        <td>
+          <%= link_to t(".links.delete"), income_path(income), method: :delete %>
+          <%= link_to t(".links.edit"), edit_income_path(income) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

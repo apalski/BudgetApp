@@ -72,8 +72,8 @@ describe IncomesController do
     context "when not the income owner" do
       it "redirects the user to their budget view" do
         create_current_user_with_budget
-        other_income = create(:income)
         create(:income, name: "gas", budget: @budget)
+        other_income = create(:income)
 
         get :show, params: { id: other_income.id }
 
@@ -84,7 +84,7 @@ describe IncomesController do
 
   context "GET #edit" do
     context "when invalid parameters" do
-      it "won't update the income attributes" do
+      it "won't update the income" do
         create_current_user_with_budget
         income = create(:income, name: "salary")
 
@@ -117,7 +117,7 @@ describe IncomesController do
 
   context "DELETE #destroy" do
     context "income doesn't exist" do
-      it "won't change Income count" do
+      it "won't change income count" do
         create_current_user_with_budget
         income = create(:income)
 
