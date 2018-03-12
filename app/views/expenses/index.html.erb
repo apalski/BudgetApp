@@ -1,4 +1,43 @@
-<h1><%= t(".title") %></h1>
-<ul>
-  <%= render @expenses %>
-</ul>
+<table>
+  <caption><%= t(".title") %></caption>
+  <thead>
+    <tr>
+      <th>
+        <%= t("expenses.defaults.name") %>
+      </th>
+      <th>
+        <%= t("expenses.defaults.frequency") %>
+      </th>
+      <th>
+        <%= t("expenses.defaults.due_date") %>
+      </th>
+      <th>
+        <%= t("expenses.defaults.bill_estimate") %>
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr id="expense_<%= expense.id %>">
+        <td>
+          <%= expense.name %>
+        </td>
+        <td>
+          <%= expense.frequency %>
+        </td>
+        <td>
+          <%= expense.due_date %>
+        </td>
+        <td>
+          <%= expense.bill_estimate %>
+        </td>
+        <td>
+          <%= link_to t(".links.delete"), expense_path(expense), method: :delete %>
+          <%= link_to t(".links.edit"), edit_expense_path(expense) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

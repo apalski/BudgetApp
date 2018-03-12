@@ -72,11 +72,14 @@ en:
     edit:
       title: "Edit your expense"
     index:
+      links:
+        delete: "Delete expense"
+        edit: "Edit expense"
       title: "Your expenses:"
     new:
       title: "Create a new expense"
     show:
-      title: "Your expense:"
+      title: "Your %{name} expense:"
     flashes:
       alerts:
         require_current_budget: "You can only access your expenses"
