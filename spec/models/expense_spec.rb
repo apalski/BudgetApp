@@ -4,10 +4,12 @@ describe Expense do
   context "validations" do
     subject { build(:expense) }
 
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_uniqueness_of(:name) }
+    it { is_expected.to validate_presence_of(:bill_estimate) }
+    it { is_expected.to validate_presence_of(:due_date) }
     it { is_expected.to validate_presence_of(:frequency) }
     it { is_expected.to define_enum_for(:frequency).with(Expense.frequencies) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_uniqueness_of(:name) }
   end
 
   context "associations" do

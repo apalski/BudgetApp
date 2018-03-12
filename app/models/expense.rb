@@ -9,7 +9,7 @@ class Expense < ActiveRecord::Base
     annually: 4,
   }
 
-  validates :name, :frequency, presence: true
+  validates :bill_estimate, :due_date, :frequency, :name, presence: true
   validates :name, uniqueness: true
   validates :frequency, inclusion: { in: Expense.frequencies.keys }
 

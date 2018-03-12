@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20180201054016) do
     t.string "name", null: false
     t.date "due_date", null: false
     t.integer "frequency", default: 0, null: false
-    t.decimal "bill_estimate"
+    t.decimal "bill_estimate", null: false
     t.bigint "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
