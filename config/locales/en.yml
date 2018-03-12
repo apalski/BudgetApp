@@ -47,16 +47,15 @@ en:
       frequency: "Frequency"
       name: "Name"
       require_budget: "You don't have a budget, create one:"
+    expenses: "less your expenses"
     new:
       budget_exists: "You already have a budget, you can only have one"
       title: "Please fill in budget details:"
     edit:
-      delete: "Delete budget"
       title: "Edit your budget:"
     show:
-      delete: "Delete budget"
-      edit: "Edit budget"
-      title: "Your budget details:"
+      incomes: "Your imcomes:"
+      title: "Your %{name} budget:"
 
   expenses:
     defaults:
@@ -98,8 +97,12 @@ en:
     create_user: "Create user"
     budget: "Budget"
     budget_page: "Budget page"
+    delete_budget: "Delete budget"
     edit_budget: "Edit budget"
     edit_profile: "Edit profile"
+    expenses: "Expenses"
+    all_expenses: "All expenses"
+    new_expense: "New expense"
     new_budget: "New budget"
     profile: "Profile"
     profile_page: "Profile page"

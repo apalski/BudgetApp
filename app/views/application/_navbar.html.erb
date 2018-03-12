@@ -2,14 +2,14 @@
   <ul class="menu">
   <% if current_user %>
     <% if current_user.admin? %>
-      <li><%= link_to t("nav.admin") %>
+      <li><a><%= t("nav.admin") %></a>
         <ul>
           <li><%= link_to t("nav.user_index"), admin_users_path %><li>
           <li><%= link_to t("nav.create_user"), new_admin_user_path %></li>
         </ul>
       </li>
     <% end %>
-    <li><%= link_to t("nav.profile") %>
+    <li><a><%= t("nav.profile") %></a>
       <ul>
         <li><%= link_to t("nav.profile_page"), users_path(current_user) %></li>
         <li>
@@ -17,13 +17,23 @@
         </li>
       </ul>
     </li>
-    <li><%= link_to t("nav.budget") %>
+
+    <li><a><%= t("nav.budget") %></a>
       <ul>
         <li><%= link_to t("nav.new_budget"), new_budgets_path %></li>
         <li><%= link_to t("nav.budget_page"), budgets_path %></li>
         <li><%= link_to t("nav.edit_budget"), edit_budgets_path %></li>
+        <li><%= link_to t("nav.delete_budget"), budgets_path, method: :delete %></li>
       </ul>
     </li>
+
+    <li><a><%= t("nav.expenses") %></a>
+      <ul>
+        <li><%= link_to t("nav.all_expenses"), expenses_path %></li>
+        <li><%= link_to t("nav.new_expense"), new_expense_path %></li>
+      </ul>
+    </li>
+
     <li><%= link_to t("nav.signout"), session_path(current_user), method: :delete %></li>
   <% else %>
     <li><%= link_to t("nav.signup"), new_users_path %></li>

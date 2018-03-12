@@ -14,6 +14,7 @@ class BudgetsController < ApplicationController
   end
 
   def show
+    @expenses = current_user.budget.expenses
   end
 
   def edit

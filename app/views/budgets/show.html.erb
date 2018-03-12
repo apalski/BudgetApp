@@ -1,8 +1,66 @@
-<div class="box">
-  <h3><%= t(".title") %></h3>
-  <%= render "budget" %>
-  <div class="button">
-    <%= link_to t(".edit"), edit_budgets_path %>
-    <%= link_to t(".delete"), budgets_path, method: :delete %>
-  </div>
+<h3><%= t(".title", name: budget.name) %></h3>
+<tqble>
+  <caption><%= t(".incomes") %></caption>
+  <thead>
+    <tr>
+      <th>
+        <%= t("incomes.defaults.name") %>
+      </th>
+      </th>
+        <%+ t("incomes.defaults.amount") %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr id="income_<%= income.id %>">
+        <td>
+          <%= income.name %>
+        </td>
+        <td>
+          <%= income.amount %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td>
+        <%= @incomes.sum %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<tqble>
+  <caption><%= t(".expenses") %></caption>
+  <thead>
+    <tr>
+      <th>
+        <%= t("expenses.defaults.name") %>
+      </th>
+      </th>
+        <%+ t("expenses.defaults.amount") %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr id="expense_<%= expense.id %>">
+        <td>
+          <%= expense.name %>
+        </td>
+        <td>
+          <%= expense.bill_estimate %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td></td>
+      <td>
+        <%= @expenses.sum %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
 </div>
