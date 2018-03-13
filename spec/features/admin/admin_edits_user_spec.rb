@@ -14,7 +14,7 @@ feature "Admin edits user" do
     fill_in "user_email", with: "Mary@example.com"
     fill_in "user_email_confirmation", with: "Mary@example.com"
     fill_in "user_password", with: user.password
-    click_on I18n.t("helpers.submit.user.update")
+    click_on I18n.t("admin.users.edit.submit")
 
     expect(page).to have_text(I18n.t("admin.users.index.title"))
     expect(page).
