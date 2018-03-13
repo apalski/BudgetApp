@@ -28,10 +28,10 @@
           <%= income.frequency %>
         </td>
         <td>
-          <%= income.due_date %>
+          <%= l(income.due_date, format: :without_weekday) %>
         </td>
         <td>
-          <%= income.amount %>
+          <%= number_to_currency(income.amount) %>
         </td>
         <td>
           <%= link_to t(".links.delete"), income_path(income), method: :delete %>

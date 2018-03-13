@@ -28,8 +28,8 @@ describe IncomesController do
         post :create, params: { income: income_params }
 
         expect(flash[:alert]).to match(
-          I18n.t("flash.actions.create.alert", resource_name: "Income")
-        )  
+          I18n.t("flash.actions.create.alert", resource_name: "Income"),
+        )
       end
     end
 
@@ -72,7 +72,7 @@ describe IncomesController do
     context "when not the income owner" do
       it "raises record not found error" do
         create_current_user_with_budget
-        income = create(:income, budget: @budget)
+        create(:income, budget: @budget)
         other_income = create(:income)
 
         expect do

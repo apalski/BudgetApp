@@ -11,7 +11,9 @@ class IncomesController < ApplicationController
   end
 
   def create
-    @income = Income.create(income_params.merge(budget: current_budget))
+    @income = current_budget.incomes.create(
+      income_params.merge(budget: current_budget),
+    )
 
     respond_with(@income)
   end
