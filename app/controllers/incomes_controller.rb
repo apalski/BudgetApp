@@ -1,13 +1,13 @@
 class IncomesController < ApplicationController
   before_action :require_login
-  before_action :require_current_budget, only: [:show, :edit, :destroy]
+  # before_action :require_current_budget, only: [:show, :edit, :destroy]
 
   def index
     @incomes = current_budget.incomes.by_name
   end
 
   def new
-    @income = Income.new
+    @income = current_budget.incomes.new
   end
 
   def create
@@ -43,7 +43,7 @@ class IncomesController < ApplicationController
   end
 
   def income
-    @income ||= Income.find(params[:id])
+    @income ||= current_budget.incomes.find(params[:id])
   end
   helper_method :income
 
@@ -51,11 +51,11 @@ class IncomesController < ApplicationController
     current_user.budget
   end
 
-  def require_current_budget
-    unless current_budget.incomes.include?(income.id)
-      redirect_to budgets_path, alert: I18n.t(
-        "incomes.flashes.alerts.require_current_budget",
-      )
-    end
-  end
+  # def require_current_budget
+  #   unless current_budget.incomes.include?(income.id)
+  #     redirect_to budgets_path, alert: I18n.t(
+  #       "incomes.flashes.alerts.require_current_budget",
+  #     )
+  #   end
+  # end
 end

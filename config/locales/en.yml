@@ -3,8 +3,8 @@ en:
     formats:
       default:
         "%A %d/%m/%Y"
-      with_weekday:
-        "%a %m/%d/%y"
+      without_weekday:
+        "%d/%m/%Y"
 
   currency:
     format:
