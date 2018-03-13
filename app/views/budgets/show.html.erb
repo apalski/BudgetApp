@@ -1,45 +1,13 @@
 <h3><%= t(".title", name: budget.name) %></h3>
-<tqble>
-  <caption><%= t(".incomes") %></caption>
-  <thead>
-    <tr>
-      <th>
-        <%= t("incomes.defaults.name") %>
-      </th>
-      </th>
-        <%+ t("incomes.defaults.amount") %>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @incomes.each do |income| %>
-      <tr id="income_<%= income.id %>">
-        <td>
-          <%= income.name %>
-        </td>
-        <td>
-          <%= income.amount %>
-        </td>
-      </tr>
-    <% end %>
-    <tr>
-      <td></td>
-      <td>
-        <%= @incomes.sum %>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<tqble>
+<table>
   <caption><%= t(".expenses") %></caption>
   <thead>
     <tr>
       <th>
         <%= t("expenses.defaults.name") %>
       </th>
-      </th>
-        <%+ t("expenses.defaults.amount") %>
+      <th>
+        <%= t("expenses.defaults.bill_estimate") %>
       </th>
     </tr>
   </thead>
@@ -55,9 +23,11 @@
       </tr>
     <% end %>
     <tr>
-      <td></td>
       <td>
-        <%= @expenses.sum %>
+        <%= t(".expenses_total") %>
+      </td>
+      <td>
+        <%= @expenses.map { |expense| expense.bill_estimate }.sum %>
       </td>
     </tr>
   </tbody>

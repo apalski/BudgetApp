@@ -47,13 +47,14 @@ en:
       frequency: "Frequency"
       name: "Name"
       require_budget: "You don't have a budget, create one:"
-    expenses: "less your expenses"
     new:
       budget_exists: "You already have a budget, you can only have one"
       title: "Please fill in budget details:"
     edit:
       title: "Edit your budget:"
     show:
+      expenses: "less your expenses"
+      expenses_total: "Total of expenses"
       incomes: "Your imcomes:"
       title: "Your %{name} budget:"
 
