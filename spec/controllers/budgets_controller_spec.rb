@@ -94,8 +94,8 @@ describe BudgetsController do
     context "when invalid parameters" do
       it "won't update the budget attributes" do
         user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget, name: "Holiday", user: user)
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -104,8 +104,8 @@ describe BudgetsController do
 
       it "renders edit" do
         user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget, user: user)
+        allow(controller).to receive(:current_user).and_return(user)
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
@@ -114,8 +114,8 @@ describe BudgetsController do
 
       it "sets the flash[:alert]" do
         user = create(:user)
-        allow(controller).to receive(:current_user).and_return(user)
         budget = create(:budget, user: user)
+        allow(controller).to receive(:current_user).and_return(user)   
 
         put :update, params: { id: budget.id, budget: { name: "" } }
 
