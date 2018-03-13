@@ -8,7 +8,7 @@ describe IncomesController do
         income_params = { name: "Salary", amount: 500, frequency: "" }
 
         expect do
-          post :create, params: { income: income_params }
+          post :create, params: { income: income_params, budget: @budget }
         end.to change(Income, :count).by(0)
       end
 
@@ -27,9 +27,9 @@ describe IncomesController do
 
         post :create, params: { income: income_params }
 
-        expect(flash[:alert]).
-          to match I18n.
-          t("flash.actions.create.alert", resource_name: "Income")
+        expect(flash[:alert]).to match(
+          I18n.t("flash.actions.create.alert", resource_name: "Income")
+        )  
       end
     end
 
@@ -70,14 +70,14 @@ describe IncomesController do
 
   context "GET #show" do
     context "when not the income owner" do
-      it "redirects the user to their budget view" do
+      it "raises record not found error" do
         create_current_user_with_budget
-        create(:income, name: "gas", budget: @budget)
+        income = create(:income, budget: @budget)
         other_income = create(:income)
 
-        get :show, params: { id: other_income.id }
-
-        expect(response.body).to redirect_to(budgets_path)
+        expect do
+          get :show, params: { id: other_income.id }
+        end.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end
@@ -86,7 +86,7 @@ describe IncomesController do
     context "when invalid parameters" do
       it "won't update the income" do
         create_current_user_with_budget
-        income = create(:income, name: "salary")
+        income = create(:income, name: "salary", budget: @budget)
 
         put :update, params: { id: income.id, income: { name: "" } }
 
@@ -95,7 +95,7 @@ describe IncomesController do
 
       it "renders edit" do
         create_current_user_with_budget
-        income = create(:income)
+        income = create(:income, budget: @budget)
 
         put :update, params: { id: income.id, income: { name: "" } }
 
@@ -104,7 +104,7 @@ describe IncomesController do
 
       it "sets the flash[:alert]" do
         create_current_user_with_budget
-        income = create(:income)
+        income = create(:income, budget: @budget)
 
         put :update, params: { id: income.id, income: { name: "" } }
 
@@ -117,15 +117,15 @@ describe IncomesController do
 
   context "DELETE #destroy" do
     context "income doesn't exist" do
-      it "won't change income count" do
+      it "raises record not found error" do
         create_current_user_with_budget
-        income = create(:income)
+        income = create(:income, budget: @budget)
 
         delete :destroy, params: { id: income.id }
 
         expect do
-          delete :destroy, params: { id: income.id }
-        end.to change(Income, :count).by(0)
+          delete :destroy, params: { id: income.reload.id }
+        end.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

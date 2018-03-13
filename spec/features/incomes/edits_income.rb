@@ -5,6 +5,7 @@ feature "edits income" do
     user = create(:user)
     create(:budget, user: user)
     income = create(:income, frequency: "weekly")
+    notice = I18n.t("flash.actions.update.notice", resource_name: "Income")
     log_in_as user
 
     visit edit_income_path(income)
@@ -12,10 +13,6 @@ feature "edits income" do
     click_on I18n.t("helpers.submit.income.update")
 
     expect(page).to have_text("monthly")
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.update.notice",
-        resource_name: "Income",
-      ),)
+    expect(page).to have_text(notice)
   end
 end
