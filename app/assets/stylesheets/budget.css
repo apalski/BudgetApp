@@ -30,7 +30,7 @@ body {
   font-size: var(--default_font_size);
 }
 
-nav {
+/* nav {
   background-color: var(--sacred_beam);
   overflow: hidden;
 }
@@ -79,7 +79,7 @@ nav li:hover ul {
 nav ul ul li:hover a {
   background-color: var(--now_what);
   color: var(--sacred_beam);
-}
+} */
 
 p {
   margin-left: 120px;
@@ -90,7 +90,7 @@ select {
   background-color: var(--white_whale);
 }
 
-table {
+/* table {
   background-color: var(--now_what);
   border-radius: var(--default_border_radius);
   margin-left: 130px;
@@ -131,7 +131,7 @@ td a:visited {
 
 th {
   height: 40px;
-}
+} */
 
 .box {
   background-color: var(--now_what);
@@ -163,7 +163,7 @@ th {
   color: var(--white_whale);
 }
 
-.flashes #flash-alert {
+/* .flashes #flash-alert {
   background-color: var(--desert_heat);
   border-top: var(--default_border) var(--golden_desert);
   border-bottom: var(--default_border) var(--golden_desert);
@@ -197,9 +197,9 @@ th {
   color: var(--sacred_beam);
   display: block;
   text-align: center;
-}
+} */
 
-.form {
+/* .form {
   color: var(--sacred_beam);
   font-size: var(--default_font_size);
   position: relative;
@@ -235,4 +235,4 @@ th {
   min-width: 30%;
   text-align: right;
   width: 100px;
-}
+} */

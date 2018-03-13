@@ -1,0 +1,37 @@
+.form {
+  color: var(--sacred_beam);
+  font-size: var(--default_font_size);
+  position: relative;
+}
+
+.form input {
+  background-color: var(--white_whale);
+  border: var(--default_border) var(--sacred_beam);
+  border-radius: var(--default_border_radius);
+  color: var(--sacred_beam);
+  font-size: var(--default_font_size);
+  margin-bottom: 10px;
+}
+
+.form input:focus {
+  border: var(--default_border) var(--sacred_beam);
+  font-size: var(--default_font_size);
+}
+
+.form input[type="submit"] {
+  background-color: var(--sacred_beam);
+  border: var(--default_border) var(--sacred_beam);
+  color: var(--white_whale);
+  font-size: var(--default_font_size);
+  margin-left: 85px;
+  text-align: center;
+  width: 150px;
+}
+
+.form label {
+  float: left;
+  font-size: var(--default_font_size);
+  min-width: 30%;
+  text-align: right;
+  width: 100px;
+}

@@ -1,0 +1,35 @@
+.flashes #flash-alert {
+  background-color: var(--desert_heat);
+  border-top: var(--default_border) var(--golden_desert);
+  border-bottom: var(--default_border) var(--golden_desert);
+  color: var(--sacred_beam);
+  display: block;
+  text-align: center;
+}
+
+.flashes #flash-error {
+  background-color: var(--desert_rock);
+  border-top: var(--default_border) var(--light_and_fluffy);
+  border-bottom: var(--default_border) var(--light_and_fluffy);
+  color: var(--sacred_beam);
+  display: block;
+  text-align: center;
+}
+
+.flashes #flash-notice {
+  background-color: var(--golden_desert);
+  border-top: var(--default_border) var(--desert_heat);
+  border-bottom: var(--default_border) var(--desert_heat);
+  color: var(--sacred_beam);
+  display: block;
+  text-align: center;
+}
+
+.flashes #flash-success {
+  background-color: var(--angels_wings);
+  border-top: var(--default_border) var(--desert_heat);
+  border-bottom: var(--default_border) var(--desert_heat);
+  color: var(--sacred_beam);
+  display: block;
+  text-align: center;
+}

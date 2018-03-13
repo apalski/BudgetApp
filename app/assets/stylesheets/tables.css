@@ -1,0 +1,42 @@
+table {
+  background-color: var(--now_what);
+  border-radius: var(--default_border_radius);
+  margin-left: 130px;
+  margin-top: 100px;
+  width: 80%;
+}
+
+table caption {
+  padding: 20px;
+  text-align: left;
+}
+
+table, th, td {
+  border: var(--default_border) var(--gear_shift);
+}
+
+td {
+  text-align: center;
+  vertical-align: center;
+}
+
+td a:link {
+  background-color: var(--sacred_beam);
+  border: var(--default_border) var(--sacred_beam);
+  border-radius: var(--default_border_radius);
+  color: var(--white_whale);
+  display: inline-block;
+  padding: 5px 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+td a:visited {
+  background-color: var(--sacred_beam);
+  border: var(--default_border) var(--sacred_beam);
+  color: var(--white_whale);
+}
+
+th {
+  height: 40px;
+}
