@@ -3,6 +3,7 @@ require "rails_helper"
 feature "admin creates new admin account" do
   scenario "successfully" do
     admin = create(:user, :admin)
+    notice = I18n.t("flash.actions.create.notice", resource_name: "User")
     log_in_as admin
 
     visit new_admin_user_path
@@ -16,11 +17,7 @@ feature "admin creates new admin account" do
     user = User.last
 
     expect(page).to have_text(I18n.t("admin.users.index.title"))
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.create.notice",
-        resource_name: "User",
-      ),)
+    expect(page).to have_text(notice)
     within "#user_#{user.id}" do
       expect(page).to have_text("Mary")
       expect(page).to have_text("true")

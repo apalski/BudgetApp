@@ -2,6 +2,7 @@ require "rails_helper"
 
 feature "user creates new account" do
   scenario "successfully" do
+    notice = I18n.t("flash.actions.create.notice", resource_name: "User")
     visit new_users_path
 
     fill_in "user_name", with: "Mary"
@@ -13,10 +14,7 @@ feature "user creates new account" do
     expect(page).to have_text(I18n.t("users.show.welcome"))
     expect(page).
       to have_text(I18n.t("sessions.new.flash.alert"))
-    expect(page).not_to have_text(I18n.t(
-      "flash.actions.create.notice",
-      resource_name: "User",
-    ),)
+    expect(page).not_to have_text(notice)
     expect(current_path).to eq(users_path)
   end
 end

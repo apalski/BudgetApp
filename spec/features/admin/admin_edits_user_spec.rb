@@ -4,6 +4,7 @@ feature "Admin edits user" do
   scenario "successfully" do
     admin = create(:user, :admin)
     user = create(:user)
+    notice = I18n.t("flash.actions.update.notice", resource_name: "User")
     log_in_as admin
 
     visit admin_users_path
@@ -17,11 +18,7 @@ feature "Admin edits user" do
     click_on I18n.t("admin.users.edit.submit")
 
     expect(page).to have_text(I18n.t("admin.users.index.title"))
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.update.notice",
-        resource_name: "User",
-      ),)
+    expect(page).to have_text(notice)
     within "#user_#{user.id}" do
       expect(page).to have_text("Mary")
     end

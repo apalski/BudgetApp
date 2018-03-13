@@ -3,6 +3,7 @@ require "rails_helper"
 feature "user updates profile" do
   scenario "successfully" do
     user = create(:user)
+    notice = I18n.t("flash.actions.update.notice", resource_name: "User")
     log_in_as user
 
     visit edit_users_path
@@ -12,10 +13,6 @@ feature "user updates profile" do
     click_on I18n.t("users.edit.submit")
 
     expect(page).to have_text("Fred")
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.update.notice",
-        resource_name: "User",
-      ),)
+    expect(page).to have_text(notice)
   end
 end

@@ -4,6 +4,7 @@ feature "delete budget" do
   scenario "successfully" do
     user = create(:user)
     budget = create(:budget, user: user)
+    notice = I18n.t("flash.actions.destroy.notice", resource_name: "Budget")
     log_in_as user
 
     visit edit_budget_path(budget)
@@ -11,8 +12,6 @@ feature "delete budget" do
     click_on I18n.t("budgets.edit.delete")
 
     expect(page).to have_text(I18n.t("budgets.new.title"))
-    expect(page).to have_text(
-      I18n.t("flash.actions.destroy.notice", resource_name: "Budget"),
-    )
+    expect(page).to have_text(notice)
   end
 end

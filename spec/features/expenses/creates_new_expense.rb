@@ -4,6 +4,7 @@ feature "create new expense" do
   scenario "successfully" do
     user = create(:user)
     create(:budget, user: user)
+    notice = I18n.t("flash.actions.create.notice", resource_name: "Expense")
     log_in_as user
 
     visit new_expense_path
@@ -16,10 +17,6 @@ feature "create new expense" do
     click_on I18n.t("helpers.submit.expense.create")
 
     expect(page).to have_text(I18n.t("expenses.show.title", name: "Gas"))
-    expect(page).
-      to have_text(I18n.t(
-        "flash.actions.create.notice",
-        resource_name: "Expense",
-      ),)
+    expect(page).to have_text(notice)
   end
 end

@@ -4,6 +4,7 @@ feature "updates budget" do
   scenario "successfully" do
     user = create(:user)
     budget = create(:budget, user: user)
+    notice = I18n.t("flash.actions.update.notice", resource_name: "Budget")
     log_in_as user
 
     visit edit_budget_path(budget)
@@ -12,8 +13,6 @@ feature "updates budget" do
     click_on I18n.t("helpers.submit.budget.update")
 
     expect(page).to have_text("My New Budget")
-    expect(page).to have_text(
-      I18n.t("flash.actions.update.notice", resource_name: "Budget"),
-    )
+    expect(page).to have_text(notice)
   end
 end

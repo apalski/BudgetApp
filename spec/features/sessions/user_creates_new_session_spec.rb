@@ -11,13 +11,12 @@ feature "user creates new session" do
 
   scenario "logs out" do
     user = create(:user)
+    notice = I18n.t("sessions.destroy.flash.notice", resource_name: "Session")
     log_in_as user
 
     click_on I18n.t("sessions.destroy.link")
 
     expect(page).to have_text(I18n.t("home.show.welcome"))
-    expect(page).to have_text(
-      I18n.t("sessions.destroy.flash.notice", resource_name: "Session"),
-    )
+    expect(page).to have_text(notice)
   end
 end
