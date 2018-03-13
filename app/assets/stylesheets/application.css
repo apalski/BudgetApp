@@ -1,9 +1,9 @@
 @charset "utf-8";
 
-@import "normalize.css/normalize";
-@import "variables";
-@import "budget";
-@import "flashes";
-@import "forms";
-@import "nav";
-@import "tables";
+@import "normalize.css/normalize.css";
+@import "variables.css";
+@import "budget.css";
+@import "flashes.css";
+@import "forms.css";
+@import "nav.css";
+@import "tables.css";
