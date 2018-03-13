@@ -1,7 +1,7 @@
 <div class="box">
   <div class="form">
     <h3><%= t(".title") %></h3>
-    <%= simple_form_for current_user, url: users_path do |f| %>
+    <%= simple_form_for current_user do |f| %>
       <%= f.input :name %>
       <%= f.input :email %>
       <%= f.submit class: "button" %>

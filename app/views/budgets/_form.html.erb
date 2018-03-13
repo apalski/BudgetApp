@@ -1,4 +1,4 @@
-<%= simple_form_for budget, url: budgets_path do |f| %>
+<%= simple_form_for budget do |f| %>
   <%= f.input :name %>
   <%= f.input :frequency, collection: Budget.frequencies.keys %>
   <div class="submit"><%= f.submit %></div>
