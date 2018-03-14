@@ -1,5 +1,5 @@
 class Expense < ActiveRecord::Base
-  belongs_to :budget, dependent: :destroy
+  belongs_to :user, dependent: :destroy
 
   enum frequency: {
     weekly: 0, fortnightly: 1, monthly: 2, quarterly: 3, annually: 4,

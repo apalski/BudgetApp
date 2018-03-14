@@ -1,11 +1,13 @@
-class Budget < ActiveRecord::Base
-  belongs_to :user, dependent: :destroy
-  has_many :incomes
-  has_many :expenses
+class Budget
+  attr_reader :user
 
-  enum frequency: { weekly: 0, fortnightly: 1, monthly: 2 }
+  delegate :expenses, :incomes, to: :user
 
-  validates :name, presence: true
-  validates :frequency, presence: true
-  validates :frequency, inclusion: { in: Budget.frequencies.keys }
+  def initialize(user)
+    @user = user
+  end
+
+  def remaining_funds
+    total_income - total_expenses
+  end
 end
