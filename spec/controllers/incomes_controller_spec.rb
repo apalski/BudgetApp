@@ -70,9 +70,8 @@ describe IncomesController do
 
   context "GET #show" do
     context "when not the income owner" do
-      it "raises record not found error" do
+      it "raises record not found exception" do
         create_current_user_with_budget
-        create(:income, budget: @budget)
         other_income = create(:income)
 
         expect do
