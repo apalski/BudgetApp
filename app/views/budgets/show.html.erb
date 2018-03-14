@@ -18,7 +18,7 @@
           <%= expense.name %>
         </td>
         <td>
-          <%= expense.bill_estimate %>
+          <%= number_to_currency(expense.bill_estimate) %>
         </td>
       </tr>
     <% end %>
@@ -27,7 +27,7 @@
         <%= t(".expenses_total") %>
       </td>
       <td>
-        <%= @expenses.map { |expense| expense.bill_estimate }.sum %>
+        <%= number_to_currency(@expenses_total) %>
       </td>
     </tr>
   </tbody>

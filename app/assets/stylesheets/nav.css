@@ -5,31 +5,31 @@ nav {
 
 nav ul,
 nav ol {
-    list-style: none;
-    list-style-image: none;
+  list-style: none;
+  list-style-image: none;
 }
 
 nav ul,
 nav ol,
 nav li {
-   margin: 0;
-   padding: 0;
-   float: left;
+  float: left;
+  margin: 0;
+  padding: 0;
 }
 
 nav a {
+  color: var(--white_whale);
   display: block;
   padding: 1em;
   text-decoration: none;
-  color: var(--white_whale);
 }
 
 nav ul ul {
-  max-width: 11em;
   background-color: var(--sacred_beam);
+  display: none;
+  max-width: 11em;
   position: absolute;
   z-index: 99;
-  display: none;
 }
 
 nav ul ul li {

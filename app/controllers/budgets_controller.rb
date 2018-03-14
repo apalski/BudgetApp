@@ -14,20 +14,21 @@ class BudgetsController < ApplicationController
   end
 
   def show
-    @expenses = current_user.budget.expenses
+    @expenses = current_budget.expenses
+    @expenses_total = total_expenses
   end
 
   def edit
   end
 
   def update
-    current_user.budget.update_attributes(budget_params)
+    current_budget.update_attributes(budget_params)
 
-    respond_with current_user.budget, location: -> { budgets_path }
+    respond_with current_budget, location: -> { budgets_path }
   end
 
   def destroy
-    current_user.budget.delete
+    current_budget.delete
     redirect_to new_budgets_path, notice: I18n.t(
       "flash.actions.destroy.notice",
       resource_name: "Budget",
@@ -59,5 +60,13 @@ class BudgetsController < ApplicationController
         "budgets.defaults.require_budget",
       )
     end
+  end
+
+  def current_budget
+    current_user.budget
+  end
+
+  def total_expenses
+    current_budget.expenses.map(&:bill_estimate).sum
   end
 end
