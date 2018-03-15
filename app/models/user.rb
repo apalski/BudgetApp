@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_secure_password
 
   has_one :budget, dependent: :destroy
+  has_many :expenses, dependent: :destroy
+  has_many :incomes, dependent: :destroy
 
   validates :name, :email, presence: true, uniqueness: true
   validates :email, confirmation: true
