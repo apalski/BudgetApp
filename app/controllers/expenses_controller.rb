@@ -1,17 +1,18 @@
 class ExpensesController < ApplicationController
   before_action :require_login
-  before_action :require_current_budget, only: [:show, :edit, :destroy]
+  before_action :current_expense, only: [:update, :destroy]
+  before_action :expense, only: [:show]
 
   def index
-    @expenses = current_budget.expenses.by_name
+    @expenses = current_user.expenses.by_name
   end
 
   def new
-    @expense = Expense.new
+    @expense = current_user.expenses.new
   end
 
   def create
-    @expense = Expense.create(expense_params.merge(budget: current_budget))
+    @expense = current_user.expenses.create(expense_params)
 
     respond_with(@expense)
   end
@@ -23,13 +24,13 @@ class ExpensesController < ApplicationController
   end
 
   def update
-    expense.update_attributes(expense_params)
+    current_expense.update_attributes(expense_params)
 
     respond_with(expense)
   end
 
   def destroy
-    expense.delete
+    current_expense.delete
 
     respond_with expense, location: -> { expenses_path }
   end
@@ -42,19 +43,11 @@ class ExpensesController < ApplicationController
   end
 
   def expense
-    @expense ||= Expense.find(params[:id])
+    @expense ||= current_user.expenses.find(params[:id])
   end
   helper_method :expense
 
-  def current_budget
-    current_user.budget
-  end
-
-  def require_current_budget
-    unless current_budget.expenses.include?(expense.id)
-      redirect_to budgets_path, alert: I18n.t(
-        "expenses.flashes.alerts.require_current_budget",
-      )
-    end
+  def current_expense
+    expense.user == current_user
   end
 end
