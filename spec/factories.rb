@@ -1,21 +1,22 @@
 FactoryBot.define do
   factory :expense do
-    sequence(:name) { |n| "name#{n}" }
-    frequency :weekly
+    bill_estimate 100
     due_date "01/05/2018"
+    frequency :weekly
+    sequence(:name) { |n| "name#{n}" }
     user
   end
 
   factory :income do
-    sequence(:name) { |n| "name#{n}" }
     frequency :fortnightly
+    sequence(:name) { |n| "name#{n}" }
     user
   end
 
   factory :user do
+    password "password"
     sequence(:name) { |n| "user name#{n}" }
     sequence(:email) { |n| "user email#{n}" }
-    password "password"
 
     trait :admin do
       admin true

@@ -9,6 +9,6 @@ describe Income do
   end
 
   context "associations" do
-    it { is_expected.to belong_to(:budget) }
+    it { is_expected.to belong_to(:user).dependent(:destroy) }
   end
 end

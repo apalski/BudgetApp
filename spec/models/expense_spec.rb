@@ -13,7 +13,7 @@ describe Expense do
   end
 
   context "associations" do
-    it { is_expected.to belong_to(:budget).dependent(:destroy) }
+    it { is_expected.to belong_to(:user).dependent(:destroy) }
   end
 
   context "frequency has a default value" do
