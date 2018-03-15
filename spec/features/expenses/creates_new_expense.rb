@@ -3,7 +3,6 @@ require "rails_helper"
 feature "create new expense" do
   scenario "successfully" do
     user = create(:user)
-    create(:budget, user: user)
     log_in_as user
 
     visit new_expense_path

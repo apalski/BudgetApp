@@ -3,8 +3,7 @@ require "rails_helper"
 feature "user sees only their expenses" do
   scenario "successfully" do
     user = create(:user)
-    budget = create(:budget, user: user)
-    user_expense = create(:expense, budget: budget)
+    user_expense = create(:expense, user: user)
     other_expense = create(:expense)
     log_in_as user
 

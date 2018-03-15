@@ -3,8 +3,7 @@ require "rails_helper"
 feature "delete expense" do
   scenario "successfully" do
     user = create(:user)
-    create(:budget, user: user)
-    expense = create(:expense)
+    expense = create(:expense, user: user)
     log_in_as user
 
     visit edit_expense_path(expense)
