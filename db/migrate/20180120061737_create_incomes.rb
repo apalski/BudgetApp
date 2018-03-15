@@ -5,7 +5,7 @@ class CreateIncomes < ActiveRecord::Migration[5.1]
       t.date :due_date
       t.string :frequency, null: false
       t.decimal :amount
-      t.references :budget
+      t.references :user
       t.timestamps
     end
   end

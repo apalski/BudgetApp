@@ -14,24 +14,15 @@ ActiveRecord::Schema.define(version: 20180201054016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "budgets", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "frequency", default: 0, null: false
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_budgets_on_user_id"
-  end
-
   create_table "expenses", force: :cascade do |t|
     t.string "name", null: false
     t.date "due_date", null: false
     t.integer "frequency", default: 0, null: false
-    t.decimal "bill_estimate", null: false
-    t.bigint "budget_id"
+    t.decimal "bill_estimate"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["budget_id"], name: "index_expenses_on_budget_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "incomes", force: :cascade do |t|
@@ -39,10 +30,10 @@ ActiveRecord::Schema.define(version: 20180201054016) do
     t.date "due_date"
     t.string "frequency", null: false
     t.decimal "amount"
-    t.bigint "budget_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["budget_id"], name: "index_incomes_on_budget_id"
+    t.index ["user_id"], name: "index_incomes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
