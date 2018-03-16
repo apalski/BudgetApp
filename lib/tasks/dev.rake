@@ -13,6 +13,16 @@ if Rails.env.development? || Rails.env.test?
         password: "secret",
         admin: true,
       )
+<<<<<<< HEAD
+=======
+      # 
+      # 9.times do
+      #   budget = create(:budget)
+      #   budget.expenses.create
+      #   print "."
+      # end
+
+>>>>>>> cd27428... Refactor dev.rake
       puts "Done!"
     end
   end
