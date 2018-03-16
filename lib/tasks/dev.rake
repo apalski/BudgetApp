@@ -14,11 +14,11 @@ if Rails.env.development? || Rails.env.test?
         admin: true,
       )
 
-      9.times do
-        budget = create(:budget)
-        budget.expenses.create
-        print "."
-      end
+      # 9.times do
+      #   budget = create(:budget)
+      #   budget.expenses.create
+      #   print "."
+      # end
 
       puts "Done!"
     end
