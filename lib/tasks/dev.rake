@@ -13,13 +13,6 @@ if Rails.env.development? || Rails.env.test?
         password: "secret",
         admin: true,
       )
-
-      # 9.times do
-      #   budget = create(:budget)
-      #   budget.expenses.create
-      #   print "."
-      # end
-
       puts "Done!"
     end
   end
