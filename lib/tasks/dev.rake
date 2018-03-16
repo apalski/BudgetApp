@@ -14,6 +14,7 @@ if Rails.env.development? || Rails.env.test?
         admin: true,
       )
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       # 
       # 9.times do
@@ -21,6 +22,8 @@ if Rails.env.development? || Rails.env.test?
       #   budget.expenses.create
       #   print "."
       # end
+=======
+>>>>>>> 567cd71... Remove budget expense creation dev.rake
 
 >>>>>>> cd27428... Refactor dev.rake
       puts "Done!"
