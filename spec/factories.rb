@@ -14,8 +14,11 @@ FactoryBot.define do
   end
 
   factory :income do
+    amount 100
+    budget
+    due_date "01/05/2018"
+    frequency :weekly
     sequence(:name) { |n| "name#{n}" }
-    frequency :fortnightly
   end
 
   factory :user do

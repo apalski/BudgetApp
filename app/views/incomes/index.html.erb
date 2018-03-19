@@ -1,0 +1,43 @@
+<table>
+  <caption><%= t(".title") %></caption>
+  <thead>
+    <tr>
+      <th>
+        <%= t("incomes.defaults.name") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.frequency") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.due_date") %>
+      </th>
+      <th>
+        <%= t("incomes.defaults.amount") %>
+      </th>
+      <th>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incomes.each do |income| %>
+      <tr id="income_<%= income.id %>">
+        <td>
+          <%= income.name %>
+        </td>
+        <td>
+          <%= income.frequency %>
+        </td>
+        <td>
+          <%= l(income.due_date, format: :without_weekday) %>
+        </td>
+        <td>
+          <%= number_to_currency(income.amount) %>
+        </td>
+        <td>
+          <%= link_to t(".links.delete"), income_path(income), method: :delete %>
+          <%= link_to t(".links.edit"), edit_income_path(income) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

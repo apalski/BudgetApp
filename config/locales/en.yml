@@ -3,8 +3,8 @@ en:
     formats:
       default:
         "%A %d/%m/%Y"
-      with_weekday:
-        "%a %m/%d/%y"
+      without_weekday:
+        "%d/%m/%Y"
 
   currency:
     format:
@@ -26,7 +26,6 @@ en:
         submit: "New account"
         title: "Create new user:"
       edit:
-        submit: "Update User"
         title: "Edit user:"
       index:
         name: "User name"
@@ -93,6 +92,35 @@ en:
       new_account: "Click New Account to sign up"
       welcome: "Welcome to Budget App"
 
+  incomes:
+    defaults:
+      amount: "Amount"
+      budget: "Budget"
+      due_date: "Due Date"
+      frequency: "Frequency"
+      name: "Name"
+      no_incomes: "You have no incomes, create one:"
+    index:
+      links:
+        delete: "Delete income"
+        edit: "Edit income"
+      title: "Your incomes:"
+    income:
+      delete: "Delete income"
+      update: "Edit income"
+    new:
+      title: "Create a new income"
+    edit:
+      title: "Edit your incomes:"
+    show:
+      title: "Your %{name} income:"
+    flashes:
+      alerts:
+        require_current_budget: "You can only access your incomes"
+    placeholders:
+      amount: "your income amount"
+      name: "your income name"
+
   nav:
     admin: "Admin"
     create_user: "Create user"
@@ -140,7 +168,6 @@ en:
       title: "Fill in your details to sign up:"
     edit:
       delete: "Delete Profile"
-      submit: "Update User"
       title: "Edit your details:"
     show:
       edit: "Edit Profile"
@@ -151,11 +178,11 @@ en:
   activerecord:
     attributes:
       frequencies:
-        weekly: "Weekly"
-        fortnightly: "Fortnightly"
-        monthly: "Monthly"
-        quarterly: "Quarterly"
-        annually: "Annually"
+        weekly: "weekly"
+        fortnightly: "fortnightly"
+        monthly: "monthly"
+        quarterly: "quarterly"
+        annually: "annually"
     errors:
       messages:
         blank: "can't be blank"
@@ -172,5 +199,9 @@ en:
       expense:
         create: "Create expense"
         update: "Edit expense"
+      income:
+        create: "Create income"
+        update: "Edit income"
       user:
         create: "New account"
+        update: "Update profile"

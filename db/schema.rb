@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20180201054016) do
 
   create_table "incomes", force: :cascade do |t|
     t.string "name", null: false
-    t.date "due_date"
-    t.string "frequency", null: false
-    t.decimal "amount"
-    t.bigint "user_id"
+    t.date "due_date", null: false
+    t.integer "frequency", default: 0, null: false
+    t.decimal "amount", null: false
+    t.bigint "budget_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_incomes_on_user_id"
