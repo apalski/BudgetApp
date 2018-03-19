@@ -38,7 +38,7 @@ class ExpensesController < ApplicationController
 
   def expense_params
     params.require(:expense).
-      permit(:bill_estimate, :due_date, :frequency, :name)
+      permit(:bill_estimate, :due_date, :frequency, :name, :budget_id)
   end
 
   def expense
