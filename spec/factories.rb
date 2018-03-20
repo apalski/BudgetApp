@@ -15,7 +15,9 @@ FactoryBot.define do
 
   factory :income do
     sequence(:name) { |n| "name#{n}" }
-    frequency :fortnightly
+    frequency "fortnightly"
+    due_date "01/05/2018"
+    amount 50
   end
 
   factory :user do
