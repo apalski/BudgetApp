@@ -16,7 +16,6 @@ jobs:
 
     steps:
       - run: sudo apt-get
-      - run: sudo apt-get install qt5-default
 
       - checkout
 
@@ -33,6 +32,10 @@ jobs:
         keys: BudgetApp-gems-{{ checksum "Gemfile.lock" }}
         paths:
           - ./vendor/bundle
+
+      - store_test_results:
+        path: test-results
+
 
       - run: bundle exec rake db:setup
       - run: bundle exec rubocop
