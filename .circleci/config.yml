@@ -33,10 +33,6 @@ jobs:
         paths:
           - ./vendor/bundle
 
-      - store_test_results:
-        path: test-results
-
-
       - run: bundle exec rake db:setup
       - run: bundle exec rubocop
       - run: bundle exec rspec
