@@ -37,27 +37,6 @@ en:
           edit: "Edit User"
         title: "Current registered users:"
 
-  budgets:
-    attributes:
-      frequencies:
-        weekly: "weekly"
-        fortnightly: "fortnightly"
-        monthly: "monthly"
-    defaults:
-      frequency: "Frequency"
-      name: "Name"
-      require_budget: "You don't have a budget, create one:"
-    new:
-      budget_exists: "You already have a budget, you can only have one"
-      title: "Please fill in budget details:"
-    edit:
-      title: "Edit your budget:"
-    show:
-      expenses: "less your expenses"
-      expenses_total: "Total of expenses"
-      incomes: "Your imcomes:"
-      title: "Your %{name} budget:"
-
   expenses:
     defaults:
       bill_estimate: "Bill Estimate"
@@ -144,6 +123,8 @@ en:
       title: "Edit your details:"
     show:
       edit: "Edit Profile"
+      expenses: "less your expenses"
+      expenses_total: "Total of expenses"
       name: "Name"
       email: "Email"
       welcome: "Your profile details:"
